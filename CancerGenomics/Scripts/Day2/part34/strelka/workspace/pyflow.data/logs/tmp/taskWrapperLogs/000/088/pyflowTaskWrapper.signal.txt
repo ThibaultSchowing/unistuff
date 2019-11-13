@@ -1,0 +1,4 @@
+[2019-11-13T14:11:41.295581Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+mergeRunStats] [wrapperSignal] wrapperStart
+[2019-11-13T14:11:41.318259Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+mergeRunStats] [wrapperSignal] taskStart
+[2019-11-13T14:11:41.369591Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+mergeRunStats] [wrapperSignal] taskExitCode 0
+[2019-11-13T14:11:42.023403Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+mergeRunStats] [wrapperSignal] taskElapsedSec 0

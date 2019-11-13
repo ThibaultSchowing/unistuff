@@ -1,0 +1,4 @@
+[2019-11-13T14:05:59.746661Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+callGenomeSegment_chromId_000_1_0010] [wrapperSignal] wrapperStart
+[2019-11-13T14:05:59.772719Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+callGenomeSegment_chromId_000_1_0010] [wrapperSignal] taskStart
+[2019-11-13T14:06:00.453983Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+callGenomeSegment_chromId_000_1_0010] [wrapperSignal] taskExitCode 0
+[2019-11-13T14:06:00.970035Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+callGenomeSegment_chromId_000_1_0010] [wrapperSignal] taskElapsedSec 0

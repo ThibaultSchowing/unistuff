@@ -1,0 +1,3 @@
+Usage: configureStrelkaSomaticWorkflow.py [options]
+
+configureStrelkaSomaticWorkflow.py: error: Can't find expected call-regions bed index file: '/data/courses/cancergenomics/SomaticVariantCalling_CancerGenomics_2019/targets/KRAS_TP53_CDKN2C_targets_GRCh38.bed.tbi'

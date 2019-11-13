@@ -1,0 +1,5 @@
+
+Successfully created workflow run script.
+To execute the workflow, run the following script and set appropriate options:
+
+/data/users/student06/day2/part34/strelka/runWorkflow.py

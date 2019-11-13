@@ -1,0 +1,382 @@
+[2019-11-13T14:03:48.543026Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Initiating pyFlow run
+[2019-11-13T14:03:48.549062Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] pyFlowClientWorkflowClass: StrelkaSomaticWorkflow
+[2019-11-13T14:03:48.557883Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] pyFlowVersion: 1.1.20
+[2019-11-13T14:03:48.563116Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] pythonVersion: 2.7.5.final.0
+[2019-11-13T14:03:48.568687Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] WorkingDir: '/data/users/student06/day2/part34'
+[2019-11-13T14:03:48.579669Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] ProcessCmdLine: '/data/users/student06/day2/part34/strelka/runWorkflow.py -m local -j 1 -g 3'
+[2019-11-13T14:03:48.593684Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] [RunParameters] mode: local
+[2019-11-13T14:03:48.599587Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] [RunParameters] nCores: 1
+[2019-11-13T14:03:48.608311Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] [RunParameters] memMb: 3072
+[2019-11-13T14:03:48.613811Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] [RunParameters] dataDir: /data/users/student06/day2/part34/strelka/workspace/pyflow.data
+[2019-11-13T14:03:48.619280Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] [RunParameters] isDryRun: False
+[2019-11-13T14:03:48.627456Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] [RunParameters] isContinue: False
+[2019-11-13T14:03:48.632686Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] [RunParameters] isForceContinue: True
+[2019-11-13T14:03:48.637349Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] [RunParameters] mailTo: ''
+[2019-11-13T14:03:48.643810Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:masterWorkflow] Starting task specification for master workflow
+[2019-11-13T14:03:48.649766Z] [binfservas01.ibu.internal] [24668_1] [StrelkaSomaticWorkflow] Initiating Strelka somatic workflow version: UNKNOWN
+[2019-11-13T14:03:48.658157Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding sub-workflow task 'CallGenome' to master workflow
+[2019-11-13T14:03:48.664695Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:masterWorkflow] Finished task specification for master workflow
+[2019-11-13T14:03:48.670347Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching sub-workflow task: 'CallGenome' from master workflow
+[2019-11-13T14:03:48.677532Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome] Starting task specification for sub-workflow
+[2019-11-13T14:03:48.683764Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+makeTmpDir' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:48.690426Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0000' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:48.696730Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+fixVcfHeader_chromId_000_1_0000' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:48.703197Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0000' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:48.709609Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+makeTmpDir' from sub-workflow 'CallGenome'
+[2019-11-13T14:03:48.715373Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0001' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:48.724222Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0001' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:48.731586Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+makeTmpDir] Task initiated on local node
+[2019-11-13T14:03:49.430793Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0002' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:50.703044Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0002' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:51.497859Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+makeTmpDir' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:03:51.738334Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0003' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:54.234748Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0003' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:55.134610Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0001' from sub-workflow 'CallGenome'
+[2019-11-13T14:03:56.213406Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0004' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:57.753018Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0001] Task initiated on local node
+[2019-11-13T14:03:58.838334Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0004' to sub-workflow 'CallGenome'
+[2019-11-13T14:03:59.861010Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0005' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:00.611805Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0001' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:04:01.415432Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0005' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:02.265829Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0006' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:03.580489Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0000' from sub-workflow 'CallGenome'
+[2019-11-13T14:04:04.647966Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0006' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:05.435950Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0000] Task initiated on local node
+[2019-11-13T14:04:06.433458Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0007' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:07.628161Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0007' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:08.108960Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0000' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:04:09.067871Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0008' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:11.281073Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0008' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:12.871913Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0005' from sub-workflow 'CallGenome'
+[2019-11-13T14:04:14.083190Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0009' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:14.405295Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0005] Task initiated on local node
+[2019-11-13T14:04:15.488117Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0009' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:17.016563Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0005' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:04:17.931137Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0010' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:18.111900Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0010' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:19.895375Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0009' from sub-workflow 'CallGenome'
+[2019-11-13T14:04:20.511521Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0011' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:21.669511Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0009] Task initiated on local node
+[2019-11-13T14:04:23.571471Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0011' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:25.006381Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0012' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:26.832747Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0012' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:27.817551Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0009' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:04:29.420558Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0013' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:30.237439Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0013' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:31.426108Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0012' from sub-workflow 'CallGenome'
+[2019-11-13T14:04:32.367857Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0014' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:33.300658Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0012] Task initiated on local node
+[2019-11-13T14:04:33.970847Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0014' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:35.063582Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0015' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:36.586783Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0015' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:37.989169Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0012' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:04:38.849840Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0016' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:40.864948Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0016' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:42.484852Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0014' from sub-workflow 'CallGenome'
+[2019-11-13T14:04:42.705823Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0017' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:44.798920Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0014] Task initiated on local node
+[2019-11-13T14:04:45.176189Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0017' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:46.485124Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0018' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:47.268451Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0018' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:48.326467Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0014' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:04:50.000826Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0019' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:51.514773Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0019' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:53.380893Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0014' from sub-workflow 'CallGenome'
+[2019-11-13T14:04:54.931355Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_000_1_0020' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:56.861794Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0014] Task initiated on local node
+[2019-11-13T14:04:57.636003Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_000_1_0020' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:59.051157Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0000' to sub-workflow 'CallGenome'
+[2019-11-13T14:04:59.598183Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0014' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:05:00.468189Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0000' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:02.837661Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0001' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:04.424709Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0006' from sub-workflow 'CallGenome'
+[2019-11-13T14:05:05.618932Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0001' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:07.465874Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0006] Task initiated on local node
+[2019-11-13T14:05:09.115977Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0002' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:10.259943Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0002' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:10.350882Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0003' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:11.418625Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0006' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:05:12.429425Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0003' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:12.823122Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0004' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:13.847772Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0003' from sub-workflow 'CallGenome'
+[2019-11-13T14:05:15.187841Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0004' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:16.683759Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0003] Task initiated on local node
+[2019-11-13T14:05:17.483590Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0005' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:17.808043Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0003' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:05:18.804154Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0005' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:20.412931Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0006' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:22.052231Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0016' from sub-workflow 'CallGenome'
+[2019-11-13T14:05:23.569336Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0006' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:24.272336Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0016] Task initiated on local node
+[2019-11-13T14:05:25.372221Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0007' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:25.942627Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0007' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:28.167065Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0008' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:29.083206Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0016' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:05:29.501594Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0008' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:31.982409Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0009' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:33.436651Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0008' from sub-workflow 'CallGenome'
+[2019-11-13T14:05:34.624953Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0009' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:35.775884Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0008] Task initiated on local node
+[2019-11-13T14:05:38.255556Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0010' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:39.373400Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0008' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:05:40.059966Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0010' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:40.144257Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_003_12_0011' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:40.587892Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0012' from sub-workflow 'CallGenome'
+[2019-11-13T14:05:42.026677Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_003_12_0011' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:42.738214Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0012] Task initiated on local node
+[2019-11-13T14:05:42.937223Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_008_17_0000' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:42.964936Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_008_17_0000' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:43.176255Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0012' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:05:47.037659Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_008_17_0001' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:48.449267Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_008_17_0001' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:50.069180Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0009' from sub-workflow 'CallGenome'
+[2019-11-13T14:05:51.966388Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_008_17_0002' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:52.494827Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0009] Task initiated on local node
+[2019-11-13T14:05:52.964472Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_008_17_0002' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:53.378300Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_008_17_0003' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:53.866784Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_008_17_0003' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:55.211044Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0009' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:05:56.199895Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_008_17_0004' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:57.702050Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_008_17_0004' to sub-workflow 'CallGenome'
+[2019-11-13T14:05:57.828517Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0010' from sub-workflow 'CallGenome'
+[2019-11-13T14:05:59.669673Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_008_17_0005' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:00.971969Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0010] Task initiated on local node
+[2019-11-13T14:06:01.733053Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_008_17_0005' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:02.914506Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0010' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:03.570371Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+callGenomeSegment_chromId_008_17_0006' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:05.892898Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+compressSegmentOutput_chromId_008_17_0006' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:06.252476Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_008_17_0001' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:07.061571Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+completedAllGenomeSegments' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:08.907439Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_008_17_0001] Task initiated on local node
+[2019-11-13T14:06:09.333449Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+SNV_concat_vcf' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:09.871402Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+SNV_index_vcf' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:11.146017Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+Indel_concat_vcf' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:12.195492Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_008_17_0001' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:12.959415Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+Indel_index_vcf' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:14.871722Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+mergeRunStats' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:16.841476Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0000' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:18.128440Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Adding command task 'CallGenome+removeTmpDir' to sub-workflow 'CallGenome'
+[2019-11-13T14:06:19.521369Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0000] Task initiated on local node
+[2019-11-13T14:06:20.312261Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome] Finished task specification for sub-workflow
+[2019-11-13T14:06:22.152872Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0000' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:22.798044Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0000' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:23.577679Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0000] Task initiated on local node
+[2019-11-13T14:06:24.631719Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0000' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:26.517947Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0011' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:28.930011Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0011] Task initiated on local node
+[2019-11-13T14:06:31.140323Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0011' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:32.823197Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0011' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:33.437488Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0011] Task initiated on local node
+[2019-11-13T14:06:35.152348Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0011' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:36.301085Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_008_17_0003' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:38.496663Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_008_17_0003] Task initiated on local node
+[2019-11-13T14:06:41.908508Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_008_17_0003' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:43.743194Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0017' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:44.776695Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0017] Task initiated on local node
+[2019-11-13T14:06:46.984384Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0017' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:47.273749Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0010' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:47.684057Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0010] Task initiated on local node
+[2019-11-13T14:06:50.548014Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0010' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:51.433038Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0010' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:52.808862Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0010] Task initiated on local node
+[2019-11-13T14:06:53.615870Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0010' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:06:56.135332Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0007' from sub-workflow 'CallGenome'
+[2019-11-13T14:06:57.092474Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0007] Task initiated on local node
+[2019-11-13T14:06:58.747645Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0007' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:00.723040Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0011' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:01.490261Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0011] Task initiated on local node
+[2019-11-13T14:07:04.153007Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0011' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:05.620016Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0001' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:06.547864Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0001] Task initiated on local node
+[2019-11-13T14:07:09.462432Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0001' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:10.318653Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0008' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:11.960388Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0008] Task initiated on local node
+[2019-11-13T14:07:13.520412Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0008' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:14.804055Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0001' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:16.483003Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_008_17_0001] Task initiated on local node
+[2019-11-13T14:07:19.447711Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0001' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:20.457579Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0018' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:22.539319Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0018] Task initiated on local node
+[2019-11-13T14:07:25.126385Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0018' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:26.770325Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0007' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:27.515911Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0007] Task initiated on local node
+[2019-11-13T14:07:29.376790Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0007' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:32.116624Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0010' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:33.424102Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0010] Task initiated on local node
+[2019-11-13T14:07:35.384809Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0010' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:36.488154Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0020' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:37.824202Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0020] Task initiated on local node
+[2019-11-13T14:07:41.539205Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0020' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:43.393923Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0020' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:44.115809Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0020] Task initiated on local node
+[2019-11-13T14:07:45.072992Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0020' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:45.928422Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+fixVcfHeader_chromId_000_1_0000' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:47.563940Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+fixVcfHeader_chromId_000_1_0000] Task initiated on local node
+[2019-11-13T14:07:48.922430Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+fixVcfHeader_chromId_000_1_0000' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:49.636708Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0000' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:50.656393Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0000] Task initiated on local node
+[2019-11-13T14:07:51.552174Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0000' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:07:53.048559Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0002' from sub-workflow 'CallGenome'
+[2019-11-13T14:07:55.039582Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0002] Task initiated on local node
+[2019-11-13T14:08:02.557163Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0002' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:03.612409Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_008_17_0005' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:04.265536Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_008_17_0005] Task initiated on local node
+[2019-11-13T14:08:05.770911Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_008_17_0005' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:07.543029Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0005' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:08.826856Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_008_17_0005] Task initiated on local node
+[2019-11-13T14:08:09.632521Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0005' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:10.817385Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0015' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:11.790446Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0015] Task initiated on local node
+[2019-11-13T14:08:13.499822Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0015' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:14.876762Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0015' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:16.523010Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0015] Task initiated on local node
+[2019-11-13T14:08:18.231867Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0015' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:18.912566Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0003' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:19.945058Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_008_17_0003] Task initiated on local node
+[2019-11-13T14:08:22.858801Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0003' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:23.052389Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0017' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:23.890550Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0017] Task initiated on local node
+[2019-11-13T14:08:27.659026Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0017' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:28.682375Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0003' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:31.295116Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0003] Task initiated on local node
+[2019-11-13T14:08:33.406893Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0003' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:34.169925Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_008_17_0002' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:35.465494Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_008_17_0002] Task initiated on local node
+[2019-11-13T14:08:38.632482Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_008_17_0002' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:39.608902Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0007' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:40.230329Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0007] Task initiated on local node
+[2019-11-13T14:08:43.494677Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0007' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:44.866698Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0007' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:46.472720Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0007] Task initiated on local node
+[2019-11-13T14:08:48.183575Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0007' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:50.148238Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0013' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:51.275757Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0013] Task initiated on local node
+[2019-11-13T14:08:53.536420Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0013' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:55.288502Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0003' from sub-workflow 'CallGenome'
+[2019-11-13T14:08:55.773617Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0003] Task initiated on local node
+[2019-11-13T14:08:58.886272Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0003' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:08:59.688960Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0016' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:01.253480Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0016] Task initiated on local node
+[2019-11-13T14:09:03.365553Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0016' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:04.314099Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0008' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:05.509763Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0008] Task initiated on local node
+[2019-11-13T14:09:08.523166Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0008' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:11.277316Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0003' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:12.145985Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0003] Task initiated on local node
+[2019-11-13T14:09:13.704920Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0003' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:15.500578Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0005' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:17.684375Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0005] Task initiated on local node
+[2019-11-13T14:09:19.645480Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0005' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:20.978676Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0018' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:21.999047Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0018] Task initiated on local node
+[2019-11-13T14:09:23.508039Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0018' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:26.318199Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0011' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:27.793598Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0011] Task initiated on local node
+[2019-11-13T14:09:29.302569Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0011' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:30.338689Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0009' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:31.438175Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0009] Task initiated on local node
+[2019-11-13T14:09:33.147474Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0009' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:34.271746Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0009' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:36.355995Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0009] Task initiated on local node
+[2019-11-13T14:09:38.217047Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0009' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:39.021729Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0005' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:40.812544Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0005] Task initiated on local node
+[2019-11-13T14:09:43.963491Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0005' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:44.232812Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0006' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:44.269516Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0006] Task initiated on local node
+[2019-11-13T14:09:47.684157Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0006' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:49.438048Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0006' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:49.624467Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0006] Task initiated on local node
+[2019-11-13T14:09:49.979513Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0006' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:51.541933Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0008' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:53.813477Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0008] Task initiated on local node
+[2019-11-13T14:09:54.368089Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0008' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:09:55.101429Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0006' from sub-workflow 'CallGenome'
+[2019-11-13T14:09:56.216472Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0006] Task initiated on local node
+[2019-11-13T14:09:58.368625Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0006' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:00.349441Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0002' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:01.899892Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_008_17_0002] Task initiated on local node
+[2019-11-13T14:10:08.661193Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0002' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:11.102303Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_008_17_0000' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:12.783204Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_008_17_0000] Task initiated on local node
+[2019-11-13T14:10:15.096567Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_008_17_0000' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:16.347975Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0001' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:16.796601Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0001] Task initiated on local node
+[2019-11-13T14:10:18.753376Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0001' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:20.889514Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_003_12_0004' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:21.188939Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_003_12_0004] Task initiated on local node
+[2019-11-13T14:10:22.797792Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_003_12_0004' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:23.066767Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0004' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:24.870831Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0004] Task initiated on local node
+[2019-11-13T14:10:25.228007Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0004' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:27.827257Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0002' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:29.376039Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0002] Task initiated on local node
+[2019-11-13T14:10:31.079602Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0002' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:32.038324Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0001' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:34.459423Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0001] Task initiated on local node
+[2019-11-13T14:10:35.315372Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0001' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:37.568786Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0005' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:38.500697Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_003_12_0005] Task initiated on local node
+[2019-11-13T14:10:39.558043Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_003_12_0005' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:40.405551Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_008_17_0006' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:40.693564Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_008_17_0006] Task initiated on local node
+[2019-11-13T14:10:41.248834Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_008_17_0006' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:41.772471Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_008_17_0004' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:44.325953Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_008_17_0004] Task initiated on local node
+[2019-11-13T14:10:46.688812Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_008_17_0004' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:48.130283Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0004' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:49.207490Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_008_17_0004] Task initiated on local node
+[2019-11-13T14:10:51.068810Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0004' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:51.436194Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0002' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:52.730762Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0002] Task initiated on local node
+[2019-11-13T14:10:54.038661Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0002' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:54.222483Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0002' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:56.354414Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0002] Task initiated on local node
+[2019-11-13T14:10:56.709857Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0002' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:10:57.280986Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0013' from sub-workflow 'CallGenome'
+[2019-11-13T14:10:58.995876Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0013] Task initiated on local node
+[2019-11-13T14:11:00.053348Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0013' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:01.033240Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0004' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:02.543360Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0004] Task initiated on local node
+[2019-11-13T14:11:03.850966Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0004' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:04.907353Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0004' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:06.103497Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0004] Task initiated on local node
+[2019-11-13T14:11:07.713568Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0004' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:08.850638Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+callGenomeSegment_chromId_000_1_0019' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:10.971353Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+callGenomeSegment_chromId_000_1_0019] Task initiated on local node
+[2019-11-13T14:11:11.727045Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+callGenomeSegment_chromId_000_1_0019' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:12.041915Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0000' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:12.842988Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_008_17_0000] Task initiated on local node
+[2019-11-13T14:11:14.302375Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0000' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:14.726624Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0006' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:16.147681Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_008_17_0006] Task initiated on local node
+[2019-11-13T14:11:18.309963Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_008_17_0006' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:18.597070Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0019' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:20.394177Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+compressSegmentOutput_chromId_000_1_0019] Task initiated on local node
+[2019-11-13T14:11:22.003858Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+compressSegmentOutput_chromId_000_1_0019' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:22.572518Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+completedAllGenomeSegments' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:24.393013Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+Indel_concat_vcf' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:24.802821Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+Indel_concat_vcf] Task initiated on local node
+[2019-11-13T14:11:26.760732Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+Indel_concat_vcf' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:27.140022Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+Indel_index_vcf' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:28.293513Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+Indel_index_vcf] Task initiated on local node
+[2019-11-13T14:11:30.323720Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+Indel_index_vcf' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:30.920263Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+SNV_concat_vcf' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:31.997932Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+SNV_concat_vcf] Task initiated on local node
+[2019-11-13T14:11:33.155006Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+SNV_concat_vcf' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:35.297982Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+SNV_index_vcf' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:35.883567Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+SNV_index_vcf] Task initiated on local node
+[2019-11-13T14:11:38.395734Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+SNV_index_vcf' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:38.734430Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+mergeRunStats' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:41.243011Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+mergeRunStats] Task initiated on local node
+[2019-11-13T14:11:43.203629Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+mergeRunStats' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:43.851239Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Launching command task: 'CallGenome+removeTmpDir' from sub-workflow 'CallGenome'
+[2019-11-13T14:11:45.814795Z] [binfservas01.ibu.internal] [24668_1] [TaskRunner:CallGenome+removeTmpDir] Task initiated on local node
+[2019-11-13T14:11:47.123472Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed command task: 'CallGenome+removeTmpDir' launched from sub-workflow 'CallGenome'
+[2019-11-13T14:11:50.946112Z] [binfservas01.ibu.internal] [24668_1] [TaskManager] Completed sub-workflow task: 'CallGenome' launched from master workflow
+[2019-11-13T14:11:52.286326Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Strelka somatic workflow successfully completed.
+[2019-11-13T14:11:52.286326Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] 
+[2019-11-13T14:11:52.286326Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] 	workflow version: UNKNOWN
+[2019-11-13T14:11:53.916705Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] 
+[2019-11-13T14:11:54.351905Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Workflow successfully completed all tasks
+[2019-11-13T14:11:56.616490Z] [binfservas01.ibu.internal] [24668_1] [WorkflowRunner] Elapsed time for full workflow: 483 sec

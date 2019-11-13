@@ -1,0 +1,7 @@
+11:56:22.960 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/software/UHTS/Analysis/picard-tools/2.18.11/bin/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Wed Nov 13 11:56:23 CET 2019] AddOrReplaceReadGroups INPUT=sorted_mappedReads_Case_001_T.bam OUTPUT=sorted_mappedReads_Case_001_T.rg.bam RGID=C2P0JACXX.6 RGLB=libraryyyyiiiiiiiID RGPL=illumina RGPU=C2P0JACXX.6.Case01_Tumor RGSM=Case01_Tumor    VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Wed Nov 13 11:56:23 CET 2019] Executing as student06@binfservas01.ibu.internal on Linux 3.10.0-1062.4.1.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_232-b09; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.18.11-SNAPSHOT
+INFO	2019-11-13 11:56:23	AddOrReplaceReadGroups	Created read-group ID=C2P0JACXX.6 PL=illumina LB=libraryyyyiiiiiiiID SM=Case01_Tumor
+
+[Wed Nov 13 11:56:23 CET 2019] picard.sam.AddOrReplaceReadGroups done. Elapsed time: 0.00 minutes.
+Runtime.totalMemory()=64880640

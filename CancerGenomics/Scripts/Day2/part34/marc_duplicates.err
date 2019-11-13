@@ -1,0 +1,40 @@
+14:36:15.073 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/software/UHTS/Analysis/picard-tools/2.18.11/bin/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Wed Nov 13 14:36:15 CET 2019] MarkDuplicates INPUT=[/data/courses/cancergenomics/SomaticVariantCalling_CancerGenomics_2019/rg/Case_001_N.coordSorted.rg.bam] OUTPUT=Case_001_N.coordSorted.rg.dedup.bam METRICS_FILE=Case_001_N_dedup.metrics.txt OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 CREATE_INDEX=true    MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000 SORTING_COLLECTION_SIZE_RATIO=0.25 TAG_DUPLICATE_SET_MEMBERS=false REMOVE_SEQUENCING_DUPLICATES=false TAGGING_POLICY=DontTag CLEAR_DT=true ADD_PG_TAG_TO_READS=true REMOVE_DUPLICATES=false ASSUME_SORTED=false DUPLICATE_SCORING_STRATEGY=SUM_OF_BASE_QUALITIES PROGRAM_RECORD_ID=MarkDuplicates PROGRAM_GROUP_NAME=MarkDuplicates READ_NAME_REGEX=<optimized capture of last three ':' separated fields as numeric values> MAX_OPTICAL_DUPLICATE_SET_SIZE=300000 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Wed Nov 13 14:36:15 CET 2019] Executing as student06@binfservas01.ibu.internal on Linux 3.10.0-1062.4.1.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_232-b09; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.18.11-SNAPSHOT
+INFO	2019-11-13 14:36:15	MarkDuplicates	Start of doWork freeMemory: 60284968; totalMemory: 64487424; maxMemory: 954728448
+INFO	2019-11-13 14:36:15	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2019-11-13 14:36:15	MarkDuplicates	Will retain up to 3459161 data points before spilling to disk.
+INFO	2019-11-13 14:36:19	MarkDuplicates	Read 5658 records. 0 pairs never matched.
+INFO	2019-11-13 14:36:19	MarkDuplicates	After buildSortedReadEndLists freeMemory: 76695208; totalMemory: 109576192; maxMemory: 954728448
+INFO	2019-11-13 14:36:19	MarkDuplicates	Will retain up to 29835264 duplicate indices before spilling to disk.
+INFO	2019-11-13 14:36:19	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2019-11-13 14:36:19	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2019-11-13 14:36:19	MarkDuplicates	Sorting list of duplicate records.
+INFO	2019-11-13 14:36:19	MarkDuplicates	After generateDuplicateIndexes freeMemory: 119039608; totalMemory: 362283008; maxMemory: 954728448
+INFO	2019-11-13 14:36:19	MarkDuplicates	Marking 216 records as duplicates.
+INFO	2019-11-13 14:36:19	MarkDuplicates	Found 1 optical duplicate clusters.
+INFO	2019-11-13 14:36:19	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2019-11-13 14:36:20	MarkDuplicates	Before output close freeMemory: 356667184; totalMemory: 362283008; maxMemory: 954728448
+INFO	2019-11-13 14:36:20	MarkDuplicates	After output close freeMemory: 356862864; totalMemory: 362283008; maxMemory: 954728448
+[Wed Nov 13 14:36:20 CET 2019] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.09 minutes.
+Runtime.totalMemory()=362283008
+14:36:21.810 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/software/UHTS/Analysis/picard-tools/2.18.11/bin/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Wed Nov 13 14:36:21 CET 2019] MarkDuplicates INPUT=[/data/courses/cancergenomics/SomaticVariantCalling_CancerGenomics_2019/rg/Case_001_T.coordSorted.rg.bam] OUTPUT=Case_001_T.coordSorted.rg.dedup.bam METRICS_FILE=Case_001_T_dedup.metrics.txt OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 CREATE_INDEX=true    MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000 SORTING_COLLECTION_SIZE_RATIO=0.25 TAG_DUPLICATE_SET_MEMBERS=false REMOVE_SEQUENCING_DUPLICATES=false TAGGING_POLICY=DontTag CLEAR_DT=true ADD_PG_TAG_TO_READS=true REMOVE_DUPLICATES=false ASSUME_SORTED=false DUPLICATE_SCORING_STRATEGY=SUM_OF_BASE_QUALITIES PROGRAM_RECORD_ID=MarkDuplicates PROGRAM_GROUP_NAME=MarkDuplicates READ_NAME_REGEX=<optimized capture of last three ':' separated fields as numeric values> MAX_OPTICAL_DUPLICATE_SET_SIZE=300000 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Wed Nov 13 14:36:21 CET 2019] Executing as student06@binfservas01.ibu.internal on Linux 3.10.0-1062.4.1.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_232-b09; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.18.11-SNAPSHOT
+INFO	2019-11-13 14:36:21	MarkDuplicates	Start of doWork freeMemory: 60279656; totalMemory: 64487424; maxMemory: 954728448
+INFO	2019-11-13 14:36:21	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2019-11-13 14:36:21	MarkDuplicates	Will retain up to 3459161 data points before spilling to disk.
+INFO	2019-11-13 14:36:23	MarkDuplicates	Read 6058 records. 0 pairs never matched.
+INFO	2019-11-13 14:36:23	MarkDuplicates	After buildSortedReadEndLists freeMemory: 78746160; totalMemory: 111673344; maxMemory: 954728448
+INFO	2019-11-13 14:36:23	MarkDuplicates	Will retain up to 29835264 duplicate indices before spilling to disk.
+INFO	2019-11-13 14:36:23	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2019-11-13 14:36:23	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2019-11-13 14:36:23	MarkDuplicates	Sorting list of duplicate records.
+INFO	2019-11-13 14:36:23	MarkDuplicates	After generateDuplicateIndexes freeMemory: 117025224; totalMemory: 360185856; maxMemory: 954728448
+INFO	2019-11-13 14:36:23	MarkDuplicates	Marking 271 records as duplicates.
+INFO	2019-11-13 14:36:23	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO	2019-11-13 14:36:23	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2019-11-13 14:36:24	MarkDuplicates	Before output close freeMemory: 354652912; totalMemory: 360185856; maxMemory: 954728448
+INFO	2019-11-13 14:36:24	MarkDuplicates	After output close freeMemory: 354852416; totalMemory: 360185856; maxMemory: 954728448
+[Wed Nov 13 14:36:24 CET 2019] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.04 minutes.
+Runtime.totalMemory()=360185856

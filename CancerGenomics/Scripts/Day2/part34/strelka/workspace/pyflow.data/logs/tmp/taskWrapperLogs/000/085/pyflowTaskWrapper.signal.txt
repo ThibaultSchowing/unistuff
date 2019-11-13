@@ -1,0 +1,4 @@
+[2019-11-13T14:11:35.935180Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+SNV_index_vcf] [wrapperSignal] wrapperStart
+[2019-11-13T14:11:35.954760Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+SNV_index_vcf] [wrapperSignal] taskStart
+[2019-11-13T14:11:35.968768Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+SNV_index_vcf] [wrapperSignal] taskExitCode 0
+[2019-11-13T14:11:37.971187Z] [binfservas01.ibu.internal] [24668_1] [pyflowTaskWrapper:CallGenome+SNV_index_vcf] [wrapperSignal] taskElapsedSec 0
