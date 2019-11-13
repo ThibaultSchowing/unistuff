@@ -1,0 +1,13 @@
+Status	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/HER21.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/HER22.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/HER23.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/NonTNBC1.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/NonTNBC2.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/NonTNBC3.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/Normal1.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/Normal2.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/Normal3.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/TNBC1.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/TNBC2.coordSorted.bam	/data/courses/cancergenomics/RNAseq_CancerGenomics_2019/chr22/mapped/TNBC3.coordSorted.bam
+Assigned	91539	150963	130353	210599	115427	121673	163979	340412	371690	124725	107830	137862
+Unassigned_Unmapped	1473	2450	5516	3105	1537	1762	454	1110	1217	2290	1685	2522
+Unassigned_MappingQuality	517	1407	3258	1055	350	476	73	274	413	781	716	1649
+Unassigned_Chimera	62908	169266	377534	99963	43410	45777	24147	49954	55945	78839	65531	245835
+Unassigned_FragmentLength	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MultiMapping	17627	42286	80599	48159	31175	33278	9010	18846	21566	66549	29419	65350
+Unassigned_Secondary	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Nonjunction	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NoFeatures	192754	348877	224299	292504	216113	234623	183781	383549	398335	336073	171356	228772
+Unassigned_Overlapping_Length	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Ambiguity	7736	9936	20952	13798	5533	5873	7943	16154	16197	7456	7942	14822

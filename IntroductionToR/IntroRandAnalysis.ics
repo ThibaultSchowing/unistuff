@@ -1,0 +1,245 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+METHOD:PUBLISH
+PRODID:-//ilias.de/NONSGML ILIAS Calendar V4.4//EN
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19170917T030000
+RRULE:FREQ=YEARLY;BYMONTH=9;BYDAY=3MO;UNTIL=19180917T235959Z
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19440403T010000
+RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=1MO;UNTIL=19450403T235959Z
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19431004T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1MO;UNTIL=19441003T235959Z
+END:STANDARD
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19471005T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1SU;UNTIL=19491003T235959Z
+END:STANDARD
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19800101T000000
+RDATE:19800101T000000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19470629T030000
+RDATE:19800406T010000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19800928T030000
+RRULE:FREQ=YEARLY;BYMONTH=9;BYDAY=-1SU;UNTIL=19950925T235959Z
+END:STANDARD
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19961027T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU;UNTIL=20371026T235959Z
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19810329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU;UNTIL=20370330T235959Z
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1602616_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190807T091100Z
+DTSTART;TZID=Europe/Berlin:20190325T153000
+DTEND;TZID=Europe/Berlin:20190325T153000
+SUMMARY:103567-HS2019-0: Introduction to R programming and analyses (Anmel
+ dungsbeginn)
+DESCRIPTION:Beschreibung: Registration deadline 03.09.19 in ILIAS. Mandato
+ ry for BSc 3rd year Ecology and Evolution.\n\nParticipants of this course 
+ should;
+ 
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=crs_1490376&client_id
+ =ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1602617_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190807T091100Z
+DTSTART;TZID=Europe/Berlin:20190903T153500
+DTEND;TZID=Europe/Berlin:20190903T153500
+SUMMARY:103567-HS2019-0: Introduction to R programming and analyses (Anmel
+ dungsende)
+DESCRIPTION:Beschreibung: Registration deadline 03.09.19 in ILIAS. Mandato
+ ry for BSc 3rd year Ecology and Evolution.\n\nParticipants of this course 
+ should;
+ 
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=crs_1490376&client_id
+ =ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604820_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153254Z
+DTSTART;TZID=Europe/Berlin:20190917T091500
+DTEND;TZID=Europe/Berlin:20190917T120000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Ökologie und Evolution Praktikumsraum D041
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548351&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604821_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153254Z
+DTSTART;TZID=Europe/Berlin:20190917T131500
+DTEND;TZID=Europe/Berlin:20190917T160000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Geologie, Bal 1 Haller-Auditorium 248
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548352&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604822_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153254Z
+DTSTART;TZID=Europe/Berlin:20190918T091500
+DTEND;TZID=Europe/Berlin:20190918T120000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Ökologie und Evolution Praktikumsraum D041
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548353&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604823_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153254Z
+DTSTART;TZID=Europe/Berlin:20190918T131500
+DTEND;TZID=Europe/Berlin:20190918T160000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Ökologie und Evolution Praktikumsraum D041
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548354&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604824_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153254Z
+DTSTART;TZID=Europe/Berlin:20190919T091500
+DTEND;TZID=Europe/Berlin:20190919T120000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Ökologie und Evolution Praktikumsraum D041
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548355&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604825_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153254Z
+DTSTART;TZID=Europe/Berlin:20190919T131500
+DTEND;TZID=Europe/Berlin:20190919T160000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Ökologie und Evolution Praktikumsraum D041
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548356&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604826_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153254Z
+DTSTART;TZID=Europe/Berlin:20190924T091500
+DTEND;TZID=Europe/Berlin:20190924T120000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Ökologie und Evolution Praktikumsraum D041
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548357&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604827_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153255Z
+DTSTART;TZID=Europe/Berlin:20190924T131500
+DTEND;TZID=Europe/Berlin:20190924T160000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Geologie, Bal 1 Haller-Auditorium 248
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548358&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604828_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153255Z
+DTSTART;TZID=Europe/Berlin:20190925T091500
+DTEND;TZID=Europe/Berlin:20190925T120000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Ökologie und Evolution Praktikumsraum D041
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548359&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604829_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153255Z
+DTSTART;TZID=Europe/Berlin:20190925T131500
+DTEND;TZID=Europe/Berlin:20190925T160000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+LOCATION:Ökologie und Evolution Praktikumsraum D041
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548360&client_i
+ d=ilias3_unibe
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20190824T143741Z
+UID:1604830_ilias3_unibe@https://ilias.unibe.ch
+LAST-MODIFIED:20190808T153255Z
+DTSTART;TZID=Europe/Berlin:20191030T091500
+DTEND;TZID=Europe/Berlin:20191030T093000
+SUMMARY:Introduction to R programming and analyses
+DESCRIPTION: Veranstaltungstyp: Blockkurs;
+ 
+URL;VALUE=URI:https://ilias.unibe.ch/goto.php?target=sess_1548361&client_i
+ d=ilias3_unibe
+END:VEVENT
+END:VCALENDAR
