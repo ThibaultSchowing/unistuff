@@ -16,7 +16,7 @@ hist(v1, breaks = 50, col = "cyan3", freq = F, xlab = "Health Care Cost [$]", ma
 
 ### Install packages
 
-install.packages(c("Mass","car", "fitdistrplus"))
+#install.packages(c("Mass","car", "fitdistrplus"))
 
 ### Required Packages for this Exercise
 library("MASS")
@@ -63,8 +63,10 @@ fit_exp <- fitdistr(v1, "exponential"); fit_exp
 
 
 fit_normal2 <- fitdist(v1, pnorm, method = "mle"); fit_normal2
-
 plot(fit_normal2)
+
+fit_exp2 <- fitdist(v1, pexp, method = "mle"); fit_exp2
+plot(fit_exp2)
 
 
 
@@ -154,15 +156,14 @@ fit_normal_log <- fitdistr(v1.log, "normal"); fit_normal_log
 # Displayed as density and not frequency, adding normal curve to see the match
 x <- range(1, 7, 0.001)
 # Plot against a normal distribuion
-curve(dnorm(x, mean(v1.log), var(v1.log)), lwd=2, col="red", add = T)
+curve(dnorm(x, mean(v1.log), var(v1.log)), lwd=3, col="red", add = T)
+
+x <- seq(min(v1.log), max(v1.log), length = 50)
+
+lines(x, dnorm(x, mean = fit_normal_log$estimate["mean"], sd = fit_normal_log$estimate["sd"]), col = "blue")
 
 
-
-# TODO !?!?!?!?
-# Plot against the fitted distribution
-curve(dnorm(x, fit_normal_log$estimate["mean"], sqrt(fit_normal_log$sd["sd"])), lwd=2, col="black", add = T)
-
-legend("topright", c("Normal distribution", "Fitted distribution"), col=c("red", "black"), lwd=10)
+legend("topright", c("Normal distribution", "Fitted distribution"), col=c("red", "blue"), lwd=10)
 
 
 
