@@ -187,3 +187,4 @@ qqPlot(v1.log, dist = "norm", col.lines = "firebrick2", envelope = 0.95,
 
 # Estimated mean and sd of the fitted log-transformed costs.
 fit_normal_log$estimate
+
