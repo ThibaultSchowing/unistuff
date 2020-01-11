@@ -26,6 +26,73 @@
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements 
+% \usepackage{ngerman}  % german documents
+\usepackage{graphicx}  % import graphics einbinden
+\usepackage{listings}  % support source code listing
+\usepackage{amsmath}  % math stuff
+\usepackage{amssymb} % 
+\usepackage{a4wide} % wide pages
+\usepackage{fancyhdr} % nice headers
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{gensymb}
+\usepackage{textgreek}
+\usepackage[pdfpagemode=None, colorlinks=true,  % url coloring
+linkcolor=blue, urlcolor=blue, citecolor=blue, plainpages=false, 
+pdfpagelabels,unicode]{hyperref}
+
+\usepackage{siunitx}
+\newcommand{\Tfrac}[2]{%
+	\ooalign{%
+		$\genfrac{}{}{2.5pt}1{#1}{#2}$\cr%
+		$\color{white}\genfrac{}{}{.8pt}1{\phantom{#1}}{\phantom{#2}}$}%
+}
+\newcommand{\Dfrac}[2]{%
+	\ooalign{%
+		$\genfrac{}{}{1.2pt}0{#1}{#2}$\cr%
+		$\color{white}\genfrac{}{}{.4pt}0{\phantom{#1}}{\phantom{#2}}$}%
+}
+
+\newcommand{\Efrac}[2]{%
+	\mathchoice
+	{\ooalign{%
+			$\genfrac{}{}{1.2pt}0{#1}{#2}$\cr%
+			$\color{white}\genfrac{}{}{.4pt}0{\phantom{#1}}{\phantom{#2}}$}}%
+	{\ooalign{%
+			$\genfrac{}{}{1.2pt}1{#1}{#2}$\cr%
+			$\color{white}\genfrac{}{}{.4pt}1{\phantom{#1}}{\phantom{#2}}$}}%
+	{\ooalign{%
+			$\genfrac{}{}{1.2pt}2{#1}{#2}$\cr%
+			$\color{white}\genfrac{}{}{.4pt}2{\phantom{#1}}{\phantom{#2}}$}}%
+	{\ooalign{%
+			$\genfrac{}{}{1.2pt}3{#1}{#2}$\cr%
+			$\color{white}\genfrac{}{}{.4pt}3{\phantom{#1}}{\phantom{#2}}$}}%
+}
+\newcommand{\efrac}[2]{%
+	\mathchoice
+	{\ooalign{%
+			$\genfrac{}{}{1.2pt}0{\hphantom{#1}}{\hphantom{#2}}$\cr%
+			$\color{white}\genfrac{}{}{.4pt}0{\color{black}#1}{\color{black}#2}$}}%
+	{\ooalign{%
+			$\genfrac{}{}{1.2pt}1{\hphantom{#1}}{\hphantom{#2}}$\cr%
+			$\color{white}\genfrac{}{}{.4pt}1{\color{black}#1}{\color{black}#2}$}}%
+	{\ooalign{%
+			$\genfrac{}{}{1.2pt}2{\hphantom{#1}}{\hphantom{#2}}$\cr%
+			$\color{white}\genfrac{}{}{.4pt}2{\color{black}#1}{\color{black}#2}$}}%
+	{\ooalign{%
+			$\genfrac{}{}{1.2pt}3{\hphantom{#1}}{\hphantom{#2}}$\cr%
+			$\color{white}\genfrac{}{}{.4pt}3{\color{black}#1}{\color{black}#2}$}}%
+}
+
+%add spaces in tables
+\newcommand\T{\rule{0pt}{4ex}}       % Top strut
+\newcommand\B{\rule[-2.2ex]{0pt}{0pt}} % Bottom strut
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
@@ -37,9 +104,9 @@
 %	DOCUMENT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Determination of the Atomic \\ Weight of Magnesium \\ CHEM 101} % Title
+\title{The \textit{Tubulin Tyrosine Ligase Like 5} Gene \\ of \textit{Drosophila melanogaster}} % Title
 
-\author{John \textsc{Smith}} % Author name
+\author{Thibault \textsc{Schowing}} % Author name
 
 \date{\today} % Date for the report
 
@@ -49,10 +116,10 @@
 
 \begin{center}
 \begin{tabular}{l r}
-Date Performed: & January 1, 2012 \\ % Date the experiment was performed
-Partners: & James Smith \\ % Partner names
-& Mary Smith \\
-Instructor: & Professor Smith % Instructor/supervisor
+Date Performed: & HS 2019 \\ % Date the experiment was performed
+Course: & Molecular Biology for non-biologists \\
+Professor: & Ruth Doerig \\
+Institution: & University of Bern % Instructor/supervisor
 \end{tabular}
 \end{center}
 
@@ -65,105 +132,185 @@ Instructor: & Professor Smith % Instructor/supervisor
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Objective}
+\section*{Objective}
 
-To determine the atomic weight of magnesium via its reaction with oxygen and to study the stoichiometry of the reaction (as defined in \ref{definitions}):
+Microtubules are cytoskeletal filaments involved in movement, transport and structure of the cell. Many of these functions require post-translational modifications that regulate the activity, localization or stability of the microtubules, e.g. polyglutamylation (\cite{schaletzky_getting_2016}). Altering the functional property of microtubules can also alter the complex cell architecture and thus alter its functionality. \\
 
-\begin{center}\ce{2 Mg + O2 -> 2 MgO}\end{center}
+The \textit{TTLL5} gene encode for a polyglutamylase that modifies $\alpha$-tubulin. Mutated \textit{TTLL5} is known to be involved in cone-rod degeneration and reduced male fertility in human (\cite{bedoni_mutations_2016}). The aim of this practical is to find more information about the human \textit{TTLL5} (\href{https://www.uniprot.org/uniprot/Q6EMB2}{Q6EMB2}) homolog in \textit{D. melanogaster}. Therefore, four experiments were performed.
 
-% If you have more than one objective, uncomment the below:
-%\begin{description}
-%\item[First Objective] \hfill \\
-%Objective 1 text
-%\item[Second Objective] \hfill \\
-%Objective 2 text
-%\end{description}
-
-\subsection{Definitions}
+\subsection*{Experiments}
 \label{definitions}
 \begin{description}
-\item[Stoichiometry]
-The relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
-\item[Atomic mass]
-The mass of an atom of a chemical element expressed in atomic mass units. It is approximately equivalent to the number of protons and neutrons in the atom (the mass number) or to the average number allowing for the relative abundances of different isotopes. 
+\item[Experiment 1: Fertility test]
+Does the overexpression of \textit{TTLL5} result in female sterility?
+\item[Experiment 2: Confocal microscopy]
+Is the Staufen protein localization in early oocytes dependent on a functional TTLL5 protein? 
+\item[Experiment 3: Western blot]
+Does the glutamylation of $\alpha$-tubulin depend on a functional TTLL5 protein? 
+\item[Experiment 4: CRISPR/Cas9]
+Introduce a point mutation into the TTLL5 gene by using the CRISPR/Cas9 system. 
 \end{description} 
- 
+
+\newpage
+\section*{Fly stocks}
+
+\begin{multicols}{2}
+\begin{Large}
+	$\Tfrac{w}{w}; \Tfrac{Driver}{(Sm, Cy)}; \Tfrac{TTLL5^{PBac}}{TM, Sb}$\\
+	
+	$\Tfrac{w}{w}; \Tfrac{Driver}{(Sm, Cy)}; \Tfrac{TTLL5^{Minos}}{TM, Sb}$\\
+	
+	$\Tfrac{w}{w}; \Tfrac{Driver}{(Sm, Cy)}; \Tfrac{TTLL5^{MI-Ex}}{TM, Sb}$\\
+	
+	$\Tfrac{w}{w}; \Tfrac{venus-TTLL}{(Sm, Cy)}; \Tfrac{Df(TTLL)}{TM, Sb}$\\
+	
+	$\Tfrac{w}{w}; \Tfrac{Driver}{(Sm, Cy)}; \Tfrac{Pr Dr}{TM, Sb}$\\
+	
+	$\Tfrac{w}{w}; \Tfrac{venus-TTLL}{(Sm, Cy)}; \Tfrac{venus-TTLL}{TM, Sb}$\\
+	
+	$\Tfrac{w}{w}; \Tfrac{msps-mcherry}{(TM, Sb)}$\\
+	
+	$\Tfrac{w}{w}; \Tfrac{TACC-mcherry}{(TM, Sb)}$\\
+	
+	$\Tfrac{w}{w}$\\
+\end{Large}
+\end{multicols}
+
+
+
+Genes and their full names:\\
+
+\begin{itemize}
+	\item \textit{TTLL5} = tyrosin tubulin ligase like 5
+	\item Mutant alleles $\textit{TTLL}^{PBac}, \textit{TTLL}^{Minos}, \textit{TTLL}^{Minos-Ex128} $
+	\item \textit{venus} = gene encoding a yellow fluorescent protein (variant of GFP)
+	\item \textit{mcherry} = gene encoding a red fluorescent protein
+	\item TACC = tumor associated coiled coil protein (Used as control for fertility test)
+	\item \textit{msps} = mini spindles (Used as control for fertility test)
+\end{itemize}
+
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
+\newpage
+\section*{Experiment 1: Fertility test}
+\subsection*{Material and methods}
 
-\section{Experimental Data}
+\textbf{Flies used for Fertility Test:}\\
 
-\begin{tabular}{ll}
-Mass of empty crucible & \SI{7.28}{\gram}\\
-Mass of crucible and magnesium before heating & \SI{8.59}{\gram}\\
-Mass of crucible and magnesium oxide after heating & \SI{9.46}{\gram}\\
-Balance used & \#4\\
-Magnesium from sample bottle & \#1
-\end{tabular}
+\begin{multicols}{2}
+	\begin{Large}
+			$\Tfrac{w}{w}; \Tfrac{venus-TTLL}{Driver}; \Tfrac{venus-TTLL}{(Tm, Sb)}$\\
+			
+			$\Tfrac{w}{w}; \Tfrac{venus-TTLL}{(Sm, Cy)}; \Tfrac{venus-TTLL}{TM, Sb}$\\
+			
+			$\Tfrac{w}{w};\Tfrac{+}{SM, Cy} ; \Tfrac{msps-mcherry}{Driver}$\\
+			
+			$\Tfrac{w}{w};\Tfrac{+}{SM, Cy} ; \Tfrac{TACC-mcherry}{Driver}$\\
+			
+			$\Tfrac{w}{w}; \Tfrac{msps-mcherry}{msps-mcherry}$\\
+			
+			$\Tfrac{w}{w}; \Tfrac{TACC-mcherry}{TACC-mcherry}$\\
+			
+			$\Tfrac{w}{w}$\\
+			
+	\end{Large}
+\end{multicols}
+
+\textbf{Crosses for Fertility Test:} \\
+
+\begin{Large}
+	4) $\Tfrac{w}{w}; \Tfrac{Driver}{(SM, Cy)}; \Tfrac{Pr Dr}{TM, Sb}$  x  $\Tfrac{w}{}; \Tfrac{venus-TTLL}{(SM, Cy)}; \Tfrac{venus-TTLL}{TM, Sb}$\\
+	
+	5) $\Tfrac{w}{w}; \Tfrac{+}{+}; \Tfrac{msps-mcherry}{(TM, Sb)}$  x  $\Tfrac{w}{}; \Tfrac{Driver}{(SM, Cy)}; \Tfrac{+}{+}$\\
+	
+	6) $\Tfrac{w}{w}; \Tfrac{+}{+}; \Tfrac{TACC-mcherry}{(TM, Sb)} $ x $\Tfrac{w}{}; \Tfrac{Driver}{(SM, Cy)}; \Tfrac{+}{+}$ 
+\end{Large}
+
+
+\subsection*{Procedure}
+\subsubsection*{Material}
+\begin{itemize}
+	\item Apple juice plates
+	\item Yeast
+\end{itemize}
+
+\subsubsection*{Preparation}
+For the apple juice plates, disolve \SI{1}{\liter} boiling tap water with \SI{30}{\gram} agar. Mix with \SI{35}{\gram} white table sugar and \SI{2}{\gram} Nipagin (Methyl-4-hydroxy-benzoate) disolved in \SI{350}{\milli\liter} apple juice. Pour about 100 small or 30 medium sized plates. Store at \SI{4}{\degreeCelsius}. Prior use, add some yeast paste.
+
+\subsubsection*{Flies}
+\begin{itemize}
+	\item Collect females once a day
+	\item Cross three 2-4 days old females with three \textit{white} males and place flies into a fresh vial containing few grainsof dried yeast
+	\item Remove adult fles after 2-3 days and wait for larvae to crawl up the glass wall
+	\item Use the removed females for egg layings. 
+\end{itemize}
+
+\subsection*{Results}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{img/fertility_test_results}
+	\caption{}
+	\label{fig:fertilitytestresults}
+\end{figure}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[H]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|l|l|l|l|l|l|}
+			\hline
+			&  &  \begin{tabular}[c]{@{}l@{}}Hatching temp\\ of female\end{tabular} & Layed eggs & Unhatched eggs & Hatching rate \\ \hline
+			4) &\T $w; \Tfrac{venus-TTLL}{venus-TTLL}; \Tfrac{venus-TTLL}{TM, Sb}$ \B & 25\degree C & 100 & 7 & 93 \\ \hline
+			&\T  $w; \Tfrac{venus-TTLL}{Driver}; \Tfrac{venus-TTLL}{TM, Sb}$ \B & 25\degree C & 97 & 9 & 90.72 \\ \hline
+			5) &\T  $w; \Tfrac{msps-mcherry}{msps-mcherry}$ \B & 25\degree C & 94 & 49 & 48 \\ \hline
+			&\T  $w; \Tfrac{msps-mcherry}{TM, Sb}$ \B & 25\degree C & 100 & 48 & 52 \\ \hline
+			&\T  $w;\Tfrac{Driver}{+} \Tfrac{msps-mcherry}{+}$ \B & 25\degree C & 100 & 67 & 33 \\ \hline
+			&\T  $w;\Tfrac{Driver}{+} \Tfrac{msps-mcherry}{+}$ \B & 25\degree C & 9 & 4 & (56) \\ \hline
+			6) &\T  $w;\Tfrac{TACC-mcherry}{TACC-mcherry}$ \B & 25\degree C & 91 & 29 & 68 \\ \hline
+			&\T  $w;\Tfrac{TACC-mcherry}{TM, Sb}$ \B & 25\degree C & 88 & 66 & 25 \\ \hline
+			&\T  $w; \Tfrac{Driver}{+}; \Tfrac{TACC-mcherry}{+}$ \B & 25\degree C & 111 & 79 & 29 \\ \hline
+			2) &\T  $w; \Tfrac{venus-TTLL}{SM, Cy}; \Tfrac{Minos}{Df(TTLL)}$ \B & 29\degree C & 30 & 9 & 70 \\ \hline
+			& \T $w; \Tfrac{venus-TTLL}{Driver}; \Tfrac{Minos}{Df(TTLL)}$ \B & 29\degree C & 73 & 6 & 92 \\ \hline
+			4) &\T  $w; \Tfrac{venus-TTLL}{venus-TTLL}; \Tfrac{venus-TTLL}{TM, Sb}$ \B & 29\degree C & 86 & 17 & 80 \\ \hline
+			&\T  $w; \Tfrac{venus-TTLL}{Driver}; \Tfrac{venus-TTLL}{TM, Sb}$ \B & 29\degree C & 85 & 14 & 84 \\ \hline
+		\end{tabular}%
+	}
+\end{table}
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3
 %----------------------------------------------------------------------------------------
+\newpage
+\section*{Experiment 2: Confocal microscopy}
 
-\section{Sample Calculation}
 
-\begin{tabular}{ll}
-Mass of magnesium metal & = \SI{8.59}{\gram} - \SI{7.28}{\gram}\\
-& = \SI{1.31}{\gram}\\
-Mass of magnesium oxide & = \SI{9.46}{\gram} - \SI{7.28}{\gram}\\
-& = \SI{2.18}{\gram}\\
-Mass of oxygen & = \SI{2.18}{\gram} - \SI{1.31}{\gram}\\
-& = \SI{0.87}{\gram}
-\end{tabular}
-
-Because of this reaction, the required ratio is the atomic weight of magnesium: \SI{16.00}{\gram} of oxygen as experimental mass of Mg: experimental mass of oxygen or $\frac{x}{1.31}=\frac{16}{0.87}$ from which, $M_{\ce{Mg}} = 16.00 \times \frac{1.31}{0.87} = 24.1 = \SI{24}{\gram\per\mole}$ (to two significant figures).
 
 %----------------------------------------------------------------------------------------
 %	SECTION 4
 %----------------------------------------------------------------------------------------
-
-\section{Results and Conclusions}
-
-The atomic weight of magnesium is concluded to be \SI{24}{\gram\per\mol}, as determined by the stoichiometry of its chemical combination with oxygen. This result is in agreement with the accepted value.
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-\caption{Figure caption.}
-\end{center}
-\end{figure}
+\newpage
+\section*{Experiment 3: Western blot}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 5
 %----------------------------------------------------------------------------------------
+\newpage
+\section*{Experiment 4: CRISPR/Cas9}
 
-\section{Discussion of Experimental Uncertainty}
-
-The accepted value (periodic table) is \SI{24.3}{\gram\per\mole} \cite{Smith:2012qr}. The percentage discrepancy between the accepted value and the result obtained here is 1.3\%. Because only a single measurement was made, it is not possible to calculate an estimated standard deviation.
-
-The most obvious source of experimental uncertainty is the limited precision of the balance. Other potential sources of experimental uncertainty are: the reaction might not be complete; if not enough time was allowed for total oxidation, less than complete oxidation of the magnesium might have, in part, reacted with nitrogen in the air (incorrect reaction); the magnesium oxide might have absorbed water from the air, and thus weigh ``too much." Because the result obtained is close to the accepted value it is possible that some of these experimental uncertainties have fortuitously cancelled one another.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 6
 %----------------------------------------------------------------------------------------
+\newpage
+\section*{Conclusion and discussion}
 
-\section{Answers to Definitions}
 
-\begin{enumerate}
-\begin{item}
-The \emph{atomic weight of an element} is the relative weight of one of its atoms compared to C-12 with a weight of 12.0000000$\ldots$, hydrogen with a weight of 1.008, to oxygen with a weight of 16.00. Atomic weight is also the average weight of all the atoms of that element as they occur in nature.
-\end{item}
-\begin{item}
-The \emph{units of atomic weight} are two-fold, with an identical numerical value. They are g/mole of atoms (or just g/mol) or amu/atom.
-\end{item}
-\begin{item}
-\emph{Percentage discrepancy} between an accepted (literature) value and an experimental value is
-\begin{equation*}
-\frac{\mathrm{experimental\;result} - \mathrm{accepted\;result}}{\mathrm{accepted\;result}}
-\end{equation*}
-\end{item}
-\end{enumerate}
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
