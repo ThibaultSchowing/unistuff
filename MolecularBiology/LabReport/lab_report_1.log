@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.23)  9 JAN 2020 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.23)  15 JAN 2020 20:40
 entering extended mode
 **./lab_report_1.tex
 (lab_report_1.tex
@@ -1147,36 +1147,41 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
 \Hy@SectionHShift=\skip88
+)
+("C:\Users\thsch\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\enumerate.st
+y"
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks26
 ) (lab_report_1.aux)
 \openout1 = `lab_report_1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 113.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 115.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
-13.
+15.
 
 ("C:\Users\thsch\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cbfonts-fd\lgrcmr.
 fd"
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
 
-Package chemgreek Info: Activating mapping `textgreek' on line 113.
+Package chemgreek Info: Activating mapping `textgreek' on line 115.
 
 
 ("C:\Users\thsch\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
@@ -1187,12 +1192,12 @@ df.mkii"
 \scratchbox=\box91
 \nofMPsegments=\count323
 \nofMParguments=\count324
-\everyMPshowfont=\toks26
+\everyMPshowfont=\toks27
 \MPscratchCnt=\count325
 \MPscratchDim=\dimen259
 \MPnumerator=\count326
 \makeMPintoPDFobject=\count327
-\everyMPtoPDFconversion=\toks27
+\everyMPtoPDFconversion=\toks28
 )
 ("C:\Users\thsch\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
 base.sty"
@@ -1296,20 +1301,20 @@ breviations.cfg"
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 \c@lstlisting=\count328
-LaTeX Info: Redefining \celsius on input line 113.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 113
+LaTeX Info: Redefining \celsius on input line 115.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 115
 .
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 113.
-Package gensymb Info: Using \Omega for \ohm on input line 113.
+LaTeX Info: Redefining \ohm on input line 115.
+Package gensymb Info: Using \Omega for \ohm on input line 115.
 
 Package gensymb Warning: Not defining \micro.
 
 \AtBeginShipoutBox=\box92
-Package hyperref Info: Link coloring ON on input line 113.
+Package hyperref Info: Link coloring ON on input line 115.
 
 ("C:\Users\thsch\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -1325,36 +1330,31 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count329
 )
-LaTeX Info: Redefining \ref on input line 113.
-LaTeX Info: Redefining \pageref on input line 113.
-LaTeX Info: Redefining \nameref on input line 113.
+LaTeX Info: Redefining \ref on input line 115.
+LaTeX Info: Redefining \pageref on input line 115.
+LaTeX Info: Redefining \nameref on input line 115.
  (lab_report_1.out) (lab_report_1.out)
 \@outlinefile=\write3
 \openout3 = `lab_report_1.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 113
+LaTeX Font Info:    Trying to load font information for U+msa on input line 115
 .
 
 ("C:\Users\thsch\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 113
+LaTeX Font Info:    Trying to load font information for U+msb on input line 115
 .
 ("C:\Users\thsch\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
 [1
 
 {C:/Users/thsch/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
@@ -1390,30 +1390,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--174
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 177--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-84.
+86.
 ("C:\Users\thsch\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 184.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--204
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
@@ -1448,12 +1448,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--216
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
@@ -1462,55 +1462,166 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
-<img/fertility_test_results.jpg, id=39, 919.18407pt x 488.57532pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+<img/fertility_test_results.jpg, id=41, 919.18407pt x 488.57532pt>
 File: img/fertility_test_results.jpg Graphic file (type jpg)
 <use img/fertility_test_results.jpg>
-Package pdftex.def Info: img/fertility_test_results.jpg  used on input line 253
+Package pdftex.def Info: img/fertility_test_results.jpg  used on input line 255
 .
 (pdftex.def)             Requested size: 424.58624pt x 225.6867pt.
-[3]
-Overfull \vbox (2.50183pt too high) has occurred while \output is active []
+[3] [4 <./img/fertility_test_results.jpg>] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
+
+ []
 
 
-[4 <./img/fertility_test_results.jpg>] [5] [6] [7] (lab_report_1.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 326.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 326.
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 
-(lab_report_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 326.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 326.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
+87.
+("C:\Users\thsch\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+[8] [9]
+<img/confocal/confocal_white_hblock.jpg, id=91, 445.9059pt x 224.2779pt>
+File: img/confocal/confocal_white_hblock.jpg Graphic file (type jpg)
+<use img/confocal/confocal_white_hblock.jpg>
+Package pdftex.def Info: img/confocal/confocal_white_hblock.jpg  used on input 
+line 407.
+(pdftex.def)             Requested size: 382.12502pt x 192.20789pt.
+<img/confocal/confocal_ex128_Df_hblock.jpg, id=92, 368.577pt x 245.718pt>
+File: img/confocal/confocal_ex128_Df_hblock.jpg Graphic file (type jpg)
+<use img/confocal/confocal_ex128_Df_hblock.jpg>
+Package pdftex.def Info: img/confocal/confocal_ex128_Df_hblock.jpg  used on inp
+ut line 414.
+(pdftex.def)             Requested size: 382.12502pt x 254.75706pt.
+<img/confocal/confocal_ex128_Df_rescue_hblock.jpg, id=93, 441.3288pt x 221.8689
+pt>
+File: img/confocal/confocal_ex128_Df_rescue_hblock.jpg Graphic file (type jpg)
+<use img/confocal/confocal_ex128_Df_rescue_hblock.jpg>
+Package pdftex.def Info: img/confocal/confocal_ex128_Df_rescue_hblock.jpg  used
+ on input line 421.
+(pdftex.def)             Requested size: 382.12502pt x 192.1103pt.
+ [10 <./img/confocal/confocal_white_hblock.jpg> <./img/confocal/confocal_ex128_
+Df_hblock.jpg>] [11 <./img/confocal/confocal_ex128_Df_rescue_hblock.jpg>] [12] 
+[13] (lab_report_1.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 465.
+ [14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 465.
+ (lab_report_1.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 465.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 465.
 Package rerunfilecheck Info: File `lab_report_1.out' has not changed.
-(rerunfilecheck)             Checksum: CB3E85C6F27D080FE10AD80F25CAC1DD;78.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 326.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 465.
  ) 
 Here is how much of TeX's memory you used:
- 26714 strings out of 492450
- 475449 string characters out of 3120004
- 559066 words of memory out of 3000000
- 30797 multiletter control sequences out of 15000+200000
- 546437 words of font info for 79 fonts, out of 3000000 for 9000
+ 26815 strings out of 492450
+ 478214 string characters out of 3120004
+ 548573 words of memory out of 3000000
+ 30863 multiletter control sequences out of 15000+200000
+ 547802 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,21n,67p,491b,751s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/thsch/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/thsch/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/th
-sch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-<C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr12.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/thsch/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/thsch/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Us
-ers/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
-12.pfb>
-Output written on lab_report_1.pdf (8 pages, 301933 bytes).
+ 45i,21n,67p,659b,852s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\thsch\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1000.pk><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/thsch/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/thsch/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/thsc
+h/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C
+:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr10.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr12.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr17.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/thsch/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/thsch/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/th
+sch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy7.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb><C:/Users/thsch/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/thsch/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on lab_report_1.pdf (14 pages, 1097623 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
- 14 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 191 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
