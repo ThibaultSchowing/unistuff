@@ -1,0 +1,129 @@
+---
+title: "Exercise4"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(car)
+library(lmtest)
+
+```
+
+In this exercise, we again consider the air pollution data set presented in the lecture. In a study on the contribution of air pollution to mortality, General Motors collected data from 60 US cities. The dependent variable is the age adjusted mortality (variable Mortality). The data includes variables measuring demographic characteristics of the cities, variables measuring climate characteristics, and variables recording the pollution potential of three different air pollutants.
+
+a) Get an overview of the data and account for possible problems. Which of the variables need to be transformed?
+
+Nice ressource for graphs: http://groups.linguistics.northwestern.edu/speech_comm_group/documents/Presentation_par_cex.pdf
+
+
+```{r}
+pollution <- read.csv("airpollution.csv", header = TRUE)
+
+# City is not a numerical value
+pollution$City = NULL
+summary(pollution) # we have 16 variables
+
+
+par(mfrow = c(4, 4), mar = c(2, 2, 1, 1), cex = 0.5)
+for(i in 1:ncol(pollution)){
+  hist(pollution[, i], freq = FALSE, main = colnames(pollution)[i], xlab = "", ylab = "")
+}
+  
+
+```
+
+We can clearly see that Population, HC, NOx and SO2 are Right skewed and thus can be log-transformed.
+
+```{r}
+pollution$Pop <- log(pollution$Pop)
+pollution$HC <- log(pollution$HC)
+pollution$NOx <- log(pollution$NOx)
+pollution$SO2 <- log(pollution$SO2)
+names(pollution)[names(pollution)=="Pop"]<-"logPop"
+names(pollution)[names(pollution)=="HC"]<- "logHC"
+names(pollution)[names(pollution)=="NOx"]<-"logNOx"
+names(pollution)[names(pollution)=="SO2"]<-"logSO2"
+
+```
+
+# Full model
+
+b) Carry out a multiple linear regression containing all variables. Does the model fit well? Check the residuals.
+
+```{r}
+pollution.fit <- lm(Mortality ~ ., data=pollution)
+summary(pollution.fit)
+```
+
+
+Check the residuals
+
+```{r}
+
+
+par(mfrow = c(1, 2), cex = 0.5)
+
+# Are the residuals fluctuating randomly or do they follow a pattern ?
+plot(fitted(pollution.fit), 
+     resid(pollution.fit), 
+     xlab = "Fitted values", 
+     ylab = "Residuals", 
+     main = "Tukey-Anscombe plot")
+qqPlot(resid(pollution.fit), 
+       dist = "norm", 
+       mean = mean(resid(pollution.fit)), 
+       sd = sd(resid(pollution.fit)), 
+       xlab = "Theoretical quantiles", 
+       ylab = "Empirical quantiles", 
+       main = "Q-Q plot of residuals")
+```
+
+
+# Reduced model
+
+c) Now take all the non-significant variables out of the model and compute the regression again.
+Compare your results to part b.).
+
+```{r}
+pollution.fit2 <- lm(Mortality ~ JanTemp + Rain + NonWhite + logNOx, data=pollution)
+summary(pollution.fit2)
+
+```
+
+
+Check the residuals with the second model
+
+```{r}
+par(mfrow = c(1, 2), cex = 0.5)
+
+# Are the residuals fluctuating randomly or do they follow a pattern ?
+plot(fitted(pollution.fit2), 
+     resid(pollution.fit2), 
+     xlab = "Fitted values", 
+     ylab = "Residuals", 
+     main = "Tukey-Anscombe plot")
+qqPlot(resid(pollution.fit2), 
+       dist = "norm", 
+       mean = mean(resid(pollution.fit2)), 
+       sd = sd(resid(pollution.fit2)), 
+       xlab = "Theoretical quantiles", 
+       ylab = "Empirical quantiles", 
+       main = "Q-Q plot of residuals")
+```
+
+
+
+# Likelihood ration test
+
+Is an object of class "anova" which contains the log-likelihood, degrees of freedom, the difference in degrees of freedom, likelihood ratio Chi-squared statistic and corresponding p value.
+
+```{r}
+
+lrtest(pollution.fit,pollution.fit2)
+
+
+
+```
+
+

@@ -1,0 +1,85 @@
+---
+title: "Exercise3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Compute an ordinary linear regression of I versus C. Does the income depend on the number of cows?
+```{r}
+farm <- read.table("farm.dat", header = TRUE)
+farm.fit <- lm(Dollar ~ cows, data=farm)
+summary(farm.fit)
+
+```
+
+
+The p-value of the regression coefficient is very small (***) thus shows that the Income explains very well the number of cows. 
+
+
+Give the confidence intervals for the expected income without any cows, with 20 cows, and with C = 8.85 cows.
+
+```{r}
+predict(farm.fit, newdata=data.frame(cows=c(0,20,8.85)), interval="confidence")
+```
+
+Compute an ordinary linear regression of I versus A and a multiple linear regression of I versus A and C. Also compute the correlation between A and C. Finally, based on your results, explain the differences between the three regression models.
+
+
+First, we fit the Income vs Acres
+```{r}
+fitAI <- lm(Dollar~acres, data=farm)
+summary(fitAI)
+```
+
+
+There is no significance (*) between the income and the acres. We add Cows as a covariate of Acres (Does income explain Acres + Cows?).
+
+```{r}
+fitAIC <- lm(Dollar~acres+cows, data=farm)
+summary(fitAIC)
+```
+
+
+As covariate, both Acres and Cows are significant.
+
+
+
+```{r}
+corCA <- cor(farm$cows, farm$acres); corCA
+
+```
+
+We can see that acres and cows have a negative corelation and that cows and income have a positive one. Acres does not explain the income (big farm with no cows for examples) but when put together
+
+To have a nice overview:
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(gridExtra)
+
+
+p1 = ggplot(data = farm,aes(x=Dollar,y=cows, color=acres)) + 
+  geom_point() +
+  geom_smooth(method = lm) +
+  theme_classic()
+
+p2 = ggplot(data = farm,aes(x=cows,y=acres, color=Dollar)) + 
+  geom_point() +
+  geom_smooth(method = lm) +
+  theme_classic()
+
+p3 = ggplot(data = farm,aes(x=acres,y=Dollar, color=cows)) + 
+  geom_point() +
+  geom_smooth(method = lm) +
+  theme_classic()
+
+
+
+grid.arrange(p1,p2,p3,nrow = 3)
+
+```
+
