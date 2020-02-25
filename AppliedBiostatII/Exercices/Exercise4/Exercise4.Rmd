@@ -114,7 +114,7 @@ qqPlot(resid(pollution.fit2),
 
 
 
-# Likelihood ration test
+# Likelihood ration test (optional)
 
 Is an object of class "anova" which contains the log-likelihood, degrees of freedom, the difference in degrees of freedom, likelihood ratio Chi-squared statistic and corresponding p value.
 
