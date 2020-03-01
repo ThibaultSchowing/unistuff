@@ -10,6 +10,8 @@ x2=seq(26,38,length=100)
 y2=dnorm(x2,mean=32,sd=6)
 polygon(c(26,x2,38),c(0,y2,0),col="red")
 
+pnorm(40,mean = 32, sd = 6)
+
 legend(x = 3, y=0.069,legend=c("P[ 26 < x < 38]"), col=c("red"), lty=1:5, cex=0.8)
 
 # F) probability between 26 and 38
