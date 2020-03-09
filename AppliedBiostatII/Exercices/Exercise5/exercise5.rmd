@@ -1,0 +1,163 @@
+---
+title: "Exercise5"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(car)
+```
+
+
+On February 9, 2014, Swiss voters accepted the initiative \Against Mass Immigration". In this exercise, we will try to predict the acceptance in each canton based on goegraphic and demographic data.
+
+The data set massimmigration.csv available in ILIAS contains the following variables:
+
+* canton:  abbreviation of the canton
+* yes: acceptance (fraction of \Yes" votes) in % (response variable)
+* area: area im km2
+* inhabitants: inhabitants of the canton
+* foreigners: fraction of foreigners in %
+
+```{r}
+
+
+mi <- read.table("../datasets/massimmigration.csv", header = TRUE, sep = "\t")
+rownames(mi) <- mi$canton
+mi$canton <- NULL
+summary(mi)
+
+
+
+mi.fit <- lm(yes ~ foreigners, data = mi)
+summary(mi.fit)
+
+plot(yes ~ foreigners, data = mi)
+abline(mi.fit)
+
+
+```
+
+The model fits quite well, the proportion of yes is negatively correlated to the number of foreigners: meaning that the more foreigners there is, the more people like them.
+
+QQplot and Tuckey-Anscombe plot to analyse the residuals:
+
+```{r}
+par(mfrow = c(1, 2), cex = 0.5)
+plot(fitted(mi.fit), 
+     resid(mi.fit),
+     xlab = "Fitted values", 
+     ylab = "Residuals", 
+     main = "Tukey-Anscombe plot")
+
+qqPlot(resid(mi.fit), 
+       dist = "norm",
+       mean = mean(resid(mi.fit)), 
+       sd = sd(resid(mi.fit)),
+       xlab = "Theoretical quantiles", 
+       ylab = "Empirical quantiles",
+       main = "Q-Q plot of residuals")
+
+
+
+
+```
+
+Both plots look good.
+
+
+
+
+
+```{r}
+
+
+
+mi <- read.table("../datasets/massimmigration.csv", header = TRUE, sep = "\t")
+rownames(mi) <- mi$canton
+mi$canton <- NULL
+
+plot.new()
+plot(yes ~ foreigners, data = mi)
+x.val <- seq(0, 40, by = 1)
+mi.fit <- lm(yes ~ foreigners, data = mi)
+pred.band <- predict(mi.fit, level = 0.9, newdata = data.frame(foreigners = x.val), interval = "prediction")
+conf.band <- predict(mi.fit, level = 0.9, newdata = data.frame(foreigners = x.val), interval = "confidence")
+
+lines(x.val, pred.band[, "lwr"], col = "blue", lty = 2)
+lines(x.val, pred.band[, "upr"], col = "blue", lty = 2)
+lines(x.val, conf.band[, "lwr"], col = "green", lty = 2)
+lines(x.val, conf.band[, "upr"], col = "green", lty = 2)
+
+
+
+
+
+
+summary(mi.fit)
+```
+
+The Confidence band indicates the accuracy of estimation of the true regression line. Meaning, the true regression line is in the green area with a 90% confidence.
+
+The Prediction interval indicates, between which boundaries the y-value of a new measurement will be with certainty 1-alpha, at position x. Meaning, in 90% of the cases, the y value will be between the blue lines.
+
+
+## c
+
+How well does the fraction of foreigners explain the acceptance in the different cantons? Calculate the coeficient of determination R2 and the F statistic "by hand", i.e. only using the R functions resid, fitted and mean. Check your results with the output of summary.
+
+The output of summary gives an R2 of 0.2629.
+
+```{r}
+yhat <- fitted(mi.fit)
+ybar <- mean(mi$yes)
+(R.sq <- sum((yhat - ybar)^2)/sum((mi$yes - ybar)^2))
+
+```
+
+For the F-Statistic given by summary is 8.558
+
+```{r}
+n <- nrow(mi)
+q <- 2
+(F <- sum((yhat - ybar)^2)*(n - q)/sum((mi$yes - yhat)^2)/(q - 1))
+```
+
+
+
+
+
+## d
+
+Select the best linear model as follows:
+1. Add a variable density to the data set, defined as the number of inhabitants per area.
+2. Start with the full regression model.
+3. As long as there is an explanatory variable with a p-value above 5%:
+  - Remove the least significant variable.
+  - Keep the new model if the larger model is not significantly better based on an F-test.
+
+
+
+```{r}
+mi$density <- mi$inhabitants/mi$area
+mi.full <- lm(yes ~ ., data = mi)
+summary(mi.full)
+```
+
+
+```{r}
+mi.red1 <- update(mi.full, . ~ . - inhabitants)
+anova(mi.red1, mi.full)
+summary(mi.red1)
+```
+
+```{r}
+mi.red2 <- update(mi.red1, . ~ . - area)
+
+summary(mi.red2)
+```
+
+
+In the next step, we would get back the model fitted in task a).
+

@@ -1,0 +1,60 @@
+---
+title: "Exercise6"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+[Graded] Biologists studied the relationship between the length of a bullfrog and how far it can jump.
+The resulting data set had 2 variables, length (body length, in mm) and jump (maximum leap distance, in cm).
+
+
+
+The variables were fitted in a linear model the output of which is shown in the following:
+
+
+Call:
+lm(formula = jump ~ length, data = bullfrog)
+
+Residuals:
+Min     1Q      Median  3Q      Max
+-34.864 -5.206  5.589   11.799  21.120
+Coefficients:
+            Estimate  Std. Error  t value   Pr(>|t|)
+(Intercept) 51.7416    59.5828    0.868     0.408
+length      0.3492     0.3965     0.881     0.401
+
+Residual standard error: 18.15 on 9 degrees of freedom
+
+Multiple R-squared: 0.07933, Adjusted R-squared: -0.02296
+
+F-statistic: 0.7755 on 1 and 9 DF, p-value: 0.4014
+
+
+
+## a) Write down the linear regression model the biologists assumed.
+
+Jump length = 51.7416 + 0.3492 * length
+
+
+## b) How many frogs were included in the study?
+
+Since the standart error has 9 degree of freedom (n - q) and that q here is 2 we have 9 + 2 = 11 frogs.
+
+## c) Is the length of the frogs a good predictor for the maximum leap distance?
+
+No, the R-squared is very small and the p-value of "length" is not significant.
+
+## d) Fill out an ANOVA table for the model based on the R output above.
+
+# slide 65
+
+
+
+
+
+
+
+
