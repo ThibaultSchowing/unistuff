@@ -3,8 +3,8 @@ Simulation parameters for current simulations
 
 
 Deme sizes
-Deme 0	307198
-Deme 1	127787
+Deme 0	490001
+Deme 1	142860
 
 
 Sample sizes
@@ -23,11 +23,11 @@ Deme 1	0
 Historical events
 Event 0
 
-#Time             : 42395
+#Time             : 4903
 #Source           : 1
 #Sink             : 0
 #Migrants         : 1
-#New size         : 1.94171
+#New size         : 1.64701
 #New growth rate  : 0
 #New migr. matrix : 0
 
