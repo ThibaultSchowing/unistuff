@@ -35,10 +35,10 @@
   - f(G)= 0.25000
   - f(T)= 0.25000
 
-. Time used 0h0m3s
+. Time used 0h0m2s
 
 
-. 3 seconds
+. 2 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -85,10 +85,10 @@
   - f(G)= 0.25000
   - f(T)= 0.25000
 
-. Time used 0h0m4s
+. Time used 0h0m5s
 
 
-. 4 seconds
+. 5 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -187,10 +187,10 @@
   - f(G)= 0.25000
   - f(T)= 0.25000
 
-. Time used 0h1m44s
+. Time used 0h1m58s
 
 
-. 104 seconds
+. 118 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -289,10 +289,10 @@
   - f(G)= 0.25000
   - f(T)= 0.25000
 
-. Time used 0h0m7s
+. Time used 0h0m5s
 
 
-. 7 seconds
+. 5 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -341,10 +341,10 @@
   - f(G)= 0.25000
   - f(T)= 0.25000
 
-. Time used 0h0m15s
+. Time used 0h0m14s
 
 
-. 15 seconds
+. 14 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -395,10 +395,10 @@
   - f(G)= 0.25000
   - f(T)= 0.25000
 
-. Time used 0h1m39s
+. Time used 0h1m47s
 
 
-. 99 seconds
+. 107 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -543,10 +543,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h0m16s
+. Time used 0h0m12s
 
 
-. 16 seconds
+. 12 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -595,10 +595,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h2m3s
+. Time used 0h2m8s
 
 
-. 123 seconds
+. 128 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -645,10 +645,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h0m3s
+. Time used 0h0m2s
 
 
-. 3 seconds
+. 2 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -749,10 +749,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h0m15s
+. Time used 0h0m16s
 
 
-. 15 seconds
+. 16 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -803,10 +803,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h1m46s
+. Time used 0h2m1s
 
 
-. 106 seconds
+. 121 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -1011,10 +1011,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h1m34s
+. Time used 0h1m43s
 
 
-. 94 seconds
+. 103 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -1063,10 +1063,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h0m4s
+. Time used 0h0m3s
 
 
-. 4 seconds
+. 3 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -1117,10 +1117,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h0m7s
+. Time used 0h0m6s
 
 
-. 7 seconds
+. 6 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -1171,10 +1171,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h0m26s
+. Time used 0h0m19s
 
 
-. 26 seconds
+. 19 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -1227,10 +1227,10 @@
   - f(G)= 0.15628
   - f(T)= 0.25764
 
-. Time used 0h2m0s
+. Time used 0h1m43s
 
 
-. 120 seconds
+. 103 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -1295,10 +1295,10 @@
 
 
 
-. Time used 0h0m7s
+. Time used 0h0m5s
 
 
-. 7 seconds
+. 5 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -1435,10 +1435,10 @@
 
 
 
-. Time used 0h0m30s
+. Time used 0h0m35s
 
 
-. 30 seconds
+. 35 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:
@@ -1507,10 +1507,10 @@
 
 
 
-. Time used 0h1m37s
+. Time used 0h1m20s
 
 
-. 97 seconds
+. 80 seconds
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citation:

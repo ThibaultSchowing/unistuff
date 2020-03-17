@@ -8,6 +8,7 @@ Created on Tue Mar 3, 2020
     
 """
 
+
 import sys
 import os
 import numpy as np
@@ -70,7 +71,21 @@ def interp(y_vals, x_vals, x_new):
     #   y_new: Interpolated values, numpy array
 
     ################### PLEASE FILL IN THIS PART ###############################
-
+    
+    # IF x < the smallest value in x_vals -> take the smalest y
+    # if x > the biggest value in x_vals -> take the biggest y
+    # use np.clip to clip values outside the interval of known x_vals:
+    x_new = np.clip(x_new, min(x_vals), max(x_vals))
+    
+    # Find the insertion points of the new x values. User searchsorted or bisect
+    
+    x_new_idx = np.searchsorted(x_vals, x_new, side='left')
+    
+    # Apply formula with lower and upper value
+    y_new = np.zeros(x_new.shape[0])
+    y_new = y_vals[x_new_idx] + (x_new - x_vals[x_new_idx]) * ((y_vals[x_new_idx - 1] - y_vals[x_new_idx])
+                                                               /(x_vals[x_new_idx - 1] - x_vals[x_new_idx]))
+    
     return y_new
 
 
@@ -85,7 +100,14 @@ def interp_1D(signal, scale_factor):
     #   signal_interp: Interpolated 1D signal, numpy array
 
     ################### PLEASE FILL IN THIS PART ###############################
-
+    
+    #linspace
+    
+    y_vals = signal 
+    x_vals = np.linspace(min(y_vals), max(y_vals), len(y_vals))
+    x_new = np.linspace(min(y_vals), max(y_vals), len(y_vals)*scale_factor)
+    y_new = interp(y_vals, x_vals, x_new)
+    signal_interp = y_new
     return signal_interp
 
 
@@ -101,14 +123,39 @@ def interp_2D(img, scale_factor):
     #   img_interp: interpolated image with the expected output shape, numpy array
 
     ################### PLEASE FILL IN THIS PART ###############################
-
+    # img
+    #[[1,2,3],
+    # [4,5,6]]
+    
+    shape = img.shape
+    
+    # img is grayscale
+    if(len(shape) == 2):
+        # for every row
+        width_inter = np.array([interp_1D(row, scale_factor) for row in img])
+        
+        # for every column (tip: transpose of the matrix.col)
+        height_inter = np.array([interp_1D(col, scale_factor) for col in width_inter.T])
+        
+        # We have to transpose again
+        img_interp = height_inter.T
+    else:
+        # img is RGB
+        
+        #Interpolated empty image / size = original size * scale factor but it must be an integer & 3 RGB channels
+        img_interp = np.empty((int(shape[0] * scale_factor), int(shape[1] * scale_factor),3))
+        
+        # The interpolation has to be done for every RGB channel 
+        for i in range(3):
+            width_inter = np.array([interp_1D(row, scale_factor) for row in img[:,:,i]])
+            height_inter = np.array([interp_1D(col, scale_factor) for col in width_inter.T])
+            img_interp[:,:,i] = height_inter.T
+            
+    
     return img_interp
 
 
-# set arguments
-filename = 'bird.jpg'
-# filename = 'butterfly.jpg'
-scale_factor = 1.5  # Scaling factor
+
 
 # Before trying to directly test the bilinear interpolation on an image, we
 # test the intermediate functions to see if the functions that are coded run
@@ -126,15 +173,44 @@ print('done.')
 print('Testing interp_2D()....')
 test_interp_2D()
 print('done.')
+print('...................................................')
+print('...................................................')
 
-print('Testing bilinear interpolation of an image...')
+#################################################
+#              Bilinear interpolation
+#################################################
+# set arguments
+filename = 'bird.jpg'
+filename2 = 'butterfly.jpg'
+scale_factor = 25  # Scaling factor
+
+
+print('Testing bilinear interpolation of an image...(grayscale)')
 # Read image as a matrix, get image shapes before and after interpolation
 img = (plt.imread(filename)).astype('float')  # need to convert to float
 in_shape = img.shape  # Input image shape
 
 # Apply bilinear interpolation
 img_int = interp_2D(img, scale_factor)
+print("Image shape: ", img.shape)
+print("Interpolated image shape: ", img_int.shape)
 print('done.')
+
+#################################################
+#                  Second image
+#################################################
+print('Testing bilinear interpolation of an RGB image...')
+# Read image as a matrix, get image shapes before and after interpolation
+img2 = (plt.imread(filename2)).astype('float')  # need to convert to float
+in_shape = img.shape  # Input image shape
+
+# Apply bilinear interpolation
+img_int2 = interp_2D(img2, scale_factor)
+print("Image shape: ", img2.shape)
+print("Interpolated image shape: ", img_int2.shape)
+print('done.')
+#################################################
+
 
 # Now, we save the interpolated image and show the results
 print('Plotting and saving results...')
@@ -150,6 +226,27 @@ plt.imshow(img.astype('uint8'))
 plt.title('Original')
 plt.subplot(1, 2, 2)
 plt.imshow(img_int.astype('uint8'))
+plt.title('Rescaled by {:2f}'.format(scale_factor))
+print('Do not forget to close the plot window --- it happens:) ')
+plt.show()
+
+######################################
+# We can do the same for the RGB image
+######################################
+
+# Now, we save the interpolated image and show the results
+print('Plotting and saving results...')
+plt.figure()
+plt.imshow(img_int2.astype('uint8'))  # Get back to uint8 data type
+filename, _ = os.path.splitext(filename2)
+plt.savefig('{}_rescaled.jpg'.format(filename2))
+plt.close()
+
+plt.figure()
+plt.subplot(1, 2, 1)
+plt.imshow(img2)
+plt.title('Original')
+plt.subplot(1, 2, 2)
 plt.title('Rescaled by {:2f}'.format(scale_factor))
 print('Do not forget to close the plot window --- it happens:) ')
 plt.show()
