@@ -1,0 +1,53 @@
+fastsimcoal was invoked with the following command line arguments:
+fsc26.exe -t NoMig_San_Maya.tpl -e NoMig_San_Maya.est -L 20 -n 100000 -d -M -q -C1 -c2 -B2;
+Invalid number of batches (2;), setting it to default value of 12)
+
+Random generator seed : 600945
+
+No population growth detected in input file
+
+Estimating model parameters using 12 batches and 2 threads
+
+Estimation of parameters by conditional maximization via Brent algorithm (initial lhood = -479929)
+
+Iter 1  Curr best params:       5343    29205   19586   3010    lhood=-477033
+
+Iter 2  Curr best params:       5343    30117   19390   3010    lhood=-477018
+
+Iter 3  Curr best params:       5343    30117   19390   2915    lhood=-477009
+
+Iter 4  Curr best params:       5811    30864   19428   3162    lhood=-476954
+
+Iter 5  Curr best params:       5811    30864   19428   3162    lhood=-476933
+
+Iter 6  Curr best params:       5811    30864   19428   3162    lhood=-476933
+
+Iter 7  Curr best params:       5811    30864   19428   3162    lhood=-476933
+
+Iter 8  Curr best params:       6265    31606   19149   3375    lhood=-476889
+
+Iter 9  Curr best params:       6469    31289   18766   3408    lhood=-476882
+
+Iter 10 Curr best params:       6469    34154   18766   3408    lhood=-476875
+
+Iter 11 Curr best params:       6469    34154   18766   3408    lhood=-476875
+
+Iter 12 Curr best params:       6829    32513   19038   3521    lhood=-476875
+
+Iter 13 Curr best params:       6829    32513   18581   3627    lhood=-476866
+
+Iter 14 Curr best params:       6994    32513   18581   3699    lhood=-476858
+
+Iter 15 Curr best params:       6994    32513   18581   3699    lhood=-476858
+
+Iter 16 Curr best params:       6994    32513   18581   3699    lhood=-476858
+
+Iter 17 Curr best params:       6994    32513   18581   3699    lhood=-476858
+
+Iter 18 Curr best params:       6994    32513   18581   3699    lhood=-476858
+
+Iter 19 Curr best params:       6994    32513   18581   3699    lhood=-476858
+
+Iter 20 Curr best params:       6994    32513   18581   3699    lhood=-476858
+
+Program total execution time: 220.853 seconds

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -332,6 +331,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -378,11 +378,8 @@ summary {
 
 # Load the package
 library(&quot;diagram&quot;)</code></pre>
-<pre><code>## Warning: package &#39;diagram&#39; was built under R version 3.5.2</code></pre>
 <pre><code>## Loading required package: shape</code></pre>
-<pre><code>## Warning: package &#39;shape&#39; was built under R version 3.5.2</code></pre>
 <pre class="r"><code>library(&quot;plotrix&quot;)</code></pre>
-<pre><code>## Warning: package &#39;plotrix&#39; was built under R version 3.5.3</code></pre>
 </div>
 <div id="objectives-of-this-practical-session" class="section level1">
 <h1>Objectives of this practical session</h1>
@@ -502,6 +499,7 @@ library(&quot;diagram&quot;)</code></pre>
 </tr>
 </tbody>
 </table>
+<p>bad SFS because most of the entries are 0</p>
 </div>
 <div id="example-of-a-2d-sfs" class="section level2">
 <h2>Example of a 2D-SFS</h2>
@@ -654,9 +652,48 @@ plot_fitSFS_1d(marginal1d_sfs, exp.marginal1d_sfs, c(1,max(marginal1d_sfs)*1.1),
 <p>MaxEstLhood: is the maximum likelihood estimated according to the model parameters.</p>
 <p>The better the fit, the smaller the difference between MaxObsLhood and MaxEstLhood</p>
 <p>DISCUSSION - Is the method able to infer the correct parameters?</p>
+<p>Yes (check the picture in the .html to have the real model). We are very close to the real model !!</p>
 <ul>
 <li>Does the expected SFS fit the observed SFS?</li>
 </ul>
+<p>Yeah pretty well !!</p>
+</div>
+</div>
+<div id="application-to-real-data-from-human-population-optional" class="section level1">
+<h1>3. Application to real data from human population (OPTIONAL)</h1>
+<div id="apply-fastsimcoal2-for-a-model-with-two-populations" class="section level2">
+<h2>3.1. Apply fastsimcoal2 for a model with two populations</h2>
+<p>The folder “/Henn_et_al_data” contains exome data from two human populations (Namibian San, SAN; <a href="https://en.wikipedia.org/wiki/San_people" class="uri">https://en.wikipedia.org/wiki/San_people</a>, and Mexican Mayan, MAYA, <a href="https://en.wikipedia.org/wiki/Maya_peoples" class="uri">https://en.wikipedia.org/wiki/Maya_peoples</a>) published in Henn et al. (2015) PNAS (<a href="http://www.pnas.org/content/113/4/E440.abstract" class="uri">http://www.pnas.org/content/113/4/E440.abstract</a>). This data was kindly provided by Stephan Peischl (<a href="http://www.bioinformatics.unibe.ch/about_us/staff/dr_peischl_stephan/index_eng.html" class="uri">http://www.bioinformatics.unibe.ch/about_us/staff/dr_peischl_stephan/index_eng.html</a>), and cannot be used outside the scope of this course.</p>
+<p>The folder “/Henn_et_al_data” contains the following files: - 2D-SFS for the two populations, assuming that we sequenced a total of 44Mb - Original genotypic matrix - TPL and EST files for a model without gene flow</p>
+</div>
+<div id="exercise-3" class="section level2">
+<h2>Exercise 3</h2>
+<p>3.1. Infer the time of divergence between two human populations, San from Africa and Maya from America - Start by considering a model without gene flow. - Then, consider a model with gene flow.</p>
+<p>What is the effect of adding gene flow into the model? What is the model that better fits the data?</p>
+<pre class="r"><code># load functions to run fastsimcoal2 and to process the output 
+source(&quot;utilFscFunctions.r&quot;)
+source(&quot;ParFileInterpreter-VS1.r&quot;)
+
+# create a list that saves all the required settings to run fastsimcoal2
+settings &lt;- list()
+# path to fastsicoal2 executable file
+settings$pathToFsc &lt;- &quot;./fastsimcoal2/fsc_linux64/&quot;
+# path to input files (working directory)
+settings$pathTo_InputFile &lt;- &quot;./Henn_et_al_data/&quot;
+# path to TPL and EST file (tags)
+settings$TPL_EST_file_tag &lt;- &quot;NoMig_San_Maya&quot;
+# number of coalescent simulations
+settings$n_coalsims &lt;- 100000
+# number of optimization cycles
+settings$n_cycles &lt;- 20
+
+# run fastsimcoal2
+# run_fsc2(settings)
+
+# get the command line to run fastsimcoal2
+cmd &lt;- get_fsc2_commandline(settings)
+cmd</code></pre>
+<pre><code>## [1] &quot;./fsc26  -t NoMig_San_Maya.tpl -e NoMig_San_Maya.est -L 20 -n 100000 -d -M -q -C1 -c2 -B2;&quot;</code></pre>
 </div>
 </div>
 

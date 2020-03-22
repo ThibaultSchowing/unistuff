@@ -1,29 +1,29 @@
-//Parameters for the coalescence simulation program : fsimcoal2.exe
-2 samples to simulate :
-//Population effective sizes (number of genes)
-6404
-28066
-//Samples sizes and samples age 
-16
-12
-//Growth rates	: negative growth implies population expansion
-0
-0
-//Number of migration matrices : 0 implies no migration between demes
-2
-//Migration matrix 0
-0 5.355701090913760e-05
-3.574631236029238e-05 0
-//Migration matrix 1: No migration
-0 0
-0 0
-//historical event: time, source, sink, migrants, new deme size, new growth rate, migration matrix index
-1 historical event
-7382 1 0 1 2.584322298563398e+00 0 1
-//Number of independent loci [chromosome] 
-1 0
-//Per chromosome: Number of contiguous linkage Block: a block is a set of contiguous loci
-1
-//per Block:data type, number of loci, per generation recombination and mutation rates and optional parameters
-FREQ  1   0   1.4e-8 OUTEXP
-
+//Parameters for the coalescence simulation program : fsimcoal2.exe
+2 samples to simulate :
+//Population effective sizes (number of genes)
+6572
+27716
+//Samples sizes and samples age 
+16
+12
+//Growth rates	: negative growth implies population expansion
+0
+0
+//Number of migration matrices : 0 implies no migration between demes
+2
+//Migration matrix 0
+0 5.129611296557117e-005
+3.839742108185175e-005 0
+//Migration matrix 1: No migration
+0 0
+0 0
+//historical event: time, source, sink, migrants, new deme size, new growth rate, migration matrix index
+1 historical event
+7344 1 0 1 2.506999391357273e+000 0 1
+//Number of independent loci [chromosome] 
+1 0
+//Per chromosome: Number of contiguous linkage Block: a block is a set of contiguous loci
+1
+//per Block:data type, number of loci, per generation recombination and mutation rates and optional parameters
+FREQ  1   0   1.4e-8 OUTEXP
+
