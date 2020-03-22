@@ -1,0 +1,39 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+A researcher studied the 
+exibility of women after taking different sports courses. The flexibility was measured by the spinal extension, a measure of how far the women could bend her back.
+The ANOVA table of the data set looks as follows:
+
+
+Analysis of Variance Table
+Response: SpineExtension
+           Df  Sum Sq   Mean Sq   F value   Pr(>F)
+Activity   2   7.0357   3.5178    6.0667    0.006882 **
+Residuals  26 15.0764   0.5799
+---
+Signif. codes:
+0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
+
+
+a) How many groups (sports activities) were in the experiment? How many women participated?
+
+Activity has 2 degrees of freedom, and we used g-1 for the ANOVA so the original amount of groups=g was 3. The residuals have 26 degrees of freedom, we used n-g for ANOVA so the original n was 26+3 = 29 participants. 
+
+
+b) What can you say on a 5% level about the null hypothesis that all sport courses lead to the same flexibility?
+
+
+We see that the p-value is clearly below the significance level, so the sports are not all the same. We can not say which ones are different
+
+
+c) What is the pooled standard deviation, spool?
+
+
+spool^2 = the mean square of errors -> spool = sqrt(mean square of errors) = sqrt(0.5799)
+
+

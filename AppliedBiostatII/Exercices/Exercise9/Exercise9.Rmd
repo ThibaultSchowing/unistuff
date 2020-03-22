@@ -1,0 +1,77 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Exercise 9. [Graded] 
+
+In a study of the dietary treatment of anemia in cattle, 144 cows were randomly divided into four treatment groups A, B, C, and D; A was the control group. After a year of treatment, blood samples were drawn and assayed for selenium. The following table shows the mean selenium concentrations in $\mu$g=dl. The MS(within) from the ANOVA was 2.071.
+
+| Group | Mean  | $n_i$ |
+|-------|-------|-------|
+| A | 0.8 | 36 |
+| B | 5.4 | 36 |
+| C | 6.2 | 36 |
+| D | 5.0 | 36 |
+
+
+
+Compute three Bonferroni-adjusted confidence intervals comparing diets B, C, and D to the control (diet A) for a FWER of $\bar{\alpha} = 0.05$. 
+
+
+Which comparison-wise significance level $\alpha$ do you have to use to calculate the confidence intervals?
+
+
+## Answer
+
+Important slides: 57, 69
+
+
+First we need $S_{pool}$ which is $\sqrt{\sigma^2}$, the given MS(within):
+
+
+
+```{r}
+spool <- sqrt(2.071);spool
+```
+
+Then we need the significance level $\alpha$ but we have to adjust it. Here is a nice resource to have a quick recap on the Bonferroni method for p-value and for confidence intervals: 
+
+https://dnett.public.iastate.edu/S402/wmultcomp.pdf
+
+
+So in short, we just need to divide the $\bar{\alpha}$ by the number of groups so that "The probability that all the Bonferroni-corrected intervals will contain their target parameters simultaneously is greater than or equal to 0.95."
+
+So let's do that, using the formula of slide 69.
+
+```{r}
+corrected_alpha <- 0.05/3
+ni <- 36
+phi <- qnorm(1 - corrected_alpha/2)
+
+grp_mean_B <- 5.4
+grp_mean_C <- 6.2
+grp_mean_D <- 5
+
+confidence_interval_B <- c(grp_mean_B - phi*spool/sqrt(ni), grp_mean_B + phi*spool/sqrt(ni));confidence_interval_B
+confidence_interval_C <- c(grp_mean_C - phi*spool/sqrt(ni), grp_mean_C + phi*spool/sqrt(ni));confidence_interval_C
+confidence_interval_D <- c(grp_mean_D - phi*spool/sqrt(ni), grp_mean_D + phi*spool/sqrt(ni));confidence_interval_D
+
+```
+
+
+The control group's mean is 0.8 and is contained in none of the confidence interval so we can conclude (with a 95% confidence) that the treatment is significantly increasing the mean selenium concentration in the cows.
+
+
+
+
+
+
+
+
+
+
+
+

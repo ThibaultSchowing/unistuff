@@ -1,0 +1,95 @@
+---
+title: "Exercise10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 10
+
+[Graded] Researchers measured the yield of 5 crop species treated with 4 fertilizers. You find the measurements in the file fertilizer.dat on ILIAS.
+
+
+a) Read in the data set and draw an interaction plot.
+R hint: since the factor levels are not encoded as strings, you first have to explicitely convert the variables CropSpecies and Fertilizer to factors.
+
+
+
+```{r}
+library(car)
+data <- read.table("fertilizer.dat", header=TRUE)
+data$Fertilizer <- as.factor(data$Fertilizer)
+data$CropSpecies <- as.factor(data$CropSpecies)
+
+interaction.plot(data$Fertilizer, data$CropSpecies, data$Yield)
+
+```
+
+
+We see that the five species act the same with the different fertilizer (they all increase similarly). There might be an interaction. 
+
+
+b) Fit an ANOVA model without interaction to the data set. Analyse the residuals. Does the model fit well? If not, can you think of a transformation that could make the fit better?
+
+
+```{r}
+data.fit <- lm(Yield ~ Fertilizer + CropSpecies, data = data)
+plot(fitted(data.fit), resid(data.fit), main = "Tukey Anscombe plot")
+qqPlot(resid(data.fit), dist = "norm", mean = mean(resid(data.fit)), sd = sd(resid(data.fit)), main = "qqplot")
+
+
+```
+
+
+
+
+The two plots demonstrate a poor fit. In the Tukey Anscombe plot we can clearly see a pattern between the residuals and the fitted values that should be randomly distributed if the model assumptions were right. The qqPlot is right skewed which suggests that we should try a log transform.
+
+```{r}
+data.fit2 <- lm(log(Yield) ~ Fertilizer + CropSpecies, data = data)
+plot(fitted(data.fit2), resid(data.fit2), main = "Tukey Anscombe plot")
+qqPlot(resid(data.fit2), dist = "norm", mean = mean(resid(data.fit2)), sd = sd(resid(data.fit2)), main = "qqplot")
+```
+
+
+It looks much better!
+
+c) Add an interaction term to the model from task b). Is there a significant interaction?
+
+
+
+```{r}
+
+data.fit3 <- lm(log(Yield) ~ Fertilizer*CropSpecies, data = data)
+
+#Note: if we try to compare with the first model, R will show an error because we need to have the log() in both.
+anova(data.fit2, data.fit3)
+```
+
+Value of the F statistic is not within the range of rejection, hence the interaction is not significant.
+
+d) Beginning from the model from task c), perform a model selection by remove non-significant terms. In which order do you have to test the terms? With which model do you end up?
+
+
+As we saw in point c, the model with the interaction term is not significant. So, we can already remove that and start again with the following model: 
+
+
+```{r}
+data.fit2 <- lm(log(Yield) ~ Fertilizer + CropSpecies, data = data)
+```
+
+
+Next we need to check the significance of Fertilizer and CropSpecies:
+
+
+```{r}
+data.fitFertilizer <- lm(log(Yield) ~ Fertilizer, data = data)
+summary(data.fitFertilizer)
+data.fitCropSpecies <- lm(log(Yield) ~ CropSpecies, data = data)
+summary(data.fitCropSpecies)
+```
+
+From this we conclude that both variables are significant. Therefore, our best model is: 
+log(Yield) ~ Fertilizer + CropSpecies
