@@ -1,0 +1,85 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+11. [Graded] A scientist is interested in how genotype of a strawberry plant affects fruit yield. There are three levels of genotype (AA, AB, BB) and ten plots of land, three plants per plot. 
+
+Each of the three genotypes is present in each plot. The data is in the file strawb.dat available on ILIAS.
+
+#a) Perform an ANOVA, assuming one-way randomized block design.
+
+
+
+
+
+```{r}
+strawb <- read.table("strawb.dat", header = T)
+strawb$land <- factor(strawb$land)
+strawb.fit.block <- lm(yield ~ gtype + land, data = strawb)
+anova(strawb.fit.block)
+```
+
+
+
+
+The genotype is significant on a 5% level but not on a 1% level. The land block factor doesn't have a significant influence
+
+#b) Repeat the analysis of variance without taking into account land effects.
+
+```{r}
+
+strawb.fit.nb <- lm(yield ~ gtype, data=strawb)
+anova(strawb.fit.nb)
+```
+
+
+
+
+# The factor Genotype is now sifnificant on a 1% level. 
+
+
+
+
+#c) Compare the results in a) and b). Why are the degrees of freedom different? Which result would you use?
+
+We can see that the genotype is more significant when we don't take the land variable. The DF changes because we removed the land variable and can now use the degree of freedom of this variable (df = 9) with the df of the residuals. The second model more precise (**) and we have less parameters to adjust
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

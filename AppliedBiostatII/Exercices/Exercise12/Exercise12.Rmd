@@ -1,0 +1,88 @@
+---
+title: "Exercise11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 11
+
+
+a) Read in the data set with R. Look at the structure of the data frame you get. Do you need some
+manual corrections to get the data in the right format? -> beach is a factor
+
+```{r}
+rikz <- read.table("RIKZ.txt", header = T)
+rikz$Beach <- as.factor(rikz$Beach)
+rikz$Sample <- NULL
+rikz
+```
+
+
+b) Fit a linear regression model using all explanatory variables. Look at the summary output of
+your fit, and analyse the residuals. Which problems do you see? How could you solve them?
+
+
+```{r}
+rikz.fitlm <- lm(Richness ~ ., data=rikz)
+summary(rikz.fitlm)
+```
+
+
+
+```{r}
+library(car)
+plot(fitted(rikz.fitlm), resid(rikz.fitlm), main = "Tukey Anscombe plot")
+qqPlot(resid(rikz.fitlm), dist = "norm", mean = mean(resid(rikz.fitlm)), sd = sd(resid(rikz.fitlm)), main = "qqplot")
+```
+
+
+c) Try to improve the quality of your model from task b) by transforming some of the variables in
+the RIKZ data set. Redo the model fit with the transformed variables. Does the model fit better
+now?
+
+
+To improve the model fit we can try applying either a log or a square root transformation, as
+these lessen extreme values in end tails. However, log(0) = -inf which would seriously distort
+the model. So to avoid this from happening, add 1 to all "Richness" values.
+
+
+```{r}
+rikz.fit2 <- lm(log(1+Richness) ~ ., data = rikz)
+plot(fitted(rikz.fit2), resid(rikz.fit2), main = "Tukey Anscombe plot")
+qqPlot(resid(rikz.fit2), dist = "norm", mean = mean(resid(rikz.fit2)), sd = sd(resid(rikz.fit2)), main = "qqplot")
+
+```
+
+
+We can also try with the square root transform:
+
+```{r}
+rikz.fit3 <- lm(sqrt(Richness) ~ ., data = rikz)
+plot(fitted(rikz.fit3), resid(rikz.fit3), main = "Tukey Anscombe plot")
+qqPlot(resid(rikz.fit3), dist = "norm", mean = mean(resid(rikz.fit3)), sd = sd(resid(rikz.fit3)), main = "qqplot")
+```
+
+
+d) Continue with the transformation you chose in c). Perform model selection by iteratively removing
+explanatory variables. Which model do you end up with?
+
+
+```{r}
+library(MASS)
+
+# fit2 -> log transformed
+rikz.bw <- stepAIC(rikz.fit2, direction = "backward", trace = 0)
+summary(rikz.bw)
+```
+
+
+```{r}
+# fit3 -> squared transformed
+rikz.bw2 <- stepAIC(rikz.fit3, direction = "backward", trace = 0)
+summary(rikz.bw2)
+```
+
+
