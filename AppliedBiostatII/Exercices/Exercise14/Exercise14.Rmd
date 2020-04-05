@@ -1,0 +1,73 @@
+---
+title: "Exercise14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 14
+
+```{r}
+data <- read.table("oxboys.csv", header = T, sep=';')
+summary(data)
+data$subject <- as.factor(data$subject)
+plot(height ~ age, data = data)
+data.lm <- lm(height ~ age, data = data)
+abline(data.lm)
+
+```
+
+
+
+2: 
+```{r}
+summary(data.lm)
+```
+
+
+3:
+```{r}
+library(lme4)
+data.rand.int <- lmer(height ~ age + (1|subject), data = data)
+plot(height ~ age, data = data)
+n <- length(levels(data$subject))
+for(i in 1:n)
+  lines(data$age[data$subject == i], fitted(data.rand.int)[data$subject == i])
+```
+
+
+
+
+
+
+```{r}
+data.rand.int.slp <- lmer(height ~ age + (1 + age|subject), data = data)
+plot(height ~ age, data = data)
+for(i in 1:n)
+  lines(data$age[data$subject == i], fitted(data.rand.int.slp)[data$subject == i])
+```
+
+
+Looks better
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

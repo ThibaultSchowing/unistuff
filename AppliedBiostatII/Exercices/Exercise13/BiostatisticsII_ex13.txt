@@ -1,0 +1,27 @@
+Categorical factors can be either fixed or random. Usually, if the investigator controls the levels of a factor, then the factor is fixed. Conversely, if the investigator randomly sampled the levels of a factor from a population, then the factor is random.
+
+Suppose you have a factor called "operator," and it has three levels. If you intentionally select these three operators and want your results to apply to only these operators, then the factor is fixed. However, if you randomly sample three operators from a larger number of operators, and you want your results to apply to all operators, then the factor is random.
+
+1:The index of a patient (subject) in a medical study. For each of the subjects, different physiological quantities were measured in order to predict the response to a certain drug.
+
+Answer: It is random. We are interested in the physiological quantities. 
+
+2: The index of a biological replicate in a gene expression study, in which different cells were grown from the same strain of yeast.
+
+Answer: We could have chosen the cells differently _> random
+
+
+
+3: The yeast strain in a gene expression study, in which cells from 5 dierent yeast strains were compared.
+
+Answer: the strain is a fixed effect -> it is the variable we are interested in
+
+
+4: The type of a machine used for sequencing a virus genome in a study which compares sequencing errors produced by dierent technologies and at different parts of the genome.
+
+Answer: Fixed
+
+
+5: The litter a rat in a behavioural study comes from.
+
+Answer: Random -> the rat could have come from other studies
