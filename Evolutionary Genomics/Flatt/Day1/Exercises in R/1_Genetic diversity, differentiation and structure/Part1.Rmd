@@ -1,0 +1,370 @@
+---
+title: "EvoGeno_Flatt_Diversity"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Practical session: measures of genetic diversity and differentiation
+
+#Summarize genetic diversity and differentiaion patterns
+1. What is the most and less diverse population?
+
+* Compute expected heterozygosity He
+
+* Compute observed heterozygosity Ho
+
+*Estimate fixation index FIS (deviation from Hardy-Weinberg equilibrium)
+
+2. What is the level of differentiation among populations?
+Compute pairwise FST for pairs of samples
+To discuss:
+
+* what factors affect the genetic diversity of populations?
+
+* what factors affect the genetic differentiation among populations?
+
+
+## Exercise 1
+Have a look at the file with the data (/Henn_et_al_data/Hennetal_genotypeMatrix.geno).
+- What are the values reported?
+- What are rows and columns?
+- How many individuals?
+
+We have 10'000 allele with 0 = homozygous like reference, 1 heterozygous ref-alternative and 2 homozygous alternative. Each column is an individual.
+
+```{r}
+# load functions to compute the expected heterozygosity
+source("utilfunctions.r")
+
+# read the genotype matrix
+geno <- as.matrix(read.table("./Henn_et_al_data/Hennetal_genotypeMatrix.geno", header=T, stringsAsFactors = F, na.strings = "NA"))
+# check if we read genotype matrix correctly
+#str(geno) # matrix with nsites rows and nind columns
+# How many individuals? How many sites?
+
+# get the label of the individuals
+inds <- colnames(geno);inds
+
+# Get the index of the individuals for San 
+# Note that the individual label starts with the population name
+# Hence we can use the substr() function to get the substring with the population name
+# from the individual label. Check the help of substr() to understand what is done below.
+san_inds <- which(substr(inds, 1, 3)=="San")
+
+dim(geno)
+```
+
+Repeat this for the other populations. Here is a vector with the population labels. Every individual name in geno matrix starts with the population name.
+
+```{r}
+# vector with the population name
+pop.names <- c("San","Mbuti","Mozabite","Pathan","Cambodian","Yakut","Maya")
+
+```
+The code below shows how you can compute the expected heterozygosity for all samples using lists and matrices as in the code below.
+
+```{r}
+# A way to get this for all populations
+# go through each pop.name and get the index of individuals of each pop 
+sample_inds <- list() # list to save the index of individuals belonging to each pop
+for(i in 1:length(pop.names)) {
+  # apply the function to detect which individuals belong to each pop
+  sample_inds[[i]] <- which(substr(inds, 1, nchar(pop.names[i]))==pop.names[i])
+}
+# check the result
+str(sample_inds)
+
+# Get the expected heterozygosity for each sample
+# initialize matrix to save heterozygosity for each SNP and for each pop
+# het is a matrix with nsnps rows and npop columns
+exp_het <- matrix(NA,nrow=nrow(geno), ncol=length(pop.names))
+# go through each population
+for(i in 1:length(pop.names)) {
+  # compute the heterozygosity by looking at a subset of individuals from geno matrix
+  exp_het[,i] <- apply(geno[,sample_inds[[i]]], 1, function(row) {ExpHet(row)}) 
+}
+# check the output
+#str(exp_het)
+
+# get the mean het for each pop
+mean_exp_het <- colMeans(exp_het)
+
+# Compare the het for each pop in a barplot
+library(RColorBrewer) # this is a cool package with color palletes
+#display.brewer.all(n=NULL, type="all", select=NULL, exact.n=TRUE, colorblindFriendly=TRUE)
+# create a pallete with one color for each pop using a qualitative pallete
+mycols <- brewer.pal("Paired", n=length(pop.names))
+barplot(mean_exp_het, names.arg = pop.names, col=mycols, border=mycols, beside=T, ylab="mean Expected heterozygosity")
+```
+
+CHECK you understand the code:
+- What is saved in variable sample_inds?
+
+* The indexes (columns) of individuals from a certain population in the dataset. 
+
+- The sample_inds is a list. Why a list and not a vector or a matrix?
+
+A vector is unidimentional but here, each element of the list sample_inds, are a list themselves so it need to be a list to accept multiple dimentions. As it is, a matrix would not allow a line to have less values than an other (all populations would have to have the same number of individuals).
+
+- How to access the elements of a list?
+
+* Using the different R indexing functions like [] for an element (that can be a vector of elements) or [[]] for a unique element. 
+
+- What is saved in variable popinds?
+
+* Integer vector of samples associated to each populations.
+
+- How can we use sample_inds to access elements of matrix geno?
+
+* Let's say we want to access first row of the first population:  
+
+
+TO DISCUSS ABOUT GENOMICS
+- What is the population with the higher expected heterozygosity?
+
+* San. 
+
+- What is the population with the higher genetic diversity?
+
+* San, because expected heterozygocyty reflects the diversity. 
+
+- What evolutionary processes could lead to these differences among populations?
+
+
+* They stay in Africa during OOA event. There are bottleneck events while migrating that the San avoided. Looking at the map, we see that the further the population, the less diversity. 
+
+
+## 2.2 Compute the observed heterozygosity for each sample
+
+The observed heterozygosity is the actual proportion of heterozygote sites per individual. For a given population, the observed heterozygosity is the averaged across individuals.
+
+
+Follow the script below to:
+
+- Compute the observed heterozygosity for each individual
+- Compute the mean observed heterozygosity for each sample
+
+
+```{r}
+# OBS_HET
+# function to compute the observed heterozygosity for a given individual
+# INPUT:
+#   geno_ind : numeric vector of size nsites with the genotypes for a given individual, coded as:
+#   0 (homozygote reference allele), 1 (heterozygote), 2 (homozygote alternative allele) or NA (missing data)
+# OUTPUT:
+#    obs_het : numeric value with the observed heterozygosity
+obs_het <- function(geno_ind) {
+  
+  # get the number of sites that are heterozygotes
+  # NOTE: need to perform the sum discarding missing data (use na.rm=T)
+  het_sites <- sum(geno_ind==1, na.rm=T)
+  # divide by the total number of sites
+  # the function is.na() returns TRUE for sites with missing data
+  # them, !is.na() returns TRUE for sites with data
+  het_sites/sum(!is.na(geno_ind))
+}
+```
+
+
+```{r}
+# Get the observed heterozygosity for each individual
+obs_het <- apply(geno, 2, function(col) {obs_het(col)})
+str(obs_het)
+
+# obs_het is a matrix with nsnps rows and npop columns
+mean_obs_het <- numeric(length(pop.names))
+# go through each population
+for(i in 1:length(pop.names)) {
+  # compute the heterozygosity by looking at a subset of individuals from geno matrix
+  mean_obs_het[i] <- mean(obs_het[sample_inds[[i]]])
+}
+# check the output
+str(mean_obs_het)
+```
+After computing the mean oberved heterozygosity for each population, you can compare it with the mean expected heterozygosity for each population.
+
+```{r}
+# Plot the mean_obs_het and mean_exp_het
+barplot(rbind(mean_obs_het,mean_exp_het), col=mycols[1:2], beside=T, names.arg = pop.names, legend.text = c("OBS_het","EXP_het"))
+```
+
+TO DISCUSS
+
+- What is the best measure to quantify the genetic diversity of a population? The expected heterozygosity or the observed heterozygosity?
+
+They are differences, we see that the Expected Hetero. are still a bit higher. We made HW assumptions meaning a global pop with no structure, etc and the differences might be due to that. The observed herero. reflects better the structure of the data. 
+
+- Is the observed and expected heterozygosities different?
+
+In the Maya we can see that they are closer. It can be explained by a bit of European admixture (from paper).
+
+
+# 2.3
+
+QUESTION
+What is expected under Hardy-Weinberg equilibrium about the relationship between observed and expected heterozygosities?
+
+We expect they are the same under HWE
+
+# Exercise 4
+
+
+Compute the estimator of FIS for each population using the code provided below.
+
+
+
+```{r}
+# Estimate the inbreeding coefficient per population
+fis <- 1-(mean_obs_het/mean_exp_het)
+
+# Plot the FIS per sample
+barplot(fis, names.arg = pop.names, col=mycols, border=mycols, beside=T, ylab="mean FIS per pop", ylim=c(-0.1,0.1))
+```
+
+
+
+TO DISCUSS
+
+- What are the range of values that FIS can take?
+
+Between 0 and 1, 1 = 100% inbred. If all the sample are hetero. 
+
+- Are the observed values low or high?
+
+They are quite low. Would be cool to compare with other species. 
+
+
+http://www2.nau.edu/lrm22/lessons/hwe/hwe.htm
+
+https://www.mun.ca/biology/scarr/2900_Population_Genetics.html
+
+
+
+# 3. What is the level of differentiation among populations?
+
+
+## Exercise 5
+
+- compute the pairwise FST between all pairs of populations using the function implemented in package SNPrelate. Follow the code below.
+
+```{r}
+# PLOTFST
+# function to plot the pairwise FST values
+# INPUT:
+#   fst : matrix with npop rows and npop columns with the pairwise FST
+#   pnames : vector of size npop with the population labels
+# OUTPUT
+# plot with the pairwise FST
+plotFst <- function(fst, pnames) {
+  # layout defines that the plot area has two regions with different sizes
+  layout(matrix(c(1,2), 1, 2, byrow = TRUE), widths=c(0.8,0.2))
+  # use Rcolor brewer to define a color scale
+  nclasses <- colorRampPalette(brewer.pal(8,"Oranges"))(15)
+  # define the breakpoints
+  breaksplot <- seq(0, max(fst, na.rm=T)*1.02,length.out = length(nclasses)+1)
+  # plot the image
+  image(1:nrow(fst), 1:nrow(fst), t(fst), breaks=breaksplot, xlab="", ylab="", col=nclasses, main="Pairwise FST", xaxt="n", yaxt="n")
+  axis(1, at=c(1:nrow(fst)), labels=pnames)
+  axis(2, at=c(1:nrow(fst)), labels=pnames)
+  image.scale(t(fst), zlim=range(breaksplot), col = nclasses, breaks=breaksplot, horiz=FALSE, ylab="Pairwise FST", cex.lab=1.2, cex.axis=1.2, cex.main=1.2)
+}
+```
+
+Now, lets use the SNPrelate package to compute the pairwise FST values using the Weir and Cockerham (1984) estimator. Compare these with your results.
+
+```{r}
+# load the R package
+library(SNPRelate)
+
+# create tag 
+# this string will be added to the files saved by SNPrelate
+filename_tag <- "HumanData"
+
+# create a vector with the population corresponding to each individual
+popinds <- names(geno) # initiliaze this with the individual names
+for(i in 1:length(pop.names)) {
+  # get pop.name label for individuals belonging to a given pop
+  popinds[sample_inds[[i]]] <- pop.names[i]
+}
+
+# create input geno file for package
+filename_geno <- paste(filename_tag,"_geno.gds",sep="")
+# use the package function, giving as input:
+# - genmatrix is the genotype matrix "geno"
+# - sample.id is the name of individuals in variable "inds"
+snpgdsCreateGeno(gds.fn=filename_geno, genmat=geno, snpfirstdim=TRUE, sample.id=inds)
+
+# Open the GDS file that you just created
+# this GDS file is the format used by SNPrelate
+genofile <- snpgdsOpen(filename=filename_geno)
+
+# Compute the pairwise FST using function snpgdsFst
+pairfst_wc <- matrix(NA, ncol=length(pop.names), nrow=length(pop.names))
+# go through each pair of populations
+for(i in 1:(length(pop.names)-1)) {
+  for(j in (i+1):length(pop.names)) {
+    # select individuals from the two populations
+    keepfst <- popinds==pop.names[i] | popinds==pop.names[j] 
+    # call function snpgdsFst to compute FST using as method W&C84
+    pairfst_wc[i,j] <- snpgdsFst(genofile, sample.id=inds[keepfst], population=as.factor(popinds[keepfst]),method="W&C84")$Fst          
+  }
+}
+# Close the GDS file
+snpgdsClose(genofile)
+
+# use the function to make the plot
+plotFst(pairfst_wc, pop.names)
+```
+
+
+## DISCUSSION
+
+- What are the populations with the higher genetic differentiation?
+
+San and Maya have the highest Fst
+
+- What demographic events can lead to this differentiation?
+
+Bottleneck during migration and isolation by distance. 
+
+- What are the populations with higher gene flow levels?
+
+More gene flow will lead with less differentiation. More gene flow homogenize the pop. The lightest color: Mozabite to pathan -> be can't know with just the Fst if they have a lot of gene flow or if they diverge recently. 
+
+- What are the populations that diverged more recently?
+
+î
+
+- How to test if the FST values are significant? What would be the null hypothesis?
+
+H0 would be "There is no difference and no structure between the individuals in the populations". We can bootstrap between the loci (random sample from all populations). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

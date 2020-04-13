@@ -1,0 +1,52 @@
+
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+                                    ---  PhyML v3.0_360-500M  ---                                             
+                            http://www.atgc-montpellier.fr/phyml                                          
+                         Copyright CNRS - Universite Montpellier II                                 
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+
+. Sequence filename: 			Clownfish_rh1.phy
+
+. Data set: 				#1
+
+. Tree topology: 			fixed
+
+. Initial tree: 			user tree (clownfish_rh1.phy_phyml_tree.txt)
+
+. Model of nucleotides substitution: 	HKY85
+
+. Number of taxa: 			25
+
+. Log-likelihood: 			-2394.73782
+
+. Unconstrained likelihood: 		-2279.33145
+
+. Parsimony: 				118
+
+. Tree size: 				0.10306
+
+. Discrete gamma model: 		Yes
+  - Number of categories: 		4
+  - Gamma shape parameter: 		1000.000
+
+. Transition/transversion ratio: 	2.569
+
+. Nucleotides frequencies:
+
+  - f(A)= 0.22226
+  - f(C)= 0.24283
+  - f(G)= 0.25637
+  - f(T)= 0.27855
+
+. Time used 0h0m0s
+
+
+. 0 seconds
+
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+ Suggested citation:
+ S. Guindon & O. Gascuel
+ "A simple, fast, and accurate algorithm to estimate large phylogenies by maximum likelihood"
+ Systematic Biology. 2003. 52(5):696-704.
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo

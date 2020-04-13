@@ -1,0 +1,6 @@
+new("pcaProject", projDir = "C:/Users/thsch/Desktop/unistuff/Evolutionary Genomics/Flatt/Day1/Exercises in R/1_Genetic diversity, differentiation and structure/", 
+    pcaDir = "HumanData_sNMF.pca/", n = 54L, L = 10000L, K = 54L, 
+    center = TRUE, scale = FALSE, pcaProject.file = "HumanData_sNMF.pcaProject", 
+    input.file = "HumanData_sNMF.lfmm", eigenvalue.file = "HumanData_sNMF.eigenvalues", 
+    eigenvector.file = "HumanData_sNMF.eigenvectors", sdev.file = "HumanData_sNMF.sdev", 
+    projection.file = "HumanData_sNMF.projections")

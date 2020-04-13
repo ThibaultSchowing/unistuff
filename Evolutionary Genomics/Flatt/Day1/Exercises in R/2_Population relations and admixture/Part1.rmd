@@ -1,0 +1,299 @@
+---
+title: "Part1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Practical session on D-statistics
+
+haracterize the relationship among populations based on D-statistics. Distinguish between gene flow and ancestral polymorphism.
+
+D-statistic (ABBA-BABA test) to detect past admixture events
+To discuss:
+
+What is the difference between a population tree and a gene tree?
+
+
+# 1. D-statistics to detect past admixture events
+
+
+For this exercise we will use data simulated according to a model of human demography based on data from Malaspinas et al. (2016). This dataset includes data from two Neanderthal populations, 1 African population and 1 non-African.
+
+The dataset is in the file “NeanderthalModel.geno”, and it is a genotype matrix similar to the Henn et al. data, with genotypes coded as 0 (homozygote for ancestral allele), 1 (heterozygote), 2 (homozygote for derived allele). Have a look at the file.
+
+Follow the code below to solve these exercises. You will need to load the functions defined in the file: “Dstat_Jacknife.r”
+
+
+## Exercise 1.
+
+
+Read the datafile. How many SNPs? How many individuals per population?
+
+```{r}
+# load the file with the function to compute the D-stat
+source("Dstat_Jacknife.r")
+
+# read the data from the Simulated_Data
+geno <- as.matrix(read.table("NeanderthalModel.geno", header=T, stringsAsFactors = F))
+str(geno) # check what was read
+```
+
+4 individuals, 2 neandertals, 1 african and 1 australian 
+435911 snp
+
+
+
+
+
+Exercise 2.
+
+Modify the code below to:
+
+- Test if Neanderthal contributed to Aboriginal Australians using the D-statistic (ABBA-BABA test).
+
+- What is the order of populations you should consider? What is P1, P2, P3 and Outgroup?
+
+
+
+
+- Based on the value of the D-statistic, is there evidence of admixture?
+
+- Can you provide an estimate of the admixture proportion?
+
+- Is the D-statistic significant? Use the jacknife approach to test this. Function Djack().
+
+
+
+The code below was used to test if there is an excess of shared derived sites between a Neanderthal population and African. We will assume that the chimpanzee is the outgroup, and we assume that chimpanzees are fixed to the ancestral allele. Thus, we will add a column of zeros to our dataset that correspond to the genotypes of the outgroup (chimpanzee).
+
+NOTE: You will need to modify the order of populations to the correct order!
+
+```{r}
+# load the file with the function to compute the D-stat
+source("Dstat_Jacknife.r")
+
+# add a column with the genotypes of the outgroup
+# that we assume if fixed to the ancestral allele
+
+# So we add a 100% ancestral allele column we called Chimp
+
+geno <- cbind(geno, 0)
+# add column name to the 5th column
+colnames(geno)[5] <- "chimp"
+# check that geno matrix has the correct dimension
+str(geno)
+```
+
+
+
+```{r}
+# individual names
+inds <- colnames(geno)
+
+# Population names in the order we want to compute the D-stat,
+# that is, in the order P1, P2, P3, P4
+
+# c("NeaAltai", "NeaPop2","Africa","chimp")
+# p4 is right, p1, p2 are in group, p3 is an ancient group
+# so we change the order to:
+
+# This is just a random order
+pop.names <- c("African", "Australia","NeaAltai","chimp")
+#pop.names <- c("NeaAltai", "NeaPop2","Africa","chimp")
+
+# Get the index of individuals from each population
+# number of populations
+npops <- length(pop.names)
+# index of sampled individuals
+sample_inds <- list() # list to save the index of individuals belonging to each pop
+for(i in 1:npops) {
+  # apply the function to detect which individuals belong to each pop
+  sample_inds[[i]] <- which(substr(inds, 1, nchar(pop.names[i]))==pop.names[i])
+}
+
+# create a new genotype matrix ordered according to the sampled_inds
+# That is a matrix with 4 columns corresponding to P1, P2, P3 and P4
+# with an individual from each population
+genoD <- geno[,sample_inds[[1]]]
+for(i in 2:4) {
+  genoD <- cbind(genoD, geno[,sample_inds[[i]]])
+}
+colnames(genoD) <- c(inds[sample_inds[[1]]],inds[sample_inds[[2]]],inds[sample_inds[[3]]],inds[sample_inds[[4]]]) 
+
+# Need to get the index of individuals
+# in this case since we have 1 individual per pop, the index is given by c(1,2,3,4)
+ds <- dstat(genoD, index_inds = c(1:4))
+ds$D # D-statistic
+```
+
+```{r}
+ds$abba # abba sites
+```
+
+```{r}
+ds$baba # baba sites
+```
+
+We have more ABBA -> more snp common between Australian and Neanderthal than with african
+
+
+```{r}
+# get the estimates of significance based on the block-jacknife approach
+dsj <- Djack(genoD, index_inds = c(1:4), numblocks = 10)
+dsj$D # D-statistic
+```
+
+
+```{r}
+dsj$sd # standard deviation
+```
+
+
+```{r}
+dsj$z # z-score
+```
+
+
+```{r}
+plot(ds$D, ylim=c(-0.1, 0.1), xaxt='n', xlab="", ylab="D-statistic", main="D-stat African Australia NeaAltai chimp", pch=16, col=1)
+add.error.bars(1, ds$D, dsj$sd, w=0.01, col=1)
+abline(h=0, lty=2)
+```
+
+
+Note: with the two Neanderthal pop. we have approx. the same results. So it's not important. 
+
+TO DISCUSS
+
+
+
+- What is the population tree?
+
+So we have the two human pop, then the neandertal then the chimp.
+
+
+
+- What is the null hypothesis under the scenario of ancestral polymorphism/incomplete lineage sorting?
+
+ the number of abba and baba are the same
+
+
+- Is the D-statistic significantly different from zero?
+- How to estimate the admixture coefficient?
+
+In our case yes, 
+
+
+- Is there evidence of admixture between Neanderthal and Aboriginal Australians?
+
+
+
+
+
+- Is there evidence of admixture between Neanderthal and Africans?
+
+
+
+
+We can't answer these questions because this dataset is only with one sample, doesn't explain the whole population. Here we can see that there is more abba than baba -> more neanderthal into australian than african. Doesn't mean we have nothing from the Africans. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
