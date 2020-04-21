@@ -1,0 +1,104 @@
+---
+title: "Exercise15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 15
+
+```{r}
+
+library(lme4)
+data(Pastes)
+```
+
+
+Assume you would have forgotten your knowledge on random effects and want to analyse the
+data set with an one- or two-way ANOVA. How do you have to specify the model, and what are
+the problems of such an approach?
+
+```{r}
+dim(Pastes)
+```
+
+```{r}
+head(Pastes)
+```
+```{r}
+summary(Pastes)
+```
+
+
+
+```{r}
+fit1 <- lm(strength ~ sample, data=Pastes)
+fit2 <- lm(strength ~ batch, data=Pastes)
+fit3 <- lm(strength ~ batch+sample, data=Pastes)
+fit4 <- lm(strength ~ batch+cask, data=Pastes)
+```
+
+Problems: 
+
+* too many variables with small group sizes.
+* missing variables for ex in fit3
+* coeff for single factor only 
+* casks (fût) are assumed to be the same between the different batch even if it is probably just a label (fixed effect of "a" which means nothing)
+
+We it shows the that fitting Anova model with fixed effects to data where random effects are present and have to be taken in account. 
+
+
+
+
+
+
+
+
+
+
+
+Assuming you have not forgotten anything on random effects. Fit a two-way random effects
+model to the data set. Which model formula is appropriate? Which remarkable feature does the
+data have?
+
+We can model this in different manner to have the "two-way": 
+
+batch & cask, batch & sample and cask & sample. But even with random effects, cask stays not practical to use (share the same label etc..) so we take batch & sample. 
+
+It is also worth noting that this: experiment has a nested design, as first the batch is randomly selected and then from each selected batch the casks are randomly taken. 
+This limits the choice of indices available in the formula for this two-way ANOVA with random effects: 
+
+we have i = 1...g batches, j = 1, ..., n casks and k = 1,2 assays 
+
+
+```{r}
+pastes.fit <- lmer(strength ~ 1 + (1|batch) + (1|sample), data = Pastes)
+summary(pastes.fit)
+```
+
+
+Does the strength significantly deviate between different casks? And between different batches?
+
+
+
+```{r}
+set.seed(42)
+confint(pastes.fit)
+```
+
+Here we can see that zero is included in the interval
+
+
+```{r}
+pastes.fit2 <- lmer(strength ~ 1 + (1|cask) + (1|sample), data = Pastes)
+set.seed(42)
+confint(pastes.fit2)
+```
+
+
+
+
+
+

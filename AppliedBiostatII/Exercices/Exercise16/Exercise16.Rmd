@@ -1,0 +1,49 @@
+---
+title: "Exercise16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 16
+
+The data set video.csv (available on ILIAS) contains measurements of a study in which
+psychologists measured the ability of probands of different age groups in learning to play a video
+game. The data set has the following variables:
+
+* id initials of the subjects
+* age age of the probands
+* trial 1: first trial, 2: second trial, . . . , 5: fifth trial
+* score score in the video game (response variable)
+
+You can treat trial as a numerical variable.
+
+```{r}
+data = read.table("video.csv", header = T, sep = ';')
+summary(data)
+plot(data)
+```
+
+```{r}
+data.fit <- lm(score ~trial, data = data)
+plot(data$trial, data$score)
+abline(data.fit)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

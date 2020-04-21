@@ -1,0 +1,88 @@
+---
+title: "Exercise1_BL6003_Schowing"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Series 1: Malthus and Verhulst model
+
+## Malthus model
+
+Use the function “ode” to solve numerically Malthus’ model. Show the trajectory for the two following set of parameters and initial conditions.
+
+
+
+
+
+```{r}
+library(deSolve)
+library(ggplot2)
+#?ode
+```
+
+
+a) $$r = 0.2$$, and $$N_0 = 5$$
+
+```{r}
+
+# Parameters passed to func
+p <- list(r = 0.2)
+
+# Integrator
+m <- c("ode45")
+
+# Differential equation
+#
+# Params: 
+#        - t: never used here but must remains. Offers the possibility to have time dependant differential equations.
+#        - N: population size at which the time derivative will be evaluated. A list with one element per dimention. For Malthus it is simply a list of 1 element.
+#        - p: parameters list 
+func <- function(t,N,p){
+  dN <- p$r * N
+  return(list(c(dN)))
+}
+
+# Time stemps for the numerical solution
+time_steps <- seq(0,10,0.01)
+
+# Initial state values for the ODE system
+N0 <- 5
+
+# Run the "ode" function
+out <- ode(y = N0, times = time_steps, func = f, parms = p, method = m)
+
+```
+
+
+
+
+
+b) $$r = -2$$, and $$N_0 = 5$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
