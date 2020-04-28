@@ -1,0 +1,100 @@
+---
+title: "Exercise19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 19
+
+
+```{r}
+#library(glmnet)
+#pyrimidine <- read.table("pyrimidine.dat", header = TRUE)
+#head(pyrimidine)
+#set.seed(307)
+#X <- as.matrix(pyrimidine[, -ncol(pyrimidine)])
+#pyr.lasso <- cv.glmnet(X, pyrimidine$y)
+#plot(pyr.lasso, xvar = "lambda")
+```
+
+
+The second minimum from the left -> in the range of the log of [0.005, 0.05]
+
+8 variables + intercept
+
+0.6 -0.04 * x4 + 0.103 * x8 + 0.001* x9 + 0.039* x15 + 0.008* x17 + 0.112* x20 - 0.316* x22 + 0.150* x25
+
+
+
+x22 eand x25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

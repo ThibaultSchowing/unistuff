@@ -1,0 +1,111 @@
+---
+title: "Exercise18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 18
+
+Prostate-specific antigen (PSA) is an enzyme whose level is used as a (controversial) indicator of prostate cancer; however, a high level may also indicate other prostate diseases. The Prostate data set examines the correlation between PSA levels and other clinical measures in men who were about to receive a radical prostatectomy. The data set is included in the R package lasso2 and can be loaded as follows:
+
+
+
+```{r}
+data(Prostate, package = "lasso2")
+summary(Prostate)
+
+```
+
+a) Fit a linear model to the data set using LASSO regression. Use the function cv.glmnet from the R package glmnet. Which is the optimal regularization parameter lambda ? Which coeficients are non-zero in the corresponding model?
+
+```{r}
+library("glmnet")
+X <- as.matrix(Prostate[,-ncol(Prostate)])
+set.seed(1234)
+prostate.lasso.cv <- cv.glmnet(X, Prostate$lpsa)
+plot(prostate.lasso.cv)
+
+```
+Lambda is very low at its minimum.
+```{r}
+prostate.lasso.cv$lambda.min
+```
+How to chose the lambda: https://www.youtube.com/watch?v=8oEZkHqf_Rk&list=PLOg0ngHtcqbPTlZzRHA2ocQZqB1D_qZ5V&index=36&t=0s 
+Here they use cross-validation (CV)
+
+It is better to take the biggest lambda within 1sd of the smallest MSE
+
+```{r}
+prostate.lasso.cv$lambda.1se
+```
+
+Here are the coefficients: 
+
+```{r}
+coef(prostate.lasso.cv)
+
+```
+b
+
+b) Fit a linear model using ridge regression. Use again the function cv.glmnet, this time with
+parameter alpha = 0. Which is the optimal regularization parameter lambda here?
+
+
+```{r}
+set.seed(1234)
+prostate.ridge.cv <- cv.glmnet(X, Prostate$lpsa, alpha = 0)
+plot(prostate.ridge.cv)
+```
+
+
+Again to find the one standard error rule lambda: 
+
+```{r}
+prostate.ridge.cv$lambda.1se
+```
+```{r}
+coef(prostate.ridge.cv)
+```
+
+
+
+c Plot the LASSO and ridge traces of the models from a) and b) side-by-side. What are the differences, and where do they come from?
+
+```{r}
+set.seed(7)
+pro.lasso <- glmnet(X, Prostate$lpsa, alpha = 1)
+set.seed(7)
+pro.ridge <- glmnet(X, Prostate$lpsa, alpha = 0)
+par(mfrow = c(1, 2), cex = 0.5, mar = c(3, 3, 4, 1))
+plot(pro.lasso, xvar = "lambda", main = "LASSO")
+plot(pro.ridge, xvar = "lambda", main = "Ridge")
+
+```
+
+Elastic net
+
+```{r}
+set.seed(7)
+pro.net.cv <- cv.glmnet(X, Prostate$lpsa, alpha = 0.5)
+plot(pro.net.cv)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -17,7 +17,7 @@ from matplotlib.pyplot import imread
 # EXERCISE 2.1 #
 ################
 
-
+# MODIFY DIRECTLY IN IPYNB !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 def compute_ssd(patch, mask, texture, patch_half_size):
     # For all possible locations of patch in texture_img, computes sum square
     # difference for all pixels where mask = 0
@@ -31,13 +31,13 @@ def compute_ssd(patch, mask, texture, patch_half_size):
     #   ssd: numpy array of size (tex_rows - 2 * patch_half_size, tex_cols - 2 * patch_half_size)
     
     # DEBUG
+    print("COMPUTE SSD")
     print("patch type: ", str(type(patch)))
-          
-    #print("mask shape: ", mask.shape)
-    #print("texture shape: ", texture.shape)
-    #print("Patch half size: ", patch_half_size)
     
-    patch_rows, patch_cols = np.shape(patch)[0,1]
+    print("mask type: ", str(type(mask)))
+    
+    patch_rows, patch_cols = np.shape(patch)[0],np.shape(patch)[1]
+    
     assert patch_rows == 2 * patch_half_size + 1 and patch_cols == 2 * patch_half_size + 1, "patch size and patch_half_size do not match"
     tex_rows, tex_cols = np.shape(texture)[0:1]
     ssd_rows = tex_rows - 2 * patch_half_size

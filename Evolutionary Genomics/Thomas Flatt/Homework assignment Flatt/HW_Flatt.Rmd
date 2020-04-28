@@ -1,0 +1,569 @@
+---
+title: "Homework_EvoGeno_Flatt"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Homework Flatt Evo Geno
+
+
+```{r}
+# EXPHET
+# computes the expected heterozygosity for a given site
+# INPUT:
+#   geno_site : vector of size nind with the genotypes coded as 0,1,2 and NA (missing data)
+# OUTPUT:
+#   expected heterozygosity
+ExpHet <- function(geno_site) {
+  
+  # get the number of individuals with data
+  ngenecopies <- 2*sum(!is.na(geno_site))
+  
+  # get the frequency of the alternative allele
+  freq <- sum(geno_site, na.rm=T)/ngenecopies
+  
+  # output the expected heterozygosity
+  he <- (ngenecopies/(ngenecopies-1))*2*freq*(1-freq)
+  he
+}
+
+geno <- as.matrix(read.table("./chimp_data/GenotypesPan.geno", header=T, stringsAsFactors = F, na.strings = "NA"))
+
+
+dim(geno)
+
+inds <- colnames(geno); inds
+```
+
+
+
+
+
+```{r}
+pop.names <- c("paniscus", "troglodytes_ellioti", "troglodytes_schweinfurthii", "troglodytes_troglodytes", "troglodytes_verus")
+
+sample_inds <- list() # list to save the index of individuals belonging to each pop
+for(i in 1:length(pop.names)) {
+  # apply the function to detect which individuals belong to each pop
+  sample_inds[[i]] <- which(substr(inds, 5, (4+nchar(pop.names[i])))==pop.names[i])
+}
+```
+
+
+```{r}
+# Get the expected heterozygosity for each sample
+# initialize matrix to save heterozygosity for each SNP and for each pop
+# het is a matrix with nsnps rows and npop columns
+exp_het <- matrix(NA,nrow=nrow(geno), ncol=length(pop.names))
+# go through each population
+for(i in 1:length(pop.names)) {
+  # compute the heterozygosity by looking at a subset of individuals from geno matrix
+  exp_het[,i] <- apply(geno[,sample_inds[[i]]], 1, function(row) {ExpHet(row)}) 
+}
+# check the output
+#str(exp_het)
+
+# get the mean het for each pop
+mean_exp_het <- colMeans(exp_het)
+
+# Compare the het for each pop in a barplot
+library(RColorBrewer) # this is a cool package with color palletes
+#display.brewer.all(n=NULL, type="all", select=NULL, exact.n=TRUE, colorblindFriendly=TRUE)
+# create a pallete with one color for each pop using a qualitative pallete
+mycols <- brewer.pal("Paired", n=length(pop.names))
+par(mai=c(1,3,1,1))
+barplot(mean_exp_het, names.arg = pop.names, col=mycols, border=mycols, beside=T, main = "Mean Expected heterozygosity", horiz=T, ,las=1)
+
+```
+
+
+# Compute the observed heterozygosity for each sample
+
+```{r}
+# OBS_HET
+# function to compute the observed heterozygosity for a given individual
+# INPUT:
+#   geno_ind : numeric vector of size nsites with the genotypes for a given individual, coded as:
+#   0 (homozygote reference allele), 1 (heterozygote), 2 (homozygote alternative allele) or NA (missing data)
+# OUTPUT:
+#    obs_het : numeric value with the observed heterozygosity
+obs_het <- function(geno_ind) {
+  
+  # get the number of sites that are heterozygotes
+  # NOTE: need to perform the sum discarding missing data (use na.rm=T)
+  het_sites <- sum(geno_ind==1, na.rm=T)
+  # divide by the total number of sites
+  # the function is.na() returns TRUE for sites with missing data
+  # them, !is.na() returns TRUE for sites with data
+  het_sites/sum(!is.na(geno_ind))
+}
+```
+
+
+
+
+```{r}
+# Get the observed heterozygosity for each individual
+obs_het <- apply(geno, 2, function(col) {obs_het(col)})
+# str(obs_het)
+
+# obs_het is a matrix with nsnps rows and npop columns
+mean_obs_het <- numeric(length(pop.names))
+# go through each population
+for(i in 1:length(pop.names)) {
+  # compute the heterozygosity by looking at a subset of individuals from geno matrix
+  mean_obs_het[i] <- mean(obs_het[sample_inds[[i]]])
+}
+# check the output
+str(mean_obs_het)
+```
+
+```{r}
+# Plot the mean_obs_het and mean_exp_het
+par(mai=c(1,3,1,1))
+barplot(rbind(mean_obs_het,mean_exp_het), col=mycols[1:2], beside=T, names.arg = pop.names, legend.text = c("OBS_het","EXP_het"), horiz=T ,las=1, args.legend = list(x = "topright", bty = "n", inset=c(-0.1, 0)))
+```
+
+
+
+
+```{r}
+# Estimate the inbreeding coefficient per population
+fis <- 1-(mean_obs_het/mean_exp_het)
+
+# Plot the FIS per sample
+# Increase margin size
+par(mar=c(11,4,4,4))
+barplot(fis, names.arg = pop.names, col=mycols, border=mycols, beside=T, ylab="mean FIS per pop", ylim=c(-0.1,0.2), las=2 )
+```
+
+```{r}
+# IMAGE.SCALE
+# This function creates a color scale for use with the image() function. 
+# Input parameters should be consistent with those used in the corresponding image plot. 
+# The "horiz" argument defines whether the scale is horizonal(=TRUE) or vertical(=FALSE).
+image.scale <- function(z, zlim, col = rainbow(12), breaks, horiz=TRUE, ...){
+  if(!missing(breaks)){
+    if(length(breaks) != (length(col)+1)){stop("must have one more break than colour")}
+  }
+  if(missing(breaks) & !missing(zlim)){
+    breaks <- seq(zlim[1], zlim[2], length.out=(length(col)+1)) 
+  }
+  if(missing(breaks) & missing(zlim)){
+    zlim <- range(z, na.rm=TRUE)
+    zlim[2] <- zlim[2]+c(zlim[2]-zlim[1])*(1E-3)#adds a bit to the range in both directions
+    zlim[1] <- zlim[1]-c(zlim[2]-zlim[1])*(1E-3)
+    breaks <- seq(zlim[1], zlim[2], length.out=(length(col)+1))
+  }
+  poly <- vector(mode="list", length(col))
+  for(i in seq(poly)){
+    poly[[i]] <- c(breaks[i], breaks[i+1], breaks[i+1], breaks[i])
+  }
+  xaxt <- ifelse(horiz, "s", "n")
+  yaxt <- ifelse(horiz, "n", "s")
+  if(horiz){ylim<-c(0,1); xlim<-range(breaks)}
+  if(!horiz){ylim<-range(breaks); xlim<-c(0,1)}
+  plot(1,1,t="n",ylim=ylim, xlim=xlim, xaxt=xaxt, yaxt=yaxt, xaxs="i", yaxs="i", ...)  
+  for(i in seq(poly)){
+    if(horiz){
+      polygon(poly[[i]], c(0,0,1,1), col=col[i], border=NA)
+    }
+    if(!horiz){
+      polygon(c(0,0,1,1), poly[[i]], col=col[i], border=NA)
+    }
+  }
+}
+```
+
+
+
+```{r}
+# PLOTFST
+# function to plot the pairwise FST values
+# INPUT:
+#   fst : matrix with npop rows and npop columns with the pairwise FST
+#   pnames : vector of size npop with the population labels
+# OUTPUT
+# plot with the pairwise FST
+plotFst <- function(fst, pnames) {
+  # layout defines that the plot area has two regions with different sizes
+  layout(matrix(c(1,2), 1, 2, byrow = TRUE), widths=c(0.8,0.2))
+  # use Rcolor brewer to define a color scale
+  nclasses <- colorRampPalette(brewer.pal(8,"Oranges"))(15)
+  # define the breakpoints
+  breaksplot <- seq(0, max(fst, na.rm=T)*1.02,length.out = length(nclasses)+1)
+  # plot the image
+  image(1:nrow(fst), 1:nrow(fst), t(fst), breaks=breaksplot, xlab="", ylab="", col=nclasses, main="Pairwise FST", xaxt="n", yaxt="n")
+  axis(1, at=c(1:nrow(fst)), labels=pnames)
+  axis(2, at=c(1:nrow(fst)), labels=pnames)
+  image.scale(t(fst), zlim=range(breaksplot), col = nclasses, breaks=breaksplot, horiz=FALSE, ylab="Pairwise FST", cex.lab=1.2, cex.axis=1.2, cex.main=1.2)
+}
+
+# load the R package
+library(SNPRelate)
+
+# create tag 
+# this string will be added to the files saved by SNPrelate
+filename_tag <- "HumanData"
+
+# create a vector with the population corresponding to each individual
+popinds <- names(geno) # initiliaze this with the individual names
+for(i in 1:length(pop.names)) {
+  # get pop.name label for individuals belonging to a given pop
+  popinds[sample_inds[[i]]] <- pop.names[i]
+}
+
+# create input geno file for package
+filename_geno <- paste(filename_tag,"_geno.gds",sep="")
+# use the package function, giving as input:
+# - genmatrix is the genotype matrix "geno"
+# - sample.id is the name of individuals in variable "inds"
+snpgdsCreateGeno(gds.fn=filename_geno, genmat=geno, snpfirstdim=TRUE, sample.id=inds)
+
+# Open the GDS file that you just created
+# this GDS file is the format used by SNPrelate
+genofile <- snpgdsOpen(filename=filename_geno)
+
+# Compute the pairwise FST using function snpgdsFst
+pairfst_wc <- matrix(NA, ncol=length(pop.names), nrow=length(pop.names))
+# go through each pair of populations
+for(i in 1:(length(pop.names)-1)) {
+  for(j in (i+1):length(pop.names)) {
+    # select individuals from the two populations
+    keepfst <- popinds==pop.names[i] | popinds==pop.names[j] 
+    # call function snpgdsFst to compute FST using as method W&C84
+    pairfst_wc[i,j] <- snpgdsFst(genofile, sample.id=inds[keepfst], population=as.factor(popinds[keepfst]),method="W&C84")$Fst          
+  }
+}
+# Close the GDS file
+snpgdsClose(genofile)
+
+# use the function to make the plot
+plotFst(pairfst_wc, pop.names)
+```
+
+
+
+PCA
+
+
+```{r}
+# load LEA package
+library("LEA")
+ 
+# create tag for filename with results
+filename_tag <- "HumanData"
+
+# Need to create the input file (geno SNMF file)
+genoSNMF <- geno
+# replace missing data by "9"
+genoSNMF[is.na(genoSNMF)]=9
+# save the file with the genotypes using 9 as missing data
+write(t(genoSNMF),file=paste(filename_tag, "_sNMF.geno",sep=""), ncolumns = ncol(genoSNMF), sep="")
+
+# Perform PCA with LEA package
+# Create a pcaProject object: pc.
+pc <- pca(paste(filename_tag, "_sNMF.geno",sep=""), scale = FALSE, center=TRUE)
+```
+
+
+```{r}
+#######################
+# Display Information #
+#######################
+
+# Display information about the analysis.
+#show(pc)
+
+# Summarize the analysis.
+#summary(pc)
+
+#####################
+# Graphical outputs #
+#####################
+library(RColorBrewer)
+mycols <- brewer.pal("Paired", n=length(pop.names))
+
+# get the explained percentage
+perc_exp <- pc$eigenvalues/sum(pc$eigenvalues, na.rm=T)
+barplot(perc_exp, ylab="Percentage variance explained", xlab="PCs", beside=T)
+```
+
+
+
+
+```{r}
+# Look at the resulting eigenvectors
+indcolor <- as.numeric(factor(popinds)) # set the color for each individual
+# Plot the first PCs
+par(mfrow=c(2,3))
+par(mar=c(4,4,4,4))
+for(i in 1:3) {
+  for(j in (i+1):4) {
+    plot(pc$projections[,i],pc$projections[,j], col=mycols[indcolor], pch=16, xlab=paste("PC", i, "%var=", perc_exp[i]), ylab=paste("PC", j, "%var=", perc_exp[j]),)
+    if(i==1 & j==3) {
+    legend("topright", pop.names, col=mycols[factor(pop.names)])      
+    }
+    
+  }
+}
+```
+
+
+
+
+
+
+
+```{r}
+# load LEA package
+library("LEA")
+ 
+# Need to create the input file (geno SNMF file)
+genoSNMF <- geno
+# replace missing data by "9"
+genoSNMF[is.na(genoSNMF)]=9
+# save the file
+write(t(genoSNMF),file=paste(filename_tag, "_sNMF.geno",sep=""), ncolumns = ncol(genoSNMF), sep="")
+# run sNMF from K values 1 up to 5
+obj.at = snmf(paste(filename_tag, "_sNMF.geno",sep=""), K=1:5, ploidy=2, entropy=T, CPU=3, project="new", repetitions=1)
+
+# look at what is in obj.at
+str(obj.at)
+
+# Find the index of the end of each population
+npops <- length(pop.names)
+indexpop <- numeric(npops)
+for(i in 1:npops){
+  indexpop[i] <- max(sample_inds[[i]])
+}
+
+pdf("AdmixtureProportions.pdf", width=10, height=6)
+# Plot the results for each K value and the cross-entropy
+par(mfrow=c(1,1))
+for(k in 2:5) {
+  mycols=brewer.pal(k, "Paired")
+  # the Q() function gets the ancestry coefficients for each K value
+  bp=barplot(t(Q(obj.at, K=k)), horiz = F, beside = F, col = mycols, space=0.01, border=NA)
+  # add lines dividing the populations
+  abline(v=indexpop, col=1, lwd=2)
+  # add the population names below each area
+  axis(side=1, at=indexpop-2, labels=pop.names)
+}
+# Plot the cross-entropy
+par(mfrow=c(1,1))
+plot(obj.at)
+dev.off()
+
+# What is the best K-value? 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

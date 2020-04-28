@@ -1,0 +1,112 @@
+---
+title: "Exercise17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 17
+
+
+
+```{r}
+
+#data(hald, package = "wle") # Package not available and cannot install from source (from archive)....
+library(MASS)
+cement <- data.frame(scale(cement));cement
+
+cement.empty <- lm(y ~ 1, data=cement)
+cement.fw <- stepAIC(cement.empty, trace = 0, scope = ~ x1 + x2 + x3 + x4, direction = "forward")
+summary(cement.fw)
+
+```
+
+We delete the third raw
+
+```{r}
+cement3 <- cement[-c(3), ]
+cement3.empty <- lm(y ~ 1, data = cement3)
+cement3.fw <- stepAIC(cement3.empty, scope = ~ x1 + x2 + x3 + x4, direction = "forward", trace = 0)
+summary(cement3.fw)
+```
+
+```{r}
+cement10 <- cement[-c(10), ]
+cement10.empty <- lm(y ~ 1, data = cement3)
+cement10.fw <- stepAIC(cement3.empty, scope = ~ x1 + x2 + x3 + x4, direction = "forward", trace = 0)
+summary(cement10.fw)
+```
+
+
+
+With the reduced datasets (without raw 3 and 10, we obtain different dataset than the one with the forward selection. 
+
+
+
+beta2 - beta4
+
+```{r}
+cement.fw$coefficients[2] - cement.fw$coefficients[4]
+cement3.fw$coefficients[2] - cement3.fw$coefficients[4]
+cement10.fw$coefficients[2] - cement10.fw$coefficients[4]
+```
+
+
+
+
+Fit a ridge regression: 
+
+```{r}
+library(MASS)
+cement.ridge <- lm.ridge(y ~ ., data = cement, lambda = seq(0,1, by=0.01))
+summary(cement.ridge)
+which.min(cement.ridge$GCV)
+```
+
+With the optimal lambda: 
+
+```{r}
+optlambda <- which.min(cement.ridge$GCV)
+cement.ridge2 <- lm.ridge(y ~ ., data = cement, lambda = optlambda)
+coef(cement.ridge2)
+```
+
+
+
+
+```{r}
+cement10 <- cement[-c(10), ]
+cement3 <- cement[-c(3), ]
+
+
+
+cement3.ridge <- lm.ridge(y ~ ., data = cement3, lambda = optlambda)
+cement10.ridge <- lm.ridge(y ~ ., data = cement10, lambda = optlambda)
+
+
+coef(cement.ridge2)
+coef(cement3.ridge)
+coef(cement10.ridge)
+
+```
+
+
+The coefficients are more or less the same in all models
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,179 @@
+<itsabeastystatewerein version='2.0' sample='10000000'>
+<statenode id='Tree.t:Species'>((0:0.01871149675130288,((((1:0.0038933646176017274,9:0.0038933646176017274)30:0.006892869484407147,((2:7.197523061099645E-5,11:7.197523061099645E-5)29:0.004735096002892026,((8:9.009955865574397E-4,12:9.009955865574397E-4)43:0.001461750167028333,17:0.0023627457535857726)38:0.0024443254799172503)45:0.005979162868505851)50:0.0026886437760605224,(((((3:0.0029285403065743535,26:0.0029285403065743535)42:0.007543931160459014,((14:3.3530771504969976E-4,23:3.3530771504969976E-4)53:0.005372869897872159,(20:4.0060480555021674E-4,22:4.0060480555021674E-4)37:0.005307572807371643)28:0.004764293854111508)32:8.81759932904267E-5,(10:0.0036746076197399767,18:0.0036746076197399767)41:0.006886039840583818)39:9.785180806406394E-4,(24:2.118236532465075E-4,27:2.118236532465075E-4)48:0.011327341887717926)44:0.0012478359793770388,(4:0.01070929898575557,(5:5.65828330181838E-4,19:5.65828330181838E-4)47:0.010143470655573732)52:0.0020777025345859023)51:6.878763577279241E-4)34:3.6762068877512974E-4,((6:4.855907924736362E-4,25:4.855907924736362E-4)35:0.0021494597938047713,(15:6.494918208680917E-4,16:6.494918208680917E-4)36:0.001985558765410316)33:0.011207447980566118)40:0.0048689981844583525)31:0.0016773680539574065,((7:0.007753714592069441,21:0.007753714592069441)46:0.01012963405977695,13:0.01788334865184639)49:0.0025055161534138955)54:0.0</statenode>
+<statenode id='popMean.Species'>popMean.Species[1 1] (0.0,Infinity): 0.003327748535285775 </statenode>
+<statenode id='speciationRate.t:Species'>speciationRate.t:Species[1 1] (0.0,Infinity): 144.74437762156924 </statenode>
+<statenode id='Tree.t:clownfish_chr02'>(((((((0:0.00785673628709013,(19:0.004536136671874838,24:0.004536136671874838)28:0.0033205996152152924)29:0.00663963844446191,21:0.01449637473155204)30:0.002338569293743261,(((3:0.008783757237174322,(9:0.006546932304881333,10:0.006546932304881333)31:0.0022368249322929886)32:0.003266051813458794,(15:0.005395766966761243,23:0.005395766966761243)33:0.006654042083871873)34:0.0029394809920100153,(8:0.010833983367430305,26:0.010833983367430305)49:0.004155306675212826)35:0.0018456539826521706)48:0.0014581827655993779,((((1:0.008077121672320406,14:0.008077121672320406)36:0.0038004382964643476,7:0.011877559968784753)43:0.0013537880674436495,((((2:0.008452293710660693,((4:0.0054669380976888815,18:0.0054669380976888815)39:0.0014321858619886383,13:0.00689912395967752)38:0.0015531697509831733)40:0.0026569418055675826,11:0.011109235516228276)45:9.050240534783545E-4,6:0.01201425956970663)41:5.058770242320609E-4,(5:0.005735821944501298,16:0.005735821944501298)44:0.006784314649437393)37:7.112114422897116E-4)47:0.0013984871775936415,(22:0.006948109034554891,25:0.006948109034554891)46:0.007681726179267153)42:0.0036632915770726353)50:0.0015310444675727536,12:0.019824171258467433)51:0.004154091014404091,27:0.023978262272871524)52:1.008061095833894E-4,(17:0.00849173700838997,20:0.00849173700838997)53:0.015587331374064943)54:0.0</statenode>
+<statenode id='mutationRate.s:clownfish_chr02'>mutationRate.s:clownfish_chr02[1 1] (0.0,Infinity): 0.7692249609538712 </statenode>
+<statenode id='Tree.t:clownfish_chr08'>(((((((0:0.004215219654391592,24:0.004215219654391592)29:0.0011016454595525393,19:0.0053168651139441315)28:0.004340505479065371,21:0.009657370593009503)30:0.004877285342744637,(((3:0.005912091618838092,(10:0.0051777088822388675,(15:0.004644451692696545,23:0.004644451692696545)31:5.332571895423225E-4)34:7.343827365992248E-4)32:0.0017822365244959722,9:0.0076943281433340645)33:0.00518243998478594,(8:0.008016348193417058,26:0.008016348193417058)49:0.0048604199347029465)48:0.0016578878076341352)35:0.00232079510690523,(((1:0.005859607399782125,14:0.005859607399782125)36:0.005798792226108764,7:0.01165839962589089)37:0.0017253359214190883,(((((2:0.006919367039439693,13:0.006919367039439693)38:0.0013754243743040401,(4:0.004878895209649466,18:0.004878895209649466)39:0.0034158962040942674)40:0.0030376968526223194,(5:0.006412844668326432,16:0.006412844668326432)44:0.00491964359803962)47:5.094006677428854E-4,(6:0.009753166370555053,11:0.009753166370555053)41:0.0020887225635538853)45:3.342625636328072E-4,(22:0.005179805351694072,25:0.005179805351694072)46:0.006996346146047673)42:0.0012075840495682326)43:0.003471715495349392)50:0.0024073516414491146,12:0.019262802684108484)51:0.002242191604676466,((17:0.00804218766293112,20:0.00804218766293112)53:0.011142938126279653,27:0.019185125789210774)52:0.0023198684995741764)54:0.0</statenode>
+<statenode id='mutationRate.s:clownfish_chr08'>mutationRate.s:clownfish_chr08[1 1] (0.0,Infinity): 0.7403688631446944 </statenode>
+<statenode id='Tree.t:clownfish_chr10'>(((((((((0:0.0041009081724870675,24:0.0041009081724870675)28:0.0018144460350981509,19:0.005915354207585218)29:0.005395282754375994,21:0.011310636961961213)30:0.0039519193805763325,((3:0.00893959884156069,(15:0.0069420185917523965,23:0.0069420185917523965)31:0.0019975802498082926)32:4.7956495070156785E-4,(9:0.00536305116805459,10:0.00536305116805459)33:0.004056112624207667)34:0.005843392550275288)35:0.0018718396245170198,(8:0.0047075877898206,26:0.0047075877898206)49:0.012426808177233965)50:9.972644565507255E-4,(((1:0.005712205567420741,14:0.005712205567420741)36:0.005904254455317537,7:0.011616460022738279)47:0.0018426359117330263,(((((2:0.005101764773366447,13:0.005101764773366447)38:0.004651491205205161,(4:0.005974804840681599,18:0.005974804840681599)39:0.003778451137890009)40:0.0011109751386658966,(5:0.004516353339743142,16:0.004516353339743142)44:0.006347877777494362)42:7.515402116024528E-4,(22:0.0057004259492743625,25:0.0057004259492743625)46:0.005915345379565595)45:0.0012138429874521493,(6:0.010210705519008014,11:0.010210705519008014)41:0.0026189087972840926)43:6.294816181791982E-4)37:0.004672564489133986)48:0.001717372569713018,12:0.01984903299331831)51:0.009232802821892674,27:0.029081835815210982)52:0.0021211801553121384,(17:0.008817340883041034,20:0.008817340883041034)53:0.022385675087482085)54:0.0</statenode>
+<statenode id='mutationRate.s:clownfish_chr10'>mutationRate.s:clownfish_chr10[1 1] (0.0,Infinity): 0.5705660243909322 </statenode>
+<statenode id='Tree.t:clownfish_chr18'>(((((0:0.00669578770530739,(19:0.004447381741500011,24:0.004447381741500011)29:0.0022484059638073787)28:0.006673473849586675,21:0.013369261554894065)30:0.0052753705963361625,((((1:0.006881919651454641,14:0.006881919651454641)36:0.0062185614061144945,(((((2:0.005697078364966387,13:0.005697078364966387)38:0.002964821675065497,(4:0.005908945869439751,18:0.005908945869439751)39:0.0027529541705921335)40:0.0018476069818705362,(6:0.008047602574646548,11:0.008047602574646548)41:0.002461904447255872)42:0.001838782849149902,(5:0.00714476270194974,16:0.00714476270194974)44:0.005203527169102582)43:6.184327239357693E-4,(22:0.006786987751659469,25:0.006786987751659469)46:0.006179734843328623)47:1.337584625810441E-4)37:6.203023266568453E-4,7:0.013720783384225981)45:0.003721840265438741,((((3:0.0066865431607184625,10:0.0066865431607184625)31:0.002097538281503983,9:0.008784081442222445)34:0.0017750519646503437,(15:0.004497673423222881,23:0.004497673423222881)32:0.006061459983649908)33:0.0040684578916298526,(8:0.005898088158517843,26:0.005898088158517843)49:0.008729503139984798)50:0.0028150323511620806)35:0.0012020085015655053)48:0.003456038602546358,((17:0.008852381001825557,20:0.008852381001825557)53:0.01076931253803692,27:0.019621693539862477)52:0.002478977213914109)51:2.418273598866344E-5,12:0.02212485348976525)54:0.0</statenode>
+<statenode id='mutationRate.s:clownfish_chr18'>mutationRate.s:clownfish_chr18[1 1] (0.0,Infinity): 0.7618712176504805 </statenode>
+<statenode id='Tree.t:clownfish_chr22'>((((((((0:0.002746557960332127,24:0.002746557960332127)29:0.001513507881804437,19:0.004260065842136564)28:0.003291571959881138,21:0.007551637802017702)30:0.007034588245418258,(((3:0.004843358868655571,10:0.004843358868655571)32:3.221941986047217E-4,9:0.005165553067260293)33:7.434255834828799E-4,(15:0.0027108857468185667,23:0.0027108857468185667)31:0.0031980929039246058)34:0.008677247396692789)35:0.0053804682993249305,(8:0.004651473255355548,26:0.004651473255355548)49:0.015315221091405342)48:0.0021292225613678273,(((1:0.003778970206089452,14:0.003778970206089452)36:0.007952626635053169,7:0.011731596841142621)37:0.0029340687077677816,((((2:0.006506475860382728,13:0.006506475860382728)38:0.004711888020847172,(4:0.0028317827025515765,18:0.0028317827025515765)39:0.008386581178678323)45:0.0011054768729815076,((5:0.0042623715246573445,16:0.0042623715246573445)44:0.007331135501433793,(6:0.010778096298030636,11:0.010778096298030636)40:8.154107280605016E-4)41:7.303337281202704E-4)42:0.0011367224740908115,(22:0.0032151788395012176,25:0.0032151788395012176)46:0.010245384388801002)47:0.0012051023206081837)43:0.007430251359218315)50:0.00297168323308971,12:0.025067600141218428)51:0.010776263389907753,((17:0.008633860407454631,20:0.008633860407454631)53:0.026203748150291917,27:0.03483760855774655)52:0.001006254973379632)54:0.0</statenode>
+<statenode id='mutationRate.s:clownfish_chr22'>mutationRate.s:clownfish_chr22[1 1] (0.0,Infinity): 0.3487821843357658 </statenode>
+<statenode id='Tree.t:clownfish_mtdna'>((((((0:8.979555265558723E-4,21:8.979555265558723E-4)28:0.0035036022452890996,(19:9.209501888606746E-4,24:9.209501888606746E-4)29:0.0034806075829842973)30:0.011373101498650355,(((1:8.547708780894139E-4,14:8.547708780894139E-4)31:0.013173208346853154,((((2:5.854230905743361E-4,13:5.854230905743361E-4)41:0.011674805536120022,((5:0.004005168659118297,16:0.004005168659118297)45:0.007787426051320454,(22:0.002033981206655079,25:0.002033981206655079)43:0.009758613503783672)42:4.676339162556064E-4)40:4.7929899645026385E-4,((4:4.2325903881748167E-4,18:4.2325903881748167E-4)37:0.011246113079519289,(6:0.0051931786028672385,11:0.0051931786028672385)39:0.0064761935154695315)46:0.0010701555048078515)44:7.93624059233564E-4,(((3:0.0017298636870349416,23:0.0017298636870349416)32:0.0027282297374851775,15:0.004458093424520119)34:8.184083048814244E-4,(9:2.1406032098429713E-4,10:2.1406032098429713E-4)33:0.005062441408417247)35:0.008256649952976642)36:4.948275425643821E-4)38:6.080442802651499E-4,7:0.014636023505207717)47:0.00113863576528761)48:0.0037383371384108258,(8:0.004029809825072057,26:0.004029809825072057)49:0.015483186583834095)50:0.014923950128030859,12:0.03443694653693701)51:0.011011188481006635,((17:0.012690977095466786,20:0.012690977095466786)53:0.02788710961354711,27:0.040578086709013896)52:0.004870048308929752)54:0.0</statenode>
+<statenode id='mutationRate.s:clownfish_mtdna'>mutationRate.s:clownfish_mtdna[1 1] (0.0,Infinity): 2.4414299273842706 </statenode>
+<statenode id='proportionInvariant.s:clownfish_chr02'>proportionInvariant.s:clownfish_chr02[1 1] (0.0,1.0): 0.7741556741235239 </statenode>
+<statenode id='gammaShape.s:clownfish_chr02'>gammaShape.s:clownfish_chr02[1 1] (0.001,1000.0): 0.6521420477406342 </statenode>
+<statenode id='freqParameter.s:clownfish_chr02'>freqParameter.s:clownfish_chr02[4 1] (0.0,1.0): 0.2694952012280688 0.25218856376971804 0.25838670007202846 0.21992953493018413 </statenode>
+<statenode id='rateAC.s:clownfish_chr02'>rateAC.s:clownfish_chr02[1 1] (0.001,Infinity): 0.9280287692476905 </statenode>
+<statenode id='rateAG.s:clownfish_chr02'>rateAG.s:clownfish_chr02[1 1] (0.001,Infinity): 3.4187285545465897 </statenode>
+<statenode id='rateAT.s:clownfish_chr02'>rateAT.s:clownfish_chr02[1 1] (0.001,Infinity): 1.3427063658331284 </statenode>
+<statenode id='rateCG.s:clownfish_chr02'>rateCG.s:clownfish_chr02[1 1] (0.001,Infinity): 0.7389437335218465 </statenode>
+<statenode id='rateGT.s:clownfish_chr02'>rateGT.s:clownfish_chr02[1 1] (0.001,Infinity): 1.0053595162929916 </statenode>
+<statenode id='proportionInvariant.s:clownfish_chr08'>proportionInvariant.s:clownfish_chr08[1 1] (0.0,1.0): 0.7814217618816289 </statenode>
+<statenode id='freqParameter.s:clownfish_chr08'>freqParameter.s:clownfish_chr08[4 1] (0.0,1.0): 0.2685443615707309 0.23167827427358587 0.23657112540776903 0.2632062387479143 </statenode>
+<statenode id='rateAC.s:clownfish_chr08'>rateAC.s:clownfish_chr08[1 1] (0.001,Infinity): 0.9455070944211003 </statenode>
+<statenode id='rateAG.s:clownfish_chr08'>rateAG.s:clownfish_chr08[1 1] (0.001,Infinity): 3.0527721833906627 </statenode>
+<statenode id='rateAT.s:clownfish_chr08'>rateAT.s:clownfish_chr08[1 1] (0.001,Infinity): 0.7194515744653754 </statenode>
+<statenode id='rateCG.s:clownfish_chr08'>rateCG.s:clownfish_chr08[1 1] (0.001,Infinity): 0.8919471114275613 </statenode>
+<statenode id='rateGT.s:clownfish_chr08'>rateGT.s:clownfish_chr08[1 1] (0.001,Infinity): 0.9901770755898883 </statenode>
+<statenode id='proportionInvariant.s:clownfish_chr10'>proportionInvariant.s:clownfish_chr10[1 1] (0.0,1.0): 0.8167593913551213 </statenode>
+<statenode id='freqParameter.s:clownfish_chr10'>freqParameter.s:clownfish_chr10[4 1] (0.0,1.0): 0.23762994963833145 0.2634719682116471 0.2584323506601351 0.2404657314898864 </statenode>
+<statenode id='rateAC.s:clownfish_chr10'>rateAC.s:clownfish_chr10[1 1] (0.001,Infinity): 0.77184951186539 </statenode>
+<statenode id='rateAG.s:clownfish_chr10'>rateAG.s:clownfish_chr10[1 1] (0.001,Infinity): 3.546607783185125 </statenode>
+<statenode id='rateAT.s:clownfish_chr10'>rateAT.s:clownfish_chr10[1 1] (0.001,Infinity): 1.2054123097682816 </statenode>
+<statenode id='rateCG.s:clownfish_chr10'>rateCG.s:clownfish_chr10[1 1] (0.001,Infinity): 0.6367805288696515 </statenode>
+<statenode id='rateGT.s:clownfish_chr10'>rateGT.s:clownfish_chr10[1 1] (0.001,Infinity): 0.9709181315481332 </statenode>
+<statenode id='proportionInvariant.s:clownfish_chr18'>proportionInvariant.s:clownfish_chr18[1 1] (0.0,1.0): 0.8322601538647454 </statenode>
+<statenode id='freqParameter.s:clownfish_chr18'>freqParameter.s:clownfish_chr18[4 1] (0.0,1.0): 0.2737211573810542 0.23318265392832188 0.23197978164098726 0.2611164070496361 </statenode>
+<statenode id='rateAC.s:clownfish_chr18'>rateAC.s:clownfish_chr18[1 1] (0.001,Infinity): 0.9669668586615832 </statenode>
+<statenode id='rateAG.s:clownfish_chr18'>rateAG.s:clownfish_chr18[1 1] (0.001,Infinity): 3.3666966203208286 </statenode>
+<statenode id='rateAT.s:clownfish_chr18'>rateAT.s:clownfish_chr18[1 1] (0.001,Infinity): 0.928918123599231 </statenode>
+<statenode id='rateCG.s:clownfish_chr18'>rateCG.s:clownfish_chr18[1 1] (0.001,Infinity): 0.9318958222124868 </statenode>
+<statenode id='rateGT.s:clownfish_chr18'>rateGT.s:clownfish_chr18[1 1] (0.001,Infinity): 1.0676099433953843 </statenode>
+<statenode id='proportionInvariant.s:clownfish_chr22'>proportionInvariant.s:clownfish_chr22[1 1] (0.0,1.0): 0.798029358862883 </statenode>
+<statenode id='freqParameter.s:clownfish_chr22'>freqParameter.s:clownfish_chr22[4 1] (0.0,1.0): 0.21936107294668752 0.2775254059278587 0.2668379550453324 0.23627556608012162 </statenode>
+<statenode id='rateAC.s:clownfish_chr22'>rateAC.s:clownfish_chr22[1 1] (0.001,Infinity): 0.802919847899178 </statenode>
+<statenode id='rateAG.s:clownfish_chr22'>rateAG.s:clownfish_chr22[1 1] (0.001,Infinity): 4.76539331366888 </statenode>
+<statenode id='rateAT.s:clownfish_chr22'>rateAT.s:clownfish_chr22[1 1] (0.001,Infinity): 0.7603351480206569 </statenode>
+<statenode id='rateCG.s:clownfish_chr22'>rateCG.s:clownfish_chr22[1 1] (0.001,Infinity): 0.682970544204069 </statenode>
+<statenode id='rateGT.s:clownfish_chr22'>rateGT.s:clownfish_chr22[1 1] (0.001,Infinity): 1.0371251235037908 </statenode>
+<statenode id='proportionInvariant.s:clownfish_mtdna'>proportionInvariant.s:clownfish_mtdna[1 1] (0.0,1.0): 0.5491722819267874 </statenode>
+<statenode id='freqParameter.s:clownfish_mtdna'>freqParameter.s:clownfish_mtdna[4 1] (0.0,1.0): 0.3124854910644009 0.29293534083674405 0.14246208954141276 0.2521170785574437 </statenode>
+<statenode id='rateAC.s:clownfish_mtdna'>rateAC.s:clownfish_mtdna[1 1] (0.001,Infinity): 1.838925017009117 </statenode>
+<statenode id='rateAG.s:clownfish_mtdna'>rateAG.s:clownfish_mtdna[1 1] (0.001,Infinity): 15.040322040670144 </statenode>
+<statenode id='rateAT.s:clownfish_mtdna'>rateAT.s:clownfish_mtdna[1 1] (0.001,Infinity): 1.8714854239177061 </statenode>
+<statenode id='rateCG.s:clownfish_mtdna'>rateCG.s:clownfish_mtdna[1 1] (0.001,Infinity): 0.6378421183663634 </statenode>
+<statenode id='rateGT.s:clownfish_mtdna'>rateGT.s:clownfish_mtdna[1 1] (0.001,Infinity): 0.857558898781015 </statenode>
+<statenode id='gammaShape.s:clownfish_mtdna'>gammaShape.s:clownfish_mtdna[1 1] (0.001,1000.0): 0.6893820236232101 </statenode>
+<statenode id='gammaShape.s:clownfish_chr22'>gammaShape.s:clownfish_chr22[1 1] (0.001,1000.0): 1.049929059915763 </statenode>
+<statenode id='gammaShape.s:clownfish_chr18'>gammaShape.s:clownfish_chr18[1 1] (0.001,1000.0): 0.6296165901571029 </statenode>
+<statenode id='gammaShape.s:clownfish_chr10'>gammaShape.s:clownfish_chr10[1 1] (0.001,1000.0): 0.7910022281598621 </statenode>
+<statenode id='gammaShape.s:clownfish_chr08'>gammaShape.s:clownfish_chr08[1 1] (0.001,1000.0): 0.687266464633404 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"clockUpDownOperator.c:clownfish_chr02","p":0.9403843523727473,"accept":6332,"reject":36516,"acceptFC":6245,"rejectFC":36465,"rejectIv":18782,"rejectOp":0},
+{"id":"TreeScaler.t:clownfish_chr02","p":0.9347792816730267,"accept":5504,"reject":37120,"acceptFC":5418,"rejectFC":37067,"rejectIv":17721,"rejectOp":0},
+{"id":"TreeRootScaler.t:clownfish_chr02","p":0.7852843506464383,"accept":6329,"reject":36181,"acceptFC":6320,"rejectFC":36053,"rejectIv":15255,"rejectOp":15244},
+{"id":"UniformOperator.t:clownfish_chr02","p":"NaN","accept":43463,"reject":170374,"acceptFC":43323,"rejectFC":169863,"rejectIv":32795,"rejectOp":0},
+{"id":"SubtreeSlide.t:clownfish_chr02","p":0.002026652529961687,"accept":47192,"reject":166221,"acceptFC":47061,"rejectFC":165673,"rejectIv":37135,"rejectOp":14817},
+{"id":"Narrow.t:clownfish_chr02","p":"NaN","accept":7248,"reject":205465,"acceptFC":7219,"rejectFC":204832,"rejectIv":84365,"rejectOp":0},
+{"id":"Wide.t:clownfish_chr02","p":"NaN","accept":185,"reject":213482,"acceptFC":185,"rejectFC":212779,"rejectIv":206447,"rejectOp":108989},
+{"id":"WilsonBalding.t:clownfish_chr02","p":"NaN","accept":186,"reject":213206,"acceptFC":186,"rejectFC":212503,"rejectIv":159685,"rejectOp":30040},
+{"id":"FixMeanMutationRatesOperator","p":0.15255874700984165,"accept":13227,"reject":86147,"acceptFC":13212,"rejectFC":85841,"rejectIv":18,"rejectOp":18},
+{"id":"clockUpDownOperator.c:clownfish_chr08","p":0.9369766439042398,"accept":6011,"reject":36597,"acceptFC":5930,"rejectFC":36553,"rejectIv":18751,"rejectOp":0},
+{"id":"TreeScaler.t:clownfish_chr08","p":0.9377400566845149,"accept":6101,"reject":37043,"acceptFC":6030,"rejectFC":36997,"rejectIv":17629,"rejectOp":0},
+{"id":"TreeRootScaler.t:clownfish_chr08","p":0.8102192780761363,"accept":5496,"reject":37507,"acceptFC":5485,"rejectFC":37392,"rejectIv":15628,"rejectOp":14622},
+{"id":"UniformOperator.t:clownfish_chr08","p":"NaN","accept":42330,"reject":170305,"acceptFC":42174,"rejectFC":169805,"rejectIv":44822,"rejectOp":0},
+{"id":"SubtreeSlide.t:clownfish_chr08","p":0.0021236247942474766,"accept":43791,"reject":169761,"acceptFC":43665,"rejectFC":169253,"rejectIv":41551,"rejectOp":17401},
+{"id":"Narrow.t:clownfish_chr08","p":"NaN","accept":9220,"reject":204179,"acceptFC":9184,"rejectFC":203533,"rejectIv":86324,"rejectOp":0},
+{"id":"Wide.t:clownfish_chr08","p":"NaN","accept":224,"reject":214009,"acceptFC":223,"rejectFC":213343,"rejectIv":207923,"rejectOp":109055},
+{"id":"WilsonBalding.t:clownfish_chr08","p":"NaN","accept":148,"reject":213671,"acceptFC":148,"rejectFC":213023,"rejectIv":166478,"rejectOp":29153},
+{"id":"clockUpDownOperator.c:clownfish_chr10","p":0.9440996921961243,"accept":7522,"reject":34990,"acceptFC":7445,"rejectFC":34933,"rejectIv":18078,"rejectOp":0},
+{"id":"TreeScaler.t:clownfish_chr10","p":0.9454243418513324,"accept":7569,"reject":34834,"acceptFC":7491,"rejectFC":34775,"rejectIv":16629,"rejectOp":0},
+{"id":"TreeRootScaler.t:clownfish_chr10","p":0.7479787031967531,"accept":6928,"reject":35925,"acceptFC":6913,"rejectFC":35797,"rejectIv":12904,"rejectOp":12904},
+{"id":"UniformOperator.t:clownfish_chr10","p":"NaN","accept":41701,"reject":171669,"acceptFC":41543,"rejectFC":171196,"rejectIv":33255,"rejectOp":0},
+{"id":"SubtreeSlide.t:clownfish_chr10","p":0.0021179239692677623,"accept":52176,"reject":161396,"acceptFC":52031,"rejectFC":160867,"rejectIv":35346,"rejectOp":14479},
+{"id":"Narrow.t:clownfish_chr10","p":"NaN","accept":7334,"reject":206564,"acceptFC":7294,"rejectFC":205947,"rejectIv":89098,"rejectOp":0},
+{"id":"Wide.t:clownfish_chr10","p":"NaN","accept":167,"reject":213791,"acceptFC":166,"rejectFC":213135,"rejectIv":207801,"rejectOp":108859},
+{"id":"WilsonBalding.t:clownfish_chr10","p":"NaN","accept":178,"reject":213233,"acceptFC":177,"rejectFC":212610,"rejectIv":159773,"rejectOp":30483},
+{"id":"clockUpDownOperator.c:clownfish_chr18","p":0.9400714062177826,"accept":5861,"reject":36943,"acceptFC":5773,"rejectFC":36880,"rejectIv":19002,"rejectOp":0},
+{"id":"TreeScaler.t:clownfish_chr18","p":0.9466431864115566,"accept":6548,"reject":35929,"acceptFC":6474,"rejectFC":35875,"rejectIv":17012,"rejectOp":0},
+{"id":"TreeRootScaler.t:clownfish_chr18","p":0.7772845613287059,"accept":5264,"reject":37323,"acceptFC":5258,"rejectFC":37192,"rejectIv":15340,"rejectOp":14633},
+{"id":"UniformOperator.t:clownfish_chr18","p":"NaN","accept":42048,"reject":171483,"acceptFC":41899,"rejectFC":170988,"rejectIv":42080,"rejectOp":0},
+{"id":"SubtreeSlide.t:clownfish_chr18","p":0.0019374839063803395,"accept":53064,"reject":161211,"acceptFC":52915,"rejectFC":160654,"rejectIv":34472,"rejectOp":12955},
+{"id":"Narrow.t:clownfish_chr18","p":"NaN","accept":6488,"reject":206572,"acceptFC":6450,"rejectFC":205909,"rejectIv":94343,"rejectOp":0},
+{"id":"Wide.t:clownfish_chr18","p":"NaN","accept":150,"reject":213273,"acceptFC":149,"rejectFC":212616,"rejectIv":207167,"rejectOp":108978},
+{"id":"WilsonBalding.t:clownfish_chr18","p":"NaN","accept":233,"reject":212736,"acceptFC":231,"rejectFC":212135,"rejectIv":165321,"rejectOp":29162},
+{"id":"clockUpDownOperator.c:clownfish_chr22","p":0.9391783527063652,"accept":5405,"reject":37325,"acceptFC":5300,"rejectFC":37264,"rejectIv":19428,"rejectOp":0},
+{"id":"TreeScaler.t:clownfish_chr22","p":0.9396132337091845,"accept":5277,"reject":37534,"acceptFC":5187,"rejectFC":37486,"rejectIv":18120,"rejectOp":0},
+{"id":"TreeRootScaler.t:clownfish_chr22","p":0.7961706140134137,"accept":6284,"reject":36150,"acceptFC":6268,"rejectFC":36045,"rejectIv":14317,"rejectOp":14317},
+{"id":"UniformOperator.t:clownfish_chr22","p":"NaN","accept":40727,"reject":173008,"acceptFC":40550,"rejectFC":172513,"rejectIv":40725,"rejectOp":0},
+{"id":"SubtreeSlide.t:clownfish_chr22","p":0.0024627326336873275,"accept":48446,"reject":165771,"acceptFC":48278,"rejectFC":165272,"rejectIv":47720,"rejectOp":20358},
+{"id":"Narrow.t:clownfish_chr22","p":"NaN","accept":12414,"reject":201084,"acceptFC":12357,"rejectFC":200461,"rejectIv":56935,"rejectOp":0},
+{"id":"Wide.t:clownfish_chr22","p":"NaN","accept":278,"reject":213520,"acceptFC":278,"rejectFC":212847,"rejectIv":204990,"rejectOp":109211},
+{"id":"WilsonBalding.t:clownfish_chr22","p":"NaN","accept":187,"reject":213164,"acceptFC":184,"rejectFC":212530,"rejectIv":152435,"rejectOp":28920},
+{"id":"clockUpDownOperator.c:clownfish_mtdna","p":0.9652676538881131,"accept":5962,"reject":37039,"acceptFC":5906,"rejectFC":36948,"rejectIv":18639,"rejectOp":0},
+{"id":"TreeScaler.t:clownfish_mtdna","p":0.9622501822610711,"accept":5188,"reject":37500,"acceptFC":5128,"rejectFC":37423,"rejectIv":18146,"rejectOp":0},
+{"id":"TreeRootScaler.t:clownfish_mtdna","p":0.8333281621453164,"accept":4777,"reject":37676,"acceptFC":4765,"rejectFC":37545,"rejectIv":10978,"rejectOp":10978},
+{"id":"UniformOperator.t:clownfish_mtdna","p":"NaN","accept":22250,"reject":191215,"acceptFC":22175,"rejectFC":190655,"rejectIv":37701,"rejectOp":0},
+{"id":"SubtreeSlide.t:clownfish_mtdna","p":0.0014290274369078584,"accept":36441,"reject":177166,"acceptFC":36296,"rejectFC":176655,"rejectIv":60173,"rejectOp":28747},
+{"id":"Narrow.t:clownfish_mtdna","p":"NaN","accept":266,"reject":213713,"acceptFC":255,"rejectFC":213058,"rejectIv":107912,"rejectOp":0},
+{"id":"Wide.t:clownfish_mtdna","p":"NaN","accept":5,"reject":212989,"acceptFC":5,"rejectFC":212329,"rejectIv":208278,"rejectOp":108418},
+{"id":"WilsonBalding.t:clownfish_mtdna","p":"NaN","accept":12,"reject":212953,"acceptFC":10,"rejectFC":212304,"rejectIv":155689,"rejectOp":27895},
+{"id":"proportionInvariantScaler.s:clownfish_chr02","p":0.9237538102067128,"accept":2000,"reject":12355,"acceptFC":1993,"rejectFC":12316,"rejectIv":1,"rejectOp":1},
+{"id":"gammaShapeScaler.s:clownfish_chr02","p":0.6736929684063447,"accept":3270,"reject":10783,"acceptFC":3249,"rejectFC":10756,"rejectIv":0,"rejectOp":0},
+{"id":"FrequenciesExchanger.s:clownfish_chr02","p":0.04249351057064778,"accept":1900,"reject":19713,"acceptFC":1897,"rejectFC":19645,"rejectIv":0,"rejectOp":0},
+{"id":"RateACScaler.s:clownfish_chr02","p":0.6477705603098952,"accept":3202,"reject":10887,"acceptFC":3190,"rejectFC":10869,"rejectIv":0,"rejectOp":0},
+{"id":"RateAGScaler.s:clownfish_chr02","p":0.7287987438441602,"accept":3185,"reject":10984,"acceptFC":3168,"rejectFC":10943,"rejectIv":0,"rejectOp":0},
+{"id":"RateATScaler.s:clownfish_chr02","p":0.6427259760782265,"accept":3468,"reject":10785,"acceptFC":3452,"rejectFC":10761,"rejectIv":0,"rejectOp":0},
+{"id":"RateCGScaler.s:clownfish_chr02","p":0.6471810605676453,"accept":3419,"reject":10734,"acceptFC":3403,"rejectFC":10709,"rejectIv":0,"rejectOp":0},
+{"id":"RateGTScaler.s:clownfish_chr02","p":0.6572983900311491,"accept":3788,"reject":10345,"acceptFC":3767,"rejectFC":10322,"rejectIv":0,"rejectOp":0},
+{"id":"proportionInvariantScaler.s:clownfish_chr08","p":0.9219032037168708,"accept":2083,"reject":12436,"acceptFC":2080,"rejectFC":12385,"rejectIv":4,"rejectOp":4},
+{"id":"FrequenciesExchanger.s:clownfish_chr08","p":0.03576570699955878,"accept":2292,"reject":19067,"acceptFC":2288,"rejectFC":19010,"rejectIv":0,"rejectOp":0},
+{"id":"RateACScaler.s:clownfish_chr08","p":0.6626111478394516,"accept":3507,"reject":10777,"acceptFC":3490,"rejectFC":10757,"rejectIv":0,"rejectOp":0},
+{"id":"RateAGScaler.s:clownfish_chr08","p":0.7312703665669624,"accept":3488,"reject":10644,"acceptFC":3477,"rejectFC":10601,"rejectIv":0,"rejectOp":0},
+{"id":"RateATScaler.s:clownfish_chr08","p":0.6475448995808749,"accept":3735,"reject":10442,"acceptFC":3715,"rejectFC":10416,"rejectIv":0,"rejectOp":0},
+{"id":"RateCGScaler.s:clownfish_chr08","p":0.6486954115905958,"accept":3624,"reject":10715,"acceptFC":3611,"rejectFC":10684,"rejectIv":0,"rejectOp":0},
+{"id":"RateGTScaler.s:clownfish_chr08","p":0.6414435325176896,"accept":3345,"reject":10848,"acceptFC":3331,"rejectFC":10808,"rejectIv":0,"rejectOp":0},
+{"id":"proportionInvariantScaler.s:clownfish_chr10","p":0.8997359004955965,"accept":1241,"reject":13045,"acceptFC":1237,"rejectFC":12991,"rejectIv":21,"rejectOp":21},
+{"id":"FrequenciesExchanger.s:clownfish_chr10","p":0.03742066177764185,"accept":2185,"reject":19008,"acceptFC":2183,"rejectFC":18946,"rejectIv":0,"rejectOp":0},
+{"id":"RateACScaler.s:clownfish_chr10","p":0.6056384276452305,"accept":3474,"reject":10923,"acceptFC":3459,"rejectFC":10893,"rejectIv":0,"rejectOp":0},
+{"id":"RateAGScaler.s:clownfish_chr10","p":0.7262031806215243,"accept":3696,"reject":10665,"acceptFC":3678,"rejectFC":10635,"rejectIv":0,"rejectOp":0},
+{"id":"RateATScaler.s:clownfish_chr10","p":0.6121627565072285,"accept":3560,"reject":10656,"acceptFC":3542,"rejectFC":10624,"rejectIv":0,"rejectOp":0},
+{"id":"RateCGScaler.s:clownfish_chr10","p":0.6294416194284876,"accept":3536,"reject":10644,"acceptFC":3518,"rejectFC":10616,"rejectIv":0,"rejectOp":0},
+{"id":"RateGTScaler.s:clownfish_chr10","p":0.6426784110540552,"accept":3514,"reject":10575,"acceptFC":3493,"rejectFC":10548,"rejectIv":0,"rejectOp":0},
+{"id":"proportionInvariantScaler.s:clownfish_chr18","p":0.9037576681684747,"accept":1181,"reject":13002,"acceptFC":1177,"rejectFC":12963,"rejectIv":30,"rejectOp":30},
+{"id":"FrequenciesExchanger.s:clownfish_chr18","p":0.046104992182792036,"accept":1726,"reject":19519,"acceptFC":1722,"rejectFC":19456,"rejectIv":0,"rejectOp":0},
+{"id":"RateACScaler.s:clownfish_chr18","p":0.64513678281625,"accept":3390,"reject":10817,"acceptFC":3376,"rejectFC":10785,"rejectIv":0,"rejectOp":0},
+{"id":"RateAGScaler.s:clownfish_chr18","p":0.7192574255796348,"accept":3199,"reject":11114,"acceptFC":3184,"rejectFC":11074,"rejectIv":0,"rejectOp":0},
+{"id":"RateATScaler.s:clownfish_chr18","p":0.6451394339486803,"accept":3520,"reject":10517,"acceptFC":3497,"rejectFC":10501,"rejectIv":0,"rejectOp":0},
+{"id":"RateCGScaler.s:clownfish_chr18","p":0.6629982920404486,"accept":3875,"reject":10342,"acceptFC":3865,"rejectFC":10318,"rejectIv":0,"rejectOp":0},
+{"id":"RateGTScaler.s:clownfish_chr18","p":0.6476900686782273,"accept":3407,"reject":10821,"acceptFC":3393,"rejectFC":10788,"rejectIv":0,"rejectOp":0},
+{"id":"proportionInvariantScaler.s:clownfish_chr22","p":0.8945404572452665,"accept":2263,"reject":11874,"acceptFC":2257,"rejectFC":11835,"rejectIv":0,"rejectOp":0},
+{"id":"FrequenciesExchanger.s:clownfish_chr22","p":0.04002963376196016,"accept":2142,"reject":19218,"acceptFC":2139,"rejectFC":19153,"rejectIv":0,"rejectOp":0},
+{"id":"RateACScaler.s:clownfish_chr22","p":0.570113095808752,"accept":3976,"reject":10255,"acceptFC":3954,"rejectFC":10233,"rejectIv":0,"rejectOp":0},
+{"id":"RateAGScaler.s:clownfish_chr22","p":0.6545680539168065,"accept":3087,"reject":11061,"acceptFC":3079,"rejectFC":11032,"rejectIv":0,"rejectOp":0},
+{"id":"RateATScaler.s:clownfish_chr22","p":0.4931362322697864,"accept":3781,"reject":10485,"acceptFC":3757,"rejectFC":10471,"rejectIv":0,"rejectOp":0},
+{"id":"RateCGScaler.s:clownfish_chr22","p":0.5981641546663916,"accept":3898,"reject":10259,"acceptFC":3881,"rejectFC":10230,"rejectIv":0,"rejectOp":0},
+{"id":"RateGTScaler.s:clownfish_chr22","p":0.572810869504227,"accept":3813,"reject":10606,"acceptFC":3795,"rejectFC":10591,"rejectIv":0,"rejectOp":0},
+{"id":"proportionInvariantScaler.s:clownfish_mtdna","p":0.8990942047589742,"accept":2282,"reject":11908,"acceptFC":2278,"rejectFC":11871,"rejectIv":0,"rejectOp":0},
+{"id":"FrequenciesExchanger.s:clownfish_mtdna","p":0.0356218700810039,"accept":1801,"reject":19588,"acceptFC":1794,"rejectFC":19527,"rejectIv":4,"rejectOp":4},
+{"id":"RateACScaler.s:clownfish_mtdna","p":0.7607712383505153,"accept":3057,"reject":11099,"acceptFC":3042,"rejectFC":11066,"rejectIv":0,"rejectOp":0},
+{"id":"RateAGScaler.s:clownfish_mtdna","p":0.8095681445001389,"accept":3299,"reject":11024,"acceptFC":3286,"rejectFC":11002,"rejectIv":0,"rejectOp":0},
+{"id":"RateATScaler.s:clownfish_mtdna","p":0.7266055077270475,"accept":2878,"reject":11189,"acceptFC":2866,"rejectFC":11160,"rejectIv":0,"rejectOp":0},
+{"id":"RateCGScaler.s:clownfish_mtdna","p":0.5371502807996119,"accept":3878,"reject":10340,"acceptFC":3850,"rejectFC":10323,"rejectIv":0,"rejectOp":0},
+{"id":"RateGTScaler.s:clownfish_mtdna","p":0.5622919306495409,"accept":3724,"reject":10527,"acceptFC":3691,"rejectFC":10506,"rejectIv":0,"rejectOp":0},
+{"id":"gammaShapeScaler.s:clownfish_mtdna","p":0.7775832004114572,"accept":2971,"reject":11168,"acceptFC":2961,"rejectFC":11136,"rejectIv":0,"rejectOp":0},
+{"id":"gammaShapeScaler.s:clownfish_chr22","p":0.5614449622822366,"accept":4013,"reject":10289,"acceptFC":3989,"rejectFC":10262,"rejectIv":0,"rejectOp":0},
+{"id":"gammaShapeScaler.s:clownfish_chr18","p":0.6880813668058424,"accept":3660,"reject":10451,"acceptFC":3648,"rejectFC":10429,"rejectIv":0,"rejectOp":0},
+{"id":"gammaShapeScaler.s:clownfish_chr10","p":0.6640103622678647,"accept":3883,"reject":10398,"acceptFC":3864,"rejectFC":10373,"rejectIv":0,"rejectOp":0},
+{"id":"gammaShapeScaler.s:clownfish_chr08","p":0.6565724559481431,"accept":3484,"reject":10916,"acceptFC":3468,"rejectFC":10896,"rejectIv":0,"rejectOp":0},
+{"id":"popMeanScale.Species","p":0.4318503819691445,"accept":2625,"reject":7656,"acceptFC":2607,"rejectFC":7643,"rejectIv":0,"rejectOp":0},
+{"id":"Reheight.t:Species","p":"NaN","accept":273854,"reject":499724,"acceptFC":272283,"rejectFC":498976,"rejectIv":0,"rejectOp":0},
+{"id":"coordinatedUniform.t:Species","p":"NaN","accept":24523,"reject":130122,"acceptFC":24194,"rejectFC":129996,"rejectIv":0,"rejectOp":0},
+{"id":"coordinatedExponential.t:Species","p":0.0010188479130908612,"accept":42172,"reject":112122,"acceptFC":42009,"rejectFC":111796,"rejectIv":0,"rejectOp":0},
+{"id":"SubtreeSlide.t:Species","p":0.001843620949197324,"accept":27817,"reject":127412,"acceptFC":27727,"rejectFC":127038,"rejectIv":91747,"rejectOp":28462},
+{"id":"WilsonBalding.t:Species","p":"NaN","accept":374,"reject":154457,"acceptFC":288,"rejectFC":154023,"rejectIv":143264,"rejectOp":20718},
+{"id":"Wide.t:Species","p":"NaN","accept":417,"reject":154113,"acceptFC":353,"rejectFC":153689,"rejectIv":154005,"rejectOp":78998},
+{"id":"Narrow.t:Species","p":"NaN","accept":14049,"reject":140855,"acceptFC":13608,"rejectFC":140779,"rejectIv":136131,"rejectOp":0},
+{"id":"UniformOperator.t:Species","p":"NaN","accept":26317,"reject":127791,"acceptFC":25897,"rejectFC":127701,"rejectIv":81284,"rejectOp":0},
+{"id":"TreeRootScaler.t:Species","p":0.8468999446609127,"accept":3534,"reject":27579,"acceptFC":3525,"rejectFC":27501,"rejectIv":22844,"rejectOp":8057},
+{"id":"TreeScaler.t:Species","p":0.9857348404583173,"accept":2833,"reject":28145,"acceptFC":2791,"rejectFC":28084,"rejectIv":14094,"rejectOp":0},
+{"id":"speciationRateScale.t:Species","p":0.35146033420157813,"accept":2527,"reject":7680,"acceptFC":2508,"rejectFC":7663,"rejectIv":0,"rejectOp":0},
+{"id":"updownAll:Species","p":0.9151368466006898,"accept":11771,"reject":50414,"acceptFC":11758,"rejectFC":50215,"rejectIv":0,"rejectOp":0}
+]}
+-->

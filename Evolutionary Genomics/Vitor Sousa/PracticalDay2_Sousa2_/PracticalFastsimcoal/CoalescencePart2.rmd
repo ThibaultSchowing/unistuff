@@ -1,0 +1,373 @@
+---
+title: "ExercisePart2Sousa"
+author: "Thibault Schowing"
+date: "12/03/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 2
+
+
+```{r}
+# install scrm package
+#install.packages("diagram")
+#install.packages("plotrix")
+
+# Load the package
+library("diagram")
+library("plotrix")
+
+```
+
+# Objectives of this practical session
+1. What is the SFS?
+* Build the derived SFS from genotypic data
+* Multi-dimensional SFS (2D-SFS)
+2. Does the SFS contain information about demography?
+* Infer parameters under simple models with fastsimcoal2 with simulated data
+3.Application to real data from human populations (OPTIONAL)
+* Apply fastsimcoal2 for a model with two populations
+* Compare results with and without gene flow
+
+# 1. What is the site frequency spectrum (SFS)?
+
+The SFS (also called Allele frequency spectrum - AFS) is a summary of genome-wide data that describes the number of single nucleotide polymorphisms (SNPs) with a given derived allele frequency in our sample.
+
+## 1.1. Multi-dimensional SFS (2D-SFS)
+
+The SFS can be extended to any number of populations. For instance, if we had sampled data from two populations, the 2D-SFS corresponds to a matrix where the entry (i,j) corresponds to the count of genomic sites (SNPs) with a derived allele frequency of i in population 1, and frequency j in population 2.
+
+Consider the following genotype matrix for 12 SNPs genotyped at 5 individuals from 2 populations, 2 diploid individuals from Pop1, and 3 diploid individuals from Pop2. Each row corresponds to one individual and each column to one SNP. Genotypes are coded as 0, 1, 2 as in Exercise 1.1.
+
+
+
+The 2D SFS can be seen as a matrix. Before starting answer the following questions:
+
+* How many rows has the 2D SFS for this dataset? What determines the number of rows?
+
+7 rows (from 0 to 6), 
+
+* How many columns has this 2D SFS for this dataset? What determines the number of columns?
+
+5 columns (from 0 to 4)
+
+* What is the range of possible values for each entry of the matrix?
+
+From 0 to 12, it is the number of site with the pop1/pop2 allele frequency. (Independent from the site)
+
+
+First, you need to compute the absolute allele frequency for each SNP in each population.
+
+Second, you need to count the number of sites with a given allele frequency in each population.
+
+
+
+| Pop2  | Pop1 	|   	|   	|   	|   	|
+|:----:	|:----:	|:-:	|:-:	|:-:	|:-:	|
+|      	|   0  	| 1 	| 2 	| 3 	| 4 	|
+|   0  	|   2  	| 1 	| 0 	| 0 	| 0 	|
+|   1  	|   2  	| 2 	| 1 	| 0 	| 0 	|
+|   2  	|   1  	| 2 	| 0 	| 0 	| 0 	|
+|   3  	|   0  	| 0 	| 0 	| 0 	| 0 	|
+|   4  	|   0  	| 1 	| 0 	| 0 	| 0 	|
+|   5  	|   0  	| 0 	| 0 	| 0 	| 0 	|
+|   6  	|   0  	| 0 	| 0 	| 0 	| 0 	|
+
+
+bad SFS because most of the entries are 0
+
+
+
+## Example of a 2D-SFS
+
+The *not* following matrix contains the 2D-SFS of 50,000 simulated sites from two populations, with a sample size of 2 diploids for pop1 and 3 diploids for pop2. Hence, we have 5 rows and 7 columns. Each entry (i,j) contains the number of SNPs with a derived allele frequency of i in pop1, and j in pop2. The sum of the entries in this matrix is the total number os sites, which in this case is 50,000.
+
+## Exercise 1.2 (5 min)
+Based on the above matrix, answer the following questions.
+
+* How many sites have 1 heterozygote individual in pop1 and 1 heterozygote individual in pop2?
+
+Take the intersection of row[1] and col[1] -> 2005
+
+
+
+* How many sites have a derived allele frequency of 4 in pop1 and a derived allele frequency of 4 in pop2?
+
+
+Intersection of row[4] and col[4] -> 407
+
+
+# 2. Does the SFS contain information about demography?
+## 2.1. Infer parameters under simple models with fastsimcoal2 with simulated data
+
+We will analyse data simulated according to the following model. (not here)
+
+
+
+
+```{r}
+# read the observed SFS
+# 2D from two populations with different Ne that diverged some time ago
+pop2d <- read.table("./FscInputFiles/2PopDiv20Mb_jointDAFpop1_0.obs", skip=1, stringsAsFactors = F, header=T, row.names = 1)
+```
+
+
+
+2.1.2. Input files: DEFINITION OF MODELS
+The model is defined in a TPL file, and the search range for the parameters are defined in the EST file.
+
+2.1.3 Settings to run fastsimcoal2
+To run fastsimcoal2 we need to specify:
+- the number of coalescent simulations to approximate the expected SFS (-n and -N option). This should be larger than 100,000.
+- the number of optimization cycles (-l and -L option). This should be at least 20, but values between 50 and 100 are recommended.
+
+2.2. Run fastsimcoal2 from R
+The following scripts will run 1 fastsimcoal2 optimization, starting from a random initial starting value. When dealing with real data one needs to repeat at least 20-100 runs (i.e. runs with different initial starting values), selecting the run that maximizes the likelihood.
+
+
+```{r}
+# load functions to run fastsimcoal2 and to process the output 
+source("utilFscFunctions.r")
+source("ParFileInterpreter-VS1.r")
+
+# create a list that saves all the required settings to run fastsimcoal2
+settings <- list()
+# path to fastsicoal2 executable file
+settings$pathToFsc <- "./fastsimcoal2/fsc_linux64/"
+# path to input files (working directory)
+settings$pathTo_InputFile <- "./FscInputFiles/"
+# path to TPL and EST file (tags)
+settings$TPL_EST_file_tag <- "2PopDiv20Mb"
+# number of coalescent simulations
+settings$n_coalsims <- 100000
+# number of optimization cycles
+settings$n_cycles <- 20
+
+# run fastsimcoal2
+#run_fsc2(settings)
+
+# get the command line to run fastsimcoal2
+cmd <- get_fsc2_commandline(settings)
+cmd
+```
+
+```{r}
+# STOP HERE!!!!
+# You need to run this in a command line (cmd in Windows) or in a Unix terminal in Linux or Mac.
+
+
+```
+
+
+
+```
+C:\Users\...\FscInputFiles>fsc26  -t 2PopDiv20Mb.tpl -e 2PopDiv20Mb.est -L 20 -n 100000 -d -M -q -C1 -c2 -B2;
+fastsimcoal was invoked with the following command line arguments:
+fsc26 -t 2PopDiv20Mb.tpl -e 2PopDiv20Mb.est -L 20 -n 100000 -d -M -q -C1 -c2 -B2;
+Invalid number of batches (2;), setting it to default value of 12)
+
+Random generator seed : 915281
+
+No population growth detected in input file
+
+Estimating model parameters using 12 batches and 2 threads
+
+Estimation of parameters by conditional maximization via Brent algorithm (initial lhood = -1.0548e+006)
+
+Iter 1  Curr best params:       1792    1348    16919   235     lhood=-138763
+
+Iter 2  Curr best params:       2425    950     11579   157     lhood=-137566
+
+Iter 3  Curr best params:       4464    886     11361   170     lhood=-137523
+
+Iter 4  Curr best params:       6552    877     11087   179     lhood=-137517
+
+Iter 5  Curr best params:       6552    995     11087   200     lhood=-137508
+
+Iter 6  Curr best params:       5597    1143    11208   234     lhood=-137503
+
+Iter 7  Curr best params:       6881    1276    11095   256     lhood=-137491
+
+Iter 8  Curr best params:       8059    1518    10984   324     lhood=-137473
+
+Iter 9  Curr best params:       12428   1845    10874   401     lhood=-137450
+
+Iter 10 Curr best params:       12658   2181    10736   483     lhood=-137432
+
+Iter 11 Curr best params:       17553   2555    10623   557     lhood=-137414
+
+Iter 12 Curr best params:       16523   2925    10623   619     lhood=-137399
+
+Iter 13 Curr best params:       14254   3295    10516   679     lhood=-137388
+
+Iter 14 Curr best params:       16908   3604    10239   791     lhood=-137377
+
+Iter 15 Curr best params:       19038   4166    10136   857     lhood=-137366
+
+Iter 16 Curr best params:       19038   4477    10034   903     lhood=-137364
+
+Iter 17 Curr best params:       19732   4477    10034   903     lhood=-137363
+
+Iter 18 Curr best params:       19138   4669    10034   916     lhood=-137362
+
+Iter 19 Curr best params:       18740   4823    10034   957     lhood=-137362
+
+Iter 20 Curr best params:       19495   4961    9933    986     lhood=-137361
+
+Program total execution time: 141.687 seconds
+
+```
+
+
+
+```{r}
+# Once you run it, you can read the results.
+# read the file with the maximum likelihood estimates
+maxlhoodEstimates <- read.table(paste(settings$pathTo_InputFile, "/",
+                                      settings$TPL_EST_file_tag, "/",
+                                      settings$TPL_EST_file_tag, ".bestlhoods",
+                                      sep=""), header=T)
+# look at the parameter estimates
+maxlhoodEstimates
+```
+
+
+
+```{r}
+# Read the observed SFS
+obsfileend <- "_jointDAFpop1_0"
+pop2d <- read.table(paste(settings$pathTo_InputFile,
+                    settings$TPL_EST_file_tag, obsfileend, ".obs",
+                    sep=""), skip=1, stringsAsFactors = F, header=T)
+# Read the expected SFS
+expectedSFS <- read.table(paste(settings$pathTo_InputFile,
+                    settings$TPL_EST_file_tag, "/",
+                    settings$TPL_EST_file_tag, obsfileend, ".txt",
+                    sep=""), header=T)
+
+# discard the monomorphic sites from the observed SFS
+pol_obs_2d <- as.matrix(pop2d)
+# observed SFS just with SNPs (polymorphic sites)
+pol_obs_2d[c(1,1)] <- 0
+# get the marginal 1d sfs for pop 1
+marginal1d_sfs <- rowSums(pol_obs_2d)
+exp.marginal1d_sfs <- rowSums(expectedSFS)
+# Plot the observed vs expected SFS
+plot_fitSFS_1d(marginal1d_sfs, exp.marginal1d_sfs, c(1,max(marginal1d_sfs)*1.1), "pop1") 
+```
+
+
+
+```{r}
+# get the marginal 1d sfs for pop 2
+marginal1d_sfs <- colSums(pol_obs_2d)
+exp.marginal1d_sfs <- colSums(expectedSFS)
+# Plot the observed vs expected SFS
+plot_fitSFS_1d(marginal1d_sfs, exp.marginal1d_sfs, c(1,max(marginal1d_sfs)*1.1), "pop2") 
+```
+
+
+
+RESULTS of 1 run
+What is the MaxObsLhood and the MaxEstLhood?
+
+
+MaxObsLhood: is the maximum possible value for the likelihood if there was a perfect fit of the expected to the observed SFS, i.e. if the expected SFS was the relative observed SFS.
+
+MaxEstLhood: is the maximum likelihood estimated according to the model parameters.
+
+The better the fit, the smaller the difference between MaxObsLhood and MaxEstLhood
+
+DISCUSSION
+- Is the method able to infer the correct parameters?
+
+Yes (check the picture in the .html to have the real model). We are very close to the real model !!
+
+
+- Does the expected SFS fit the observed SFS?
+
+
+Yeah pretty well !!
+
+
+
+
+
+
+# 3. Application to real data from human population (OPTIONAL)
+## 3.1. Apply fastsimcoal2 for a model with two populations
+
+The folder “/Henn_et_al_data” contains exome data from two human populations (Namibian San, SAN; https://en.wikipedia.org/wiki/San_people, and Mexican Mayan, MAYA, https://en.wikipedia.org/wiki/Maya_peoples) published in Henn et al. (2015) PNAS (http://www.pnas.org/content/113/4/E440.abstract). This data was kindly provided by Stephan Peischl (http://www.bioinformatics.unibe.ch/about_us/staff/dr_peischl_stephan/index_eng.html), and cannot be used outside the scope of this course.
+
+The folder “/Henn_et_al_data” contains the following files:
+- 2D-SFS for the two populations, assuming that we sequenced a total of 44Mb
+- Original genotypic matrix
+- TPL and EST files for a model without gene flow
+
+## Exercise 3
+
+
+3.1. Infer the time of divergence between two human populations, San from Africa and Maya from America
+- Start by considering a model without gene flow.
+- Then, consider a model with gene flow.
+
+
+What is the effect of adding gene flow into the model? What is the model that better fits the data?
+
+
+```{r}
+# load functions to run fastsimcoal2 and to process the output 
+source("utilFscFunctions.r")
+source("ParFileInterpreter-VS1.r")
+
+# create a list that saves all the required settings to run fastsimcoal2
+settings <- list()
+# path to fastsicoal2 executable file
+settings$pathToFsc <- "./fastsimcoal2/fsc_linux64/"
+# path to input files (working directory)
+settings$pathTo_InputFile <- "./Henn_et_al_data/"
+# path to TPL and EST file (tags)
+settings$TPL_EST_file_tag <- "NoMig_San_Maya"
+# number of coalescent simulations
+settings$n_coalsims <- 100000
+# number of optimization cycles
+settings$n_cycles <- 20
+
+# run fastsimcoal2
+# run_fsc2(settings)
+
+# get the command line to run fastsimcoal2
+cmd <- get_fsc2_commandline(settings)
+cmd
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
