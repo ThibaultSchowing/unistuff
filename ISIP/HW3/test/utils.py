@@ -29,6 +29,12 @@ def compute_ssd(patch, mask, texture, patch_half_size):
     # Outputs:
     #   ssd: numpy array of size (tex_rows - 2 * patch_half_size, tex_cols - 2 * patch_half_size)
     
+    # DEBUG
+    #print("COMPUTE SSD")
+    #print("patch type: ", str(type(patch)), " - patch shape: ", patch.shape)
+    #print("mask type: ", str(type(mask)))
+    #print("texture shape: ", np.shape(texture))
+    
     patch_rows, patch_cols = np.shape(patch)[0],np.shape(patch)[1]
     
     assert patch_rows == 2 * patch_half_size + 1 and patch_cols == 2 * patch_half_size + 1, "patch size and patch_half_size do not match"
@@ -42,16 +48,21 @@ def compute_ssd(patch, mask, texture, patch_half_size):
     # Loop center point  of SSD in texture
     for center_i in range(patch_half_size, tex_rows - patch_half_size):
         for center_j in range(patch_half_size, tex_cols - patch_half_size):
+            #print("Loop: ", center_i, " - ", center_j)
             
-            tmp_texture = np.array(texture[center_i - patch_half_size:center_i + patch_half_size + 1, 
-                                           center_j - patch_half_size:center_j + patch_half_size + 1])
+            # tmp texture part
+            tmp_texture = np.array(texture[center_i-patch_half_size:center_i+patch_half_size+1, center_j-patch_half_size:center_j+patch_half_size+1])
             tmp_texture[mask] = [0,0,0]
+            
+            #print("tmp_texture shape: ", tmp_texture.shape)
+            #print("patch shape: ",  patch.shape)
+            
+            # compare tmp_texture and patch, both with a black area 
             
             ssd[center_i-patch_half_size, center_j-patch_half_size] = ((tmp_texture - patch)**2).sum()
             
             # contains big values and zeros (we want the smallest of the big values)
-            
-    ssd = ssd[np.where(np.all(ssd == [0,0,0], axis=-1),np.inf,ssd)]
+    
     return ssd
 
 

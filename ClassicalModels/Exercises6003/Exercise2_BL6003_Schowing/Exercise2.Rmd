@@ -1,0 +1,290 @@
+---
+title: 'Series 2: SI model'
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## Thibault Schowing (13-870-365)
+
+## Classical models in biology (exercises) BL.6003
+
+# SI model
+
+
+
+
+
+
+```{r}
+library(deSolve)
+library(ggplot2)
+library(tidyr)
+#?ode
+```
+
+### Phase space and vector field
+
+We aim at using the ode45 solver to integrate numerically the Kermack-McKendrick epidemic model. We will represent the vector field of the system in the phase space. Here the model's phase space is represented for the following parameters values:
+
+
+* Infection rate: $\beta = 0.1$ 
+* Recovery/death rate:  $\alpha = 1$
+
+
+Note: the notation used is from the slides (2020) and not from the exercises.
+
+
+```{r}
+# Parameters
+p <- list(beta = 0.1, alpha = 1)
+
+# Derivative
+f <- function(t,N,p){
+  S <- N[1]
+  I <- N[2]
+  dS <- -p$beta * S * I
+  dI <- p$beta * S * I - p$alpha * I
+  return(list(c(dS,dI)))
+}
+
+time_steps <- seq(0,50,0.05)
+
+# Initial states
+N0 <- c(30,4)
+N1 <- c(20,16)
+
+# Model solutions
+out0 <- ode(y = N0, times = time_steps, func = f, parms = p, method = c("ode45"))
+out1 <- ode(y = N1, times = time_steps, func = f, parms = p, method = c("ode45"))
+
+
+# Sequences for the vector field
+N0.g <- seq(1,35,1)#S
+N1.g <- seq(1,25,1)#I
+
+# Empty plot
+plot(NA, xlab = "Suceptible (S)", ylab="Infected", xlim=c(0,35), ylim=c(0,25), main = "Phase Space and vector field")
+
+# Draw each arrow
+for (i in 1:length(N0.g)){
+  for (j in 1:length(N1.g)){
+    S <- N0.g[i]
+    I <- N1.g[j]
+    dS <- -p$beta * S * I
+    dI <- p$beta * S * I - p$alpha * I
+    arrows(S, I, S+dS/7, I+dI/7, length = 0.02, col = "darkgreen")
+  }
+}
+
+# Trajectories and start point
+lines(x = out0[,2], y = out0[,3], col='blue', lwd = 2)
+points(N0[1],N0[2],pch=19,cex=1,col='blue')
+
+lines(x = out1[,2], y = out1[,3], col='red', lwd = 2)
+points(N1[1],N1[2],pch=19,cex=1,col='red')
+
+abline(v=p$alpha/p$beta, col = "blue", lwd = 2)
+
+```
+
+
+
+```{r, echo=FALSE}
+# Do not display warning messages (for arrows of length 0)
+defaultW <- getOption("warn") 
+options(warn = -1) 
+```
+
+
+
+
+
+
+
+### SI model without immunity and without death.
+
+
+
+We consider a modification of the original Kermack-McKendrick model by assuming that the infected people, once the leave the infected class, become again susceptible (no death, but no immunity either). 
+
+
+We have different starting points:
+
+* Blue: 17 susceptibles and 10 infected
+* Red: 2 susceptibles and 6 infected
+* Yellow: 15 susceptible and 0 infected.
+
+
+The new model is given by:
+
+
+
+```{r, message=FALSE}
+
+p <- list(beta = 0.1, alpha = 1)
+
+f2 <- function(t,N,p){
+  S <- N[1]
+  I <- N[2]
+  dS <- -p$beta * S * I + p$alpha * I
+  dI <- p$beta * S * I - p$alpha * I
+  return(list(c(dS,dI)))
+}
+
+time_steps <- seq(0,50,0.05)
+
+# Initial states
+# S - I
+N0 <- c(17,10)
+N1 <- c(2,6)
+N2 <- c(15,0)
+
+# Models solutions
+out20 <- ode(y = N0, times = time_steps, func = f2, parms = p, method = c("ode45"))
+out21 <- ode(y = N1, times = time_steps, func = f2, parms = p, method = c("ode45"))
+out22 <- ode(y = N2, times = time_steps, func = f2, parms = p, method = c("ode45"))
+
+# Ranges for the vector field
+N1.g <- seq(1,20,1)#S
+N2.g <- seq(1,20,1)#I
+
+
+plot(NA, xlab = "Susceptible (S)", ylab="Infected", xlim=c(0,20), ylim=c(0,20), main = "beta = 0.1")
+
+lines(x = out20[,2], y = out20[,3], col='blue', lwd = 2)
+points(N0[1],N0[2],pch=19,cex=1,col='blue')
+
+lines(x = out21[,2], y = out21[,3], col='red', lwd = 2)
+points(N1[1],N1[2],pch=19,cex=1,col='red')
+
+lines(x = out22[,2], y = out22[,3], col='yellow', lwd = 2)
+points(N2[1],N2[2],pch=19,cex=1,col='yellow')
+
+# Vector field
+for (i in 1:length(N1.g)){
+  for (j in 1:length(N2.g)){
+    S <- N1.g[i]
+    I <- N2.g[j]
+    dS <- -p$beta * S * I + p$alpha * I
+    dI <- p$beta * S * I - p$alpha * I
+    
+    arrows(S, I, S+dS/6, I+dI/6, length = 0.02, col = "darkgreen")
+    
+  }
+}
+abline(v=p$alpha/p$beta, col = "orange")
+abline(a=0, b=0, col = "orange")
+
+```
+
+
+### Find a theoretical explanation of what you can observe numerically.
+
+
+
+We always reach a steady state. Depending on how many people were in the two categories (Infected or Susceptible) at the beginning, the steady state will have either 0 infected or the number of infected will be located on the $\alpha / \beta$ vertical line. In other words, the system will end on either on the x axis or on the epidemic threshold's vertical line.  
+
+
+
+The location of the vertical line depends on the infection and recovery rates. We can (maybe) draw a paralell with the annual flu. If we consider that the flu has a constant infection rate, and that nobody dies of it, it means that every year, depending on how many people are susceptible, we would reach an equilibrium point. 
+
+
+To take a present-day example, the hospitals capacities are based on this equilibrium point. If suddenly a flue with a higher infection rate appears, the steady state of infected people will be much higher as the threshold will move to the left (see the graph bellow).
+
+Note, here we still consider a recovery rate of 100% at every step but changing it will just move the epidemic threshold's vertical line left (more infectious and harder to recover) or right (less infectious). Also note that the part left of the $\alpha / \beta$ line makes less sense as we would more often start with a few infected people for a bigger number of suceptible (right side).
+
+
+
+
+
+
+
+
+
+```{r, message=FALSE, echo=FALSE}
+p <- list(beta = 0.2, alpha = 1)
+
+f2 <- function(t,N,p){
+  S <- N[1]
+  I <- N[2]
+  dS <- -p$beta * S * I + p$alpha * I
+  dI <- p$beta * S * I - p$alpha * I
+  return(list(c(dS,dI)))
+}
+
+time_steps <- seq(0,50,0.05)
+
+# Initial states
+# S - I
+N0 <- c(17,10)
+N1 <- c(2,6)
+N2 <- c(15,0)
+
+# Model solutions
+out20 <- ode(y = N0, times = time_steps, func = f2, parms = p, method = c("ode45"))
+out21 <- ode(y = N1, times = time_steps, func = f2, parms = p, method = c("ode45"))
+out22 <- ode(y = N2, times = time_steps, func = f2, parms = p, method = c("ode45"))
+
+# Ranges for the vector field
+N1.g <- seq(1,20,1)#S
+N2.g <- seq(1,20,1)#I
+
+
+plot(NA, xlab = "Susceptible (S)", ylab="Infected", xlim=c(0,20), ylim=c(0,20), main = "beta = 0.2")
+
+lines(x = out20[,2], y = out20[,3], col='blue', lwd = 2)
+points(N0[1],N0[2],pch=19,cex=1,col='blue')
+
+lines(x = out21[,2], y = out21[,3], col='red', lwd = 2)
+points(N1[1],N1[2],pch=19,cex=1,col='red')
+
+lines(x = out22[,2], y = out22[,3], col='yellow', lwd = 2)
+points(N2[1],N2[2],pch=19,cex=1,col='yellow')
+
+# Vector field
+for (i in 1:length(N1.g)){
+  for (j in 1:length(N2.g)){
+    S <- N1.g[i]
+    I <- N2.g[j]
+    dS <- -p$beta * S * I + p$alpha * I
+    dI <- p$beta * S * I - p$alpha * I
+    arrows(S, I, S+dS/6, I+dI/6, length = 0.02, col = "darkgreen")
+  }
+}
+
+abline(v=p$alpha/p$beta, col = "orange")
+abline(a=0, b=0, col = "orange")
+```
+
+
+
+
+```{r, echo=FALSE}
+options(warn = defaultW)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
