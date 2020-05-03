@@ -45,7 +45,7 @@ def compute_ssd(patch, mask, texture, patch_half_size):
             
             tmp_texture = np.array(texture[center_i - patch_half_size:center_i + patch_half_size + 1, 
                                            center_j - patch_half_size:center_j + patch_half_size + 1])
-            tmp_texture[mask] = [0,0,0]
+            tmp_texture[mask == 0] = [0,0,0]
             ssd[center_i-patch_half_size, center_j-patch_half_size] = ((tmp_texture - patch)**2).sum()
             
     return ssd

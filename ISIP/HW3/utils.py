@@ -13,6 +13,13 @@ from matplotlib.pyplot import imread
 #                        Functions for you to complete                       #
 ##############################################################################
 
+def show(img, name = "Some image"):
+    #plt.subplot(1,1,1)
+    plt.imshow(img)
+    plt.axis('off')
+    plt.title(name)
+    plt.show()
+    
 ################
 # EXERCISE 2.1 #
 ################
@@ -36,8 +43,11 @@ def compute_ssd(patch, mask, texture, patch_half_size):
     ssd_rows = tex_rows - 2 * patch_half_size
     ssd_cols = tex_cols - 2 * patch_half_size
     ssd = np.zeros((ssd_rows, ssd_cols))
-    
-    patch[mask] = [0,0,0]
+    #print("mask")
+    #print(mask)
+    #print("patch")
+    #print(patch)
+    #patch[mask] = [0,0,0]
     
     # Loop center point  of SSD in texture
     for center_i in range(patch_half_size, tex_rows - patch_half_size):
