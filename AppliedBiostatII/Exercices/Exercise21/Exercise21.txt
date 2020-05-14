@@ -1,0 +1,5 @@
+a) if the two distributions are identical (except mean) and the prior are the same, the threshold is then between the two mean: 5.
+
+b) check solution
+
+c)

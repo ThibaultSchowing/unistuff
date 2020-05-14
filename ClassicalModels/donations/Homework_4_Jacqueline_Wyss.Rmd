@@ -1,0 +1,293 @@
+---
+title: "R Notebook"
+author: "Jacqueline Wyss, Matrikel-Nr 09-131-954"
+output: pdf_document
+---
+
+```{r}
+library(deSolve)
+```
+
+Lotka-volterra model with competition between species
+Phase space and vector field
+
+```{r}
+#Parameter list
+r <- c(2, 2.5)
+alpha <- matrix(c(1, 0.5, 0.5, 1), nrow=2, byrow=T)
+p <- list (r=r, alpha=alpha)
+
+N0 <- c(2.5, 0.5)
+
+
+#function
+f <- function (t,N,p){
+  N_1 <- N[1]
+  N_2 <- N[2]
+  dN_1 <- N_1 *(p$r[1] - alpha[1,1]*N_1 - alpha[1,2]*N_2)
+  dN_2 <- N_2 *(p$r[2] - alpha[2,1]*N_1 - alpha[2,2]*N_2)
+  return ( list ( c(dN_1, dN_2)))
+}
+
+#time steps
+time_steps <- seq (0,100,0.01)
+
+#implement function
+out <- ode (y = N0, times = time_steps, func = f, parms = p, method = c ("ode45"))
+
+
+#non-trivial zero growth isocline for N
+zero_1_intercept <- p$r[1]/alpha[1,2]
+zero_1_slope <- -(alpha[1,1])/alpha[1,2]
+
+#non-trivial zero growth isocline for P
+zero_2_intercept <- p$r[2]/alpha[2,2]
+zero_2_slope <- -(alpha[2,1])/alpha[2,2]
+
+
+```
+
+
+
+
+
+
+
+```{r}
+
+#plot one trajectories and zero growth isoclines 
+plot (NA, xlab = "N1", ylab="N2", ylim = c(0,5), xlim = c(0,5))
+abline(a=zero_1_intercept, b= zero_1_slope, col='red', lty='dotted' )
+abline(a=zero_2_intercept, b= zero_2_slope, col='darkgreen', lty='dotted')
+
+lines (x = out[,2], y = out[,3], col='blue')
+points (N0[1],N0[2],pch=19,cex=1,col='blue')
+
+
+#Build vector arrow field
+N1.g <- seq (0,5,0.2)
+N2.g <- seq (0,5,0.2)
+
+
+for (i in 1 :length (N1.g)){
+  for (j in 1 :length (N2.g)){
+    N_1 <- N1.g[i]
+    N_2 <- N2.g[j]
+
+    dN_1 <- N_1 *(p$r[1] - alpha[1,1]*N_1 - alpha[1,2]*N_2)
+    dN_2 <- N_2 *(p$r[2] - alpha[2,1]*N_1 - alpha[2,2]*N_2) 
+    
+    #Here a scaling factor for the arrows is added for better visual     discrimination. Code above without scaling
+    arrows (N_1, N_2, N_1 + 0.1*dN_1, N_2 + 0.1*dN_2, length = 0.02, col = 'orange')
+}
+}
+
+
+```
+
+
+
+```{r}
+#Parameter list
+r <- c(3.5, 1.5)
+alpha <- matrix(c(1, 0.5, 0.5, 1), nrow=2, byrow=T)
+p <- list (r=r, alpha=alpha)
+
+N0 <- c(0.2, 3)
+
+#implement function
+out1 <- ode (y = N0, times = time_steps, func = f, parms = p, method = c ("ode45"))
+
+
+#non-trivial zero growth isocline for N
+zero_1_intercept <- p$r[1]/alpha[1,2]
+zero_1_slope <- -(alpha[1,1])/alpha[1,2]
+
+#non-trivial zero growth isocline for P
+zero_2_intercept <- p$r[2]/alpha[2,2]
+zero_2_slope <- -(alpha[2,1])/alpha[2,2]
+
+
+#plot zero growth isoclines 
+plot (NA, xlab = "N1", ylab="N2", ylim = c(0,5), xlim = c(0,5))
+abline(a=zero_1_intercept, b= zero_1_slope, col='red', lty='dotted' )
+abline(a=zero_2_intercept, b= zero_2_slope, col='darkgreen', lty='dotted')
+
+
+#Build vector arrow field
+N1.g <- seq (0,5,0.2)
+N2.g <- seq (0,5,0.2)
+
+for (i in 1 :length (N1.g)){
+  for (j in 1 :length (N2.g)){
+    N_1 <- N1.g[i]
+    N_2 <- N2.g[j]
+
+    dN_1 <- N_1 *(p$r[1] - alpha[1,1]*N_1 - alpha[1,2]*N_2)
+    dN_2 <- N_2 *(p$r[2] - alpha[2,1]*N_1 - alpha[2,2]*N_2) 
+    
+    #Here a scaling factor for the arrows is added for better visual     discrimination. Code above without scaling
+    arrows (N_1, N_2, N_1 + 0.1*dN_1, N_2 + 0.1*dN_2, length = 0.02, col = 'orange')
+}
+}
+
+#plot trajectory
+lines (x = out1[,2], y = out1[,3], col='blue')
+points (N0[1],N0[2],pch=19,cex=1,col='blue')
+
+
+```
+
+
+```{r}
+#Parameter list
+r <- c(1, 3)
+alpha <- matrix(c(1, 0.5, 0.5, 1), nrow=2, byrow=T)
+p <- list (r=r, alpha=alpha)
+
+N0 <- c(1.5, 0.1)
+
+#implement function
+out1 <- ode (y = N0, times = time_steps, func = f, parms = p, method = c ("ode45"))
+
+
+#non-trivial zero growth isocline for N
+zero_1_intercept <- p$r[1]/alpha[1,2]
+zero_1_slope <- -(alpha[1,1])/alpha[1,2]
+
+#non-trivial zero growth isocline for P
+zero_2_intercept <- p$r[2]/alpha[2,2]
+zero_2_slope <- -(alpha[2,1])/alpha[2,2]
+
+
+#plot zero growth isoclines 
+plot (NA, xlab = "N1", ylab="N2", ylim = c(0,5), xlim = c(0,5))
+abline(a=zero_1_intercept, b= zero_1_slope, col='red', lty='dotted' )
+abline(a=zero_2_intercept, b= zero_2_slope, col='darkgreen', lty='dotted')
+
+
+#Build vector arrow field
+N1.g <- seq (0,5,0.2)
+N2.g <- seq (0,5,0.2)
+
+for (i in 1 :length (N1.g)){
+  for (j in 1 :length (N2.g)){
+    N_1 <- N1.g[i]
+    N_2 <- N2.g[j]
+
+    dN_1 <- N_1 *(p$r[1] - alpha[1,1]*N_1 - alpha[1,2]*N_2)
+    dN_2 <- N_2 *(p$r[2] - alpha[2,1]*N_1 - alpha[2,2]*N_2) 
+    
+    #Here a scaling factor for the arrows is added for better visual     discrimination. Code above without scaling
+    arrows (N_1, N_2, N_1 + 0.1*dN_1, N_2 + 0.1*dN_2, length = 0.02, col = 'orange')
+}
+}
+
+#plot trajectory
+lines (x = out1[,2], y = out1[,3], col='blue')
+points (N0[1],N0[2],pch=19,cex=1,col='blue')
+
+```
+
+
+```{r}
+#Parameter list
+r <- c(2, 2)
+alpha <- matrix(c(0.5, 1, 1, 0.5), nrow=2, byrow=T)
+p <- list (r=r, alpha=alpha)
+
+N0 <- c(3.5,3)
+
+#implement function
+out1 <- ode (y = N0, times = time_steps, func = f, parms = p, method = c ("ode45"))
+
+
+#non-trivial zero growth isocline for N
+zero_1_intercept <- p$r[1]/alpha[1,2]
+zero_1_slope <- -(alpha[1,1])/alpha[1,2]
+
+#non-trivial zero growth isocline for P
+zero_2_intercept <- p$r[2]/alpha[2,2]
+zero_2_slope <- -(alpha[2,1])/alpha[2,2]
+
+
+#plot zero growth isoclines 
+plot (NA, xlab = "N1", ylab="N2", ylim = c(0,5), xlim = c(0,5))
+abline(a=zero_1_intercept, b= zero_1_slope, col='red', lty='dotted' )
+abline(a=zero_2_intercept, b= zero_2_slope, col='darkgreen', lty='dotted')
+
+
+#Build vector arrow field
+N1.g <- seq (0,5,0.2)
+N2.g <- seq (0,5,0.2)
+
+for (i in 1 :length (N1.g)){
+  for (j in 1 :length (N2.g)){
+    N_1 <- N1.g[i]
+    N_2 <- N2.g[j]
+
+    dN_1 <- N_1 *(p$r[1] - alpha[1,1]*N_1 - alpha[1,2]*N_2)
+    dN_2 <- N_2 *(p$r[2] - alpha[2,1]*N_1 - alpha[2,2]*N_2) 
+    
+    #Here a scaling factor for the arrows is added for better visual     discrimination. Code above without scaling
+    arrows (N_1, N_2, N_1 + 0.1*dN_1, N_2 + 0.1*dN_2, length = 0.02, col = 'orange')
+}
+}
+
+#plot trajectory
+lines (x = out1[,2], y = out1[,3], col='blue')
+points (N0[1],N0[2],pch=19,cex=1,col='blue')
+
+```
+
+
+```{r}
+#Parameter list
+r <- c(2, 2)
+alpha <- matrix(c(0.5, 1, 1, 0.5), nrow=2, byrow=T)
+p <- list (r=r, alpha=alpha)
+
+N0 <- c(3,3.5)
+
+#implement function
+out1 <- ode (y = N0, times = time_steps, func = f, parms = p, method = c ("ode45"))
+
+
+#non-trivial zero growth isocline for N
+zero_1_intercept <- p$r[1]/alpha[1,2]
+zero_1_slope <- -(alpha[1,1])/alpha[1,2]
+
+#non-trivial zero growth isocline for P
+zero_2_intercept <- p$r[2]/alpha[2,2]
+zero_2_slope <- -(alpha[2,1])/alpha[2,2]
+
+
+#plot zero growth isoclines 
+plot (NA, xlab = "N1", ylab="N2", ylim = c(0,5), xlim = c(0,5))
+abline(a=zero_1_intercept, b= zero_1_slope, col='red', lty='dotted' )
+abline(a=zero_2_intercept, b= zero_2_slope, col='darkgreen', lty='dotted')
+
+
+#Build vector arrow field
+N1.g <- seq (0,5,0.2)
+N2.g <- seq (0,5,0.2)
+
+for (i in 1 :length (N1.g)){
+  for (j in 1 :length (N2.g)){
+    N_1 <- N1.g[i]
+    N_2 <- N2.g[j]
+
+    dN_1 <- N_1 *(p$r[1] - alpha[1,1]*N_1 - alpha[1,2]*N_2)
+    dN_2 <- N_2 *(p$r[2] - alpha[2,1]*N_1 - alpha[2,2]*N_2) 
+    
+    #Here a scaling factor for the arrows is added for better visual     discrimination. Code above without scaling
+    arrows (N_1, N_2, N_1 + 0.1*dN_1, N_2 + 0.1*dN_2, length = 0.02, col = 'orange')
+}
+}
+
+#plot trajectory
+lines (x = out1[,2], y = out1[,3], col='blue')
+points (N0[1],N0[2],pch=19,cex=1,col='blue')
+
+```
+
